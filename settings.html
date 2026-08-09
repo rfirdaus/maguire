@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Settings — Maguire.id</title>
+  <meta name="description" content="Manage workspace, notification, security, team access, and data preferences in Maguire." />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/app.css" />
+</head>
+<body class="app-page">
+  <div class="app-shell">
+    <aside class="app-sidebar" id="app-sidebar" aria-label="Main navigation">
+      <div class="app-sidebar-brand">
+        <a class="logo" href="dashboard.html" aria-label="Maguire.id dashboard">Maguire<span>.id</span></a>
+      </div>
+
+      <div class="app-sidebar-section-label">Workspace</div>
+      <nav class="app-nav">
+        <a class="app-nav-link" href="dashboard.html">
+          <span class="app-nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"></rect><rect x="14" y="3" width="7" height="7" rx="1.5"></rect><rect x="3" y="14" width="7" height="7" rx="1.5"></rect><rect x="14" y="14" width="7" height="7" rx="1.5"></rect></svg></span>
+          Dashboard
+        </a>
+        <a class="app-nav-link" href="discover.html">
+          <span class="app-nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.4-3.4"></path></svg></span>
+          Discover
+          <span class="app-nav-badge">12</span>
+        </a>
+        <a class="app-nav-link" href="my-tenders.html">
+          <span class="app-nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14a1 1 0 0 1 1 1v15H4V5a1 1 0 0 1 1-1Z"></path><path d="M8 8h8M8 12h8M8 16h5"></path></svg></span>
+          My Tenders
+          <span class="app-nav-badge app-nav-badge-muted">3</span>
+        </a>
+        <a class="app-nav-link" href="documents.html">
+          <span class="app-nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4H10l2 2h5.5A2.5 2.5 0 0 1 20 8.5v9A2.5 2.5 0 0 1 17.5 20h-11A2.5 2.5 0 0 1 4 17.5Z"></path></svg></span>
+          Documents
+        </a>
+        <a class="app-nav-link" href="company-profile.html">
+          <span class="app-nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V7l8-4 8 4v14"></path><path d="M8 10h1M8 14h1M8 18h1M15 10h1M15 14h1M15 18h1"></path></svg></span>
+          Company Profile
+        </a>
+      </nav>
+
+      <div class="app-sidebar-section-label">Account</div>
+      <nav class="app-nav">
+        <a class="app-nav-link" href="notifications.html">
+          <span class="app-nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"></path><path d="M10 21h4"></path></svg></span>
+          Notifications
+          <span class="app-notification-dot" id="sidebar-notification-dot" aria-label="Unread notification"></span>
+        </a>
+        <a class="app-nav-link is-active" href="settings.html" aria-current="page">
+          <span class="app-nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06-2.83 2.83-.06-.06A1.7 1.7 0 0 0 15 19.4a1.7 1.7 0 0 0-1 .6 1.7 1.7 0 0 0-.4 1.1V21h-4v-.1A1.7 1.7 0 0 0 8.6 19.4a1.7 1.7 0 0 0-1.88.34l-.06.06-2.83-2.83.06-.06A1.7 1.7 0 0 0 4.6 15a1.7 1.7 0 0 0-.6-1 1.7 1.7 0 0 0-1.1-.4H3v-4h.1A1.7 1.7 0 0 0 4.6 8.6a1.7 1.7 0 0 0-.34-1.88l-.06-.06 2.83-2.83.06.06A1.7 1.7 0 0 0 9 4.6a1.7 1.7 0 0 0 1-.6 1.7 1.7 0 0 0 .4-1.1V3h4v.1A1.7 1.7 0 0 0 15.4 4.6a1.7 1.7 0 0 0 1.88-.34l.06-.06 2.83 2.83-.06.06A1.7 1.7 0 0 0 19.4 9c.27.36.48.7.6 1 .12.3.4.68 1 .8h.1v4H21a1.7 1.7 0 0 0-1.6.2Z"></path></svg></span>
+          Settings
+        </a>
+      </nav>
+
+      <div class="app-sidebar-footer">
+        <div class="app-sidebar-company">
+          <strong>PT Wijaya Infrastruktur Nusantara</strong>
+          <span>Infrastructure &amp; Engineering</span>
+        </div>
+      </div>
+    </aside>
+
+    <main class="app-main">
+      <header class="app-topbar">
+        <div class="app-topbar-left">
+          <button class="app-icon-button app-mobile-menu" id="mobile-menu-button" type="button" aria-label="Open navigation" aria-controls="app-sidebar" aria-expanded="false">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+          </button>
+          <div>
+            <div class="app-topbar-title">Settings</div>
+            <div class="app-topbar-company">PT Wijaya Infrastruktur Nusantara</div>
+          </div>
+        </div>
+
+        <div class="app-topbar-actions">
+          <button class="app-icon-button app-topbar-notification" id="notification-button" type="button" aria-label="Notifications" aria-expanded="false">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"></path><path d="M10 21h4"></path></svg>
+            <span class="notification-count" id="notification-count">1</span>
+          </button>
+          <div class="app-user-menu-wrap">
+            <button class="app-user-button" id="user-menu-button" type="button" aria-expanded="false">
+              <span class="app-user-avatar">BS</span>
+              <span class="app-user-meta"><strong>Budi Santoso</strong><span>Business Development</span></span>
+              <svg class="app-user-chevron" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+            </button>
+            <div class="app-dropdown" id="user-menu" hidden>
+              <a href="company-profile.html">Company Profile</a>
+              <a href="settings.html">Settings</a>
+              <button type="button" id="logout-button">Sign out</button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="app-mobile-overlay" id="mobile-overlay" hidden></div>
+
+      <section class="app-content settings-content">
+        <div class="app-page-header settings-page-header">
+          <div>
+            <h1>Settings</h1>
+            <p>Manage your Maguire workspace, notification preferences, access, and account security.</p>
+          </div>
+          <span class="settings-save-state" id="settings-save-state" aria-live="polite">All changes saved</span>
+        </div>
+
+        <div class="settings-layout">
+          <nav class="app-card settings-nav" aria-label="Settings sections">
+            <button class="settings-nav-link is-active" type="button" data-section="workspace">
+              <span class="settings-nav-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V7l8-4 8 4v14"></path><path d="M8 10h1M8 14h1M15 10h1M15 14h1"></path></svg></span>
+              <span><strong>Workspace</strong><small>Company-wide preferences</small></span>
+            </button>
+            <button class="settings-nav-link" type="button" data-section="notifications">
+              <span class="settings-nav-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"></path><path d="M10 21h4"></path></svg></span>
+              <span><strong>Notifications</strong><small>Alerts &amp; reminders</small></span>
+            </button>
+            <button class="settings-nav-link" type="button" data-section="team">
+              <span class="settings-nav-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"></circle><circle cx="17" cy="10" r="2.5"></circle><path d="M3 20c0-4 2.7-6 6-6s6 2 6 6M14 15c3.7-.5 7 1.1 7 5"></path></svg></span>
+              <span><strong>Team &amp; Access</strong><small>Members &amp; roles</small></span>
+            </button>
+            <button class="settings-nav-link" type="button" data-section="security">
+              <span class="settings-nav-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 5 6v5c0 5 3 8.5 7 10 4-1.5 7-5 7-10V6l-7-3Z"></path><path d="m9 12 2 2 4-4"></path></svg></span>
+              <span><strong>Security</strong><small>Password &amp; sessions</small></span>
+            </button>
+            <button class="settings-nav-link" type="button" data-section="data">
+              <span class="settings-nav-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="7" ry="3"></ellipse><path d="M5 5v6c0 1.7 3.1 3 7 3s7-1.3 7-3V5M5 11v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"></path></svg></span>
+              <span><strong>Data &amp; Privacy</strong><small>Export &amp; retention</small></span>
+            </button>
+          </nav>
+
+          <div class="settings-panels">
+            <section class="settings-panel is-active" id="settings-workspace" data-settings-panel="workspace">
+              <div class="app-card settings-section-card">
+                <div class="settings-section-heading">
+                  <div><span>Workspace</span><h2>General preferences</h2><p>These defaults apply across your company's Maguire workspace.</p></div>
+                </div>
+                <div class="settings-form-grid">
+                  <label class="settings-field settings-field-wide"><span>Workspace name</span><input id="workspace-name" type="text" value="PT Wijaya Infrastruktur Nusantara" /></label>
+                  <label class="settings-field"><span>Timezone</span><select id="timezone"><option value="Asia/Jakarta">Asia/Jakarta (WIB)</option><option value="Asia/Makassar">Asia/Makassar (WITA)</option><option value="Asia/Jayapura">Asia/Jayapura (WIT)</option></select></label>
+                  <label class="settings-field"><span>Currency</span><select id="currency"><option value="IDR">IDR — Indonesian Rupiah</option><option value="USD">USD — US Dollar</option></select></label>
+                  <label class="settings-field"><span>Date format</span><select id="date-format"><option value="DD MMM YYYY">DD MMM YYYY</option><option value="DD/MM/YYYY">DD/MM/YYYY</option><option value="YYYY-MM-DD">YYYY-MM-DD</option></select></label>
+                  <label class="settings-field"><span>Week starts on</span><select id="week-start"><option value="monday">Monday</option><option value="sunday">Sunday</option></select></label>
+                </div>
+              </div>
+
+              <div class="app-card settings-section-card">
+                <div class="settings-section-heading"><div><span>Tender defaults</span><h2>Discovery &amp; assessment</h2><p>Choose how Maguire prioritizes new opportunities and assessment alerts.</p></div></div>
+                <div class="settings-row-list">
+                  <div class="settings-preference-row"><div><strong>Recommended tender threshold</strong><p>Only surface opportunities above this preliminary match score in Recommended.</p></div><label class="settings-compact-select"><select id="match-threshold"><option value="70">70% and above</option><option value="75">75% and above</option><option value="80">80% and above</option><option value="85">85% and above</option></select></label></div>
+                  <div class="settings-preference-row"><div><strong>Mandatory gap escalation</strong><p>Highlight mandatory qualification gaps as eligibility risks during assessment.</p></div><label class="settings-switch"><input id="mandatory-escalation" type="checkbox" checked /><span></span></label></div>
+                  <div class="settings-preference-row"><div><strong>Source traceability</strong><p>Require assessment findings to retain a source document, section, or page reference.</p></div><label class="settings-switch"><input id="source-traceability" type="checkbox" checked /><span></span></label></div>
+                </div>
+              </div>
+            </section>
+
+            <section class="settings-panel" id="settings-notifications" data-settings-panel="notifications" hidden>
+              <div class="app-card settings-section-card">
+                <div class="settings-section-heading"><div><span>Channels</span><h2>Notification delivery</h2><p>Choose where and when Maguire should alert you.</p></div></div>
+                <div class="settings-row-list">
+                  <div class="settings-preference-row"><div><strong>In-app notifications</strong><p>Show tender, task, evidence, and deadline alerts inside Maguire.</p></div><label class="settings-switch"><input id="notify-inapp" type="checkbox" checked /><span></span></label></div>
+                  <div class="settings-preference-row"><div><strong>Email digest</strong><p>Receive a weekday summary of new matches, deadlines, and actions.</p></div><div class="settings-inline-controls"><label class="settings-switch"><input id="notify-email" type="checkbox" checked /><span></span></label><input class="settings-time-input" id="digest-time" type="time" value="08:00" /></div></div>
+                  <div class="settings-preference-row"><div><strong>Weekly pipeline summary</strong><p>Get a Monday morning summary of evaluating, preparing, and submitted tenders.</p></div><label class="settings-switch"><input id="notify-weekly" type="checkbox" checked /><span></span></label></div>
+                </div>
+              </div>
+
+              <div class="app-card settings-section-card">
+                <div class="settings-section-heading"><div><span>Events</span><h2>What should trigger an alert?</h2><p>Critical eligibility and evidence risks remain prominent even when routine alerts are reduced.</p></div></div>
+                <div class="settings-notification-grid">
+                  <label class="settings-notification-option"><span><strong>New tender matches</strong><small>Relevant opportunities above your match threshold.</small></span><span class="settings-switch"><input id="event-matches" type="checkbox" checked /><span></span></span></label>
+                  <label class="settings-notification-option"><span><strong>Deadline reminders</strong><small>7 days, 3 days, and 1 day before submission.</small></span><span class="settings-switch"><input id="event-deadlines" type="checkbox" checked /><span></span></span></label>
+                  <label class="settings-notification-option"><span><strong>Readiness &amp; eligibility changes</strong><small>Assessment completion or newly detected qualification risk.</small></span><span class="settings-switch"><input id="event-readiness" type="checkbox" checked /><span></span></span></label>
+                  <label class="settings-notification-option"><span><strong>Evidence expiry</strong><small>Certificates or company evidence approaching expiry.</small></span><span class="settings-switch"><input id="event-expiry" type="checkbox" checked /><span></span></span></label>
+                  <label class="settings-notification-option"><span><strong>Task assignments</strong><small>New tasks, ownership changes, and overdue actions.</small></span><span class="settings-switch"><input id="event-tasks" type="checkbox" checked /><span></span></span></label>
+                  <label class="settings-notification-option"><span><strong>Submission status</strong><small>Submission, buyer evaluation, award, and closing updates.</small></span><span class="settings-switch"><input id="event-status" type="checkbox" checked /><span></span></span></label>
+                </div>
+              </div>
+            </section>
+
+            <section class="settings-panel" id="settings-team" data-settings-panel="team" hidden>
+              <div class="app-card settings-section-card">
+                <div class="settings-section-heading settings-section-heading-actions">
+                  <div><span>Access</span><h2>Team members</h2><p>Six people currently have access to this workspace.</p></div>
+                  <button class="btn btn-primary" id="invite-member-button" type="button">Invite Member</button>
+                </div>
+                <div class="settings-team-list" id="settings-team-list">
+                  <div class="settings-team-row"><span class="settings-team-avatar">BS</span><span class="settings-team-copy"><strong>Budi Santoso</strong><small>budi@wijayainfra.co.id · Business Development</small></span><span class="settings-role-pill is-admin">Admin</span><span class="settings-team-status">Active</span></div>
+                  <div class="settings-team-row"><span class="settings-team-avatar">SW</span><span class="settings-team-copy"><strong>Sari Wibowo</strong><small>sari@wijayainfra.co.id · Bid Manager</small></span><span class="settings-role-pill">Manager</span><span class="settings-team-status">Active</span></div>
+                  <div class="settings-team-row"><span class="settings-team-avatar">AP</span><span class="settings-team-copy"><strong>Andi Pratama</strong><small>andi@wijayainfra.co.id · Engineering</small></span><span class="settings-role-pill">Member</span><span class="settings-team-status">Active</span></div>
+                  <div class="settings-team-row"><span class="settings-team-avatar">DL</span><span class="settings-team-copy"><strong>Dewi Lestari</strong><small>dewi@wijayainfra.co.id · Legal &amp; Compliance</small></span><span class="settings-role-pill">Member</span><span class="settings-team-status">Active</span></div>
+                  <div class="settings-team-row"><span class="settings-team-avatar">RH</span><span class="settings-team-copy"><strong>Rizky Hidayat</strong><small>rizky@wijayainfra.co.id · Finance</small></span><span class="settings-role-pill">Member</span><span class="settings-team-status">Active</span></div>
+                  <div class="settings-team-row"><span class="settings-team-avatar">MA</span><span class="settings-team-copy"><strong>Maya Anindita</strong><small>maya@wijayainfra.co.id · Commercial</small></span><span class="settings-role-pill">Member</span><span class="settings-team-status">Active</span></div>
+                </div>
+              </div>
+
+              <div class="app-card settings-section-card">
+                <div class="settings-section-heading"><div><span>Roles</span><h2>Access model</h2><p>Prototype permissions are simplified into three roles.</p></div></div>
+                <div class="settings-role-grid">
+                  <article><span class="settings-role-icon">A</span><div><strong>Admin</strong><p>Manage workspace settings, members, company profile, documents, and all tenders.</p></div></article>
+                  <article><span class="settings-role-icon">M</span><div><strong>Manager</strong><p>Create tender workspaces, assign tasks, manage evidence, and review assessments.</p></div></article>
+                  <article><span class="settings-role-icon">U</span><div><strong>Member</strong><p>Work on assigned tenders, tasks, documents, and requirements.</p></div></article>
+                </div>
+              </div>
+            </section>
+
+            <section class="settings-panel" id="settings-security" data-settings-panel="security" hidden>
+              <div class="app-card settings-section-card">
+                <div class="settings-section-heading"><div><span>Account security</span><h2>Password &amp; authentication</h2><p>Manage access to your individual Maguire account.</p></div></div>
+                <div class="settings-row-list">
+                  <div class="settings-preference-row"><div><strong>Password</strong><p>Last changed 14 days ago.</p></div><button class="btn btn-secondary settings-row-button" id="change-password-button" type="button">Change Password</button></div>
+                  <div class="settings-preference-row"><div><strong>Two-factor authentication</strong><p>Add a second verification step when signing in.</p></div><label class="settings-switch"><input id="two-factor" type="checkbox" /><span></span></label></div>
+                </div>
+              </div>
+
+              <div class="app-card settings-section-card">
+                <div class="settings-section-heading"><div><span>Sessions</span><h2>Active sessions</h2><p>Devices currently signed into your account.</p></div></div>
+                <div class="settings-session-list">
+                  <div class="settings-session-row"><span class="settings-device-icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="12" rx="2"></rect><path d="M8 20h8M12 16v4"></path></svg></span><span><strong>Chrome on macOS</strong><small>Jakarta, Indonesia · Current session</small></span><span class="settings-session-current">Current</span></div>
+                  <div class="settings-session-row"><span class="settings-device-icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="7" y="2" width="10" height="20" rx="2"></rect><path d="M11 18h2"></path></svg></span><span><strong>Safari on iPhone</strong><small>Jakarta, Indonesia · Last active 2 hours ago</small></span><button class="settings-text-action" id="revoke-session-button" type="button">Revoke</button></div>
+                </div>
+              </div>
+            </section>
+
+            <section class="settings-panel" id="settings-data" data-settings-panel="data" hidden>
+              <div class="app-card settings-section-card">
+                <div class="settings-section-heading"><div><span>Data</span><h2>Workspace data &amp; exports</h2><p>Manage copies of your workspace data and retention preferences.</p></div></div>
+                <div class="settings-row-list">
+                  <div class="settings-preference-row"><div><strong>Export company profile</strong><p>Download structured company profile data and capability records.</p></div><button class="btn btn-secondary settings-row-button" data-prototype-action="Company profile export prepared" type="button">Export</button></div>
+                  <div class="settings-preference-row"><div><strong>Export tender activity</strong><p>Download tender portfolio, workspace, task, and submission activity.</p></div><button class="btn btn-secondary settings-row-button" data-prototype-action="Tender activity export prepared" type="button">Export</button></div>
+                  <div class="settings-preference-row"><div><strong>Document retention</strong><p>Keep archived tender-specific files after tender completion.</p></div><label class="settings-compact-select"><select id="retention"><option value="indefinite">Keep indefinitely</option><option value="5y">5 years</option><option value="3y">3 years</option><option value="1y">1 year</option></select></label></div>
+                </div>
+              </div>
+
+              <div class="app-card settings-section-card settings-danger-card">
+                <div class="settings-section-heading"><div><span>Danger zone</span><h2>Workspace deletion</h2><p>Deleting the workspace would remove company profile data, tender workspaces, and linked evidence.</p></div></div>
+                <div class="settings-danger-row"><div><strong>Delete PT Wijaya Infrastruktur Nusantara</strong><p>This action should require administrator confirmation and cannot be undone in production.</p></div><button class="btn settings-danger-button" id="delete-workspace-button" type="button">Delete Workspace</button></div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="notification-popover" id="notification-popover" hidden>
+    <div class="notification-popover-header"><strong>Notifications</strong><a href="notifications.html">View all</a></div>
+    <a class="notification-preview" id="notification-preview" href="documents.html"><span class="notification-preview-icon" aria-hidden="true">!</span><span><strong>ISO 45001 expires soon</strong><small>Your certificate expires in 23 days.</small></span></a>
+  </div>
+
+  <div class="settings-modal-backdrop" id="settings-modal" hidden>
+    <div class="settings-modal" role="dialog" aria-modal="true" aria-labelledby="settings-modal-title">
+      <button class="settings-modal-close" id="settings-modal-close" type="button" aria-label="Close">×</button>
+      <div class="settings-modal-icon" id="settings-modal-icon">✓</div>
+      <h2 id="settings-modal-title">Settings updated</h2>
+      <p id="settings-modal-copy"></p>
+      <div id="settings-modal-extra"></div>
+      <div class="settings-modal-actions" id="settings-modal-actions"><button class="btn btn-primary" id="settings-modal-done" type="button">Done</button></div>
+    </div>
+  </div>
+
+  <div class="settings-toast" id="settings-toast" role="status" aria-live="polite"><strong id="settings-toast-title">Saved</strong><span id="settings-toast-copy">Your changes were saved.</span></div>
+
+  <script>
+    const isAuthenticated = localStorage.getItem("maguire_demo_authenticated") === "true";
+    if (!isAuthenticated) window.location.replace("login.html");
+
+    const SETTINGS_KEY = "maguire_settings_v1";
+    const defaults = {
+      workspaceName: "PT Wijaya Infrastruktur Nusantara",
+      timezone: "Asia/Jakarta",
+      currency: "IDR",
+      dateFormat: "DD MMM YYYY",
+      weekStart: "monday",
+      matchThreshold: "70",
+      mandatoryEscalation: true,
+      sourceTraceability: true,
+      notifyInapp: true,
+      notifyEmail: true,
+      digestTime: "08:00",
+      notifyWeekly: true,
+      eventMatches: true,
+      eventDeadlines: true,
+      eventReadiness: true,
+      eventExpiry: true,
+      eventTasks: true,
+      eventStatus: true,
+      twoFactor: false,
+      retention: "indefinite"
+    };
+
+    let settings;
+    try { settings = { ...defaults, ...(JSON.parse(localStorage.getItem(SETTINGS_KEY)) || {}) }; }
+    catch { settings = { ...defaults }; }
+
+    const controls = {
+      workspaceName: document.getElementById("workspace-name"), timezone: document.getElementById("timezone"), currency: document.getElementById("currency"),
+      dateFormat: document.getElementById("date-format"), weekStart: document.getElementById("week-start"), matchThreshold: document.getElementById("match-threshold"),
+      mandatoryEscalation: document.getElementById("mandatory-escalation"), sourceTraceability: document.getElementById("source-traceability"), notifyInapp: document.getElementById("notify-inapp"),
+      notifyEmail: document.getElementById("notify-email"), digestTime: document.getElementById("digest-time"), notifyWeekly: document.getElementById("notify-weekly"),
+      eventMatches: document.getElementById("event-matches"), eventDeadlines: document.getElementById("event-deadlines"), eventReadiness: document.getElementById("event-readiness"),
+      eventExpiry: document.getElementById("event-expiry"), eventTasks: document.getElementById("event-tasks"), eventStatus: document.getElementById("event-status"),
+      twoFactor: document.getElementById("two-factor"), retention: document.getElementById("retention")
+    };
+
+    function loadSettings() {
+      Object.entries(controls).forEach(([key, el]) => {
+        if (!el) return;
+        if (el.type === "checkbox") el.checked = Boolean(settings[key]);
+        else el.value = settings[key];
+      });
+    }
+
+    let saveTimer;
+    const saveState = document.getElementById("settings-save-state");
+    function persistSettings() {
+      Object.entries(controls).forEach(([key, el]) => {
+        if (!el) return;
+        settings[key] = el.type === "checkbox" ? el.checked : el.value;
+      });
+      localStorage.setItem(SETTINGS_KEY, JSON.stringify(settings));
+      saveState.textContent = "Saving…";
+      saveState.classList.add("is-saving");
+      clearTimeout(saveTimer);
+      saveTimer = setTimeout(() => {
+        saveState.textContent = "All changes saved";
+        saveState.classList.remove("is-saving");
+      }, 420);
+    }
+
+    Object.values(controls).forEach(el => {
+      if (!el) return;
+      el.addEventListener(el.type === "text" || el.type === "time" ? "input" : "change", persistSettings);
+    });
+
+    const settingsNavLinks = [...document.querySelectorAll("[data-section]")];
+    const settingsPanels = [...document.querySelectorAll("[data-settings-panel]")];
+    function activateSection(name, updateHash = true) {
+      const valid = settingsPanels.some(panel => panel.dataset.settingsPanel === name) ? name : "workspace";
+      settingsNavLinks.forEach(btn => btn.classList.toggle("is-active", btn.dataset.section === valid));
+      settingsPanels.forEach(panel => {
+        const active = panel.dataset.settingsPanel === valid;
+        panel.classList.toggle("is-active", active);
+        panel.hidden = !active;
+      });
+      if (updateHash) history.replaceState(null, "", valid === "workspace" ? "settings.html" : `#${valid}`);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+    settingsNavLinks.forEach(btn => btn.addEventListener("click", () => activateSection(btn.dataset.section)));
+    window.addEventListener("hashchange", () => activateSection(location.hash.replace("#", "") || "workspace", false));
+
+    const modal = document.getElementById("settings-modal");
+    const modalTitle = document.getElementById("settings-modal-title");
+    const modalCopy = document.getElementById("settings-modal-copy");
+    const modalIcon = document.getElementById("settings-modal-icon");
+    const modalExtra = document.getElementById("settings-modal-extra");
+    const modalActions = document.getElementById("settings-modal-actions");
+    const defaultModalActions = '<button class="btn btn-primary" id="settings-modal-done" type="button">Done</button>';
+
+    function bindModalDone() { const done = document.getElementById("settings-modal-done"); if (done) done.addEventListener("click", closeModal); }
+    function openModal(title, copy, icon = "✓", extra = "", actions = defaultModalActions) {
+      modalTitle.textContent = title; modalCopy.textContent = copy; modalIcon.textContent = icon; modalExtra.innerHTML = extra; modalActions.innerHTML = actions;
+      modal.hidden = false; document.body.classList.add("settings-modal-open"); bindModalDone();
+    }
+    function closeModal() { modal.hidden = true; document.body.classList.remove("settings-modal-open"); }
+    document.getElementById("settings-modal-close").addEventListener("click", closeModal);
+    modal.addEventListener("click", event => { if (event.target === modal) closeModal(); });
+    document.addEventListener("keydown", event => { if (event.key === "Escape" && !modal.hidden) closeModal(); });
+
+    const toast = document.getElementById("settings-toast");
+    let toastTimer;
+    function showToast(title, copy) {
+      document.getElementById("settings-toast-title").textContent = title;
+      document.getElementById("settings-toast-copy").textContent = copy;
+      toast.classList.add("is-visible"); clearTimeout(toastTimer); toastTimer = setTimeout(() => toast.classList.remove("is-visible"), 2400);
+    }
+
+    document.querySelectorAll("[data-prototype-action]").forEach(button => button.addEventListener("click", () => showToast(button.dataset.prototypeAction, "The export is simulated in this prototype.")));
+
+    document.getElementById("invite-member-button").addEventListener("click", () => {
+      openModal("Invite team member", "Add someone to the PT Wijaya Infrastruktur Nusantara workspace.", "+", `
+        <div class="settings-modal-form">
+          <label><span>Work email</span><input id="invite-email" type="email" placeholder="name@company.com" /></label>
+          <label><span>Role</span><select id="invite-role"><option>Member</option><option>Manager</option><option>Admin</option></select></label>
+        </div>`,
+        '<button class="btn btn-secondary" id="settings-modal-done" type="button">Cancel</button><button class="btn btn-primary" id="send-invite-button" type="button">Send Invite</button>'
+      );
+      document.getElementById("send-invite-button").addEventListener("click", () => {
+        const email = document.getElementById("invite-email").value.trim();
+        if (!email || !email.includes("@")) { document.getElementById("invite-email").classList.add("is-error"); return; }
+        closeModal(); showToast("Invitation sent", `${email} was invited to the workspace.`);
+      });
+    });
+
+    document.getElementById("change-password-button").addEventListener("click", () => {
+      openModal("Change password", "Enter a new password for the demo account.", "••", `
+        <div class="settings-modal-form">
+          <label><span>Current password</span><input type="password" value="demo123" /></label>
+          <label><span>New password</span><input id="new-password" type="password" placeholder="At least 8 characters" /></label>
+        </div>`,
+        '<button class="btn btn-secondary" id="settings-modal-done" type="button">Cancel</button><button class="btn btn-primary" id="save-password-button" type="button">Update Password</button>'
+      );
+      document.getElementById("save-password-button").addEventListener("click", () => {
+        const value = document.getElementById("new-password").value;
+        if (value.length < 8) { document.getElementById("new-password").classList.add("is-error"); return; }
+        closeModal(); showToast("Password updated", "Password change is simulated for this prototype.");
+      });
+    });
+
+    document.getElementById("revoke-session-button").addEventListener("click", event => {
+      event.currentTarget.closest(".settings-session-row").remove();
+      showToast("Session revoked", "Safari on iPhone has been signed out.");
+    });
+
+    document.getElementById("delete-workspace-button").addEventListener("click", () => {
+      openModal("Delete workspace?", "This destructive action is disabled in the prototype. In production, an administrator would need to confirm the workspace name before deletion.", "!", "",
+        '<button class="btn btn-primary" id="settings-modal-done" type="button">Keep Workspace</button>');
+    });
+
+    const userMenuButton = document.getElementById("user-menu-button");
+    const userMenu = document.getElementById("user-menu");
+    const logoutButton = document.getElementById("logout-button");
+    const notificationButton = document.getElementById("notification-button");
+    const notificationPopover = document.getElementById("notification-popover");
+    const notificationCount = document.getElementById("notification-count");
+    const sidebarNotificationDot = document.getElementById("sidebar-notification-dot");
+    const notificationPreview = document.getElementById("notification-preview");
+    const mobileMenuButton = document.getElementById("mobile-menu-button");
+    const sidebar = document.getElementById("app-sidebar");
+    const mobileOverlay = document.getElementById("mobile-overlay");
+
+    let readIds;
+    try { readIds = new Set(JSON.parse(localStorage.getItem("maguire_notification_read_ids")) || []); }
+    catch { readIds = new Set(); }
+    const isoUnread = !readIds.has("iso-expiry");
+    notificationCount.hidden = !isoUnread;
+    sidebarNotificationDot.hidden = !isoUnread;
+    if (!isoUnread) {
+      notificationPopover.querySelector(".notification-preview-icon").textContent = "✓";
+      notificationPreview.querySelector("strong").textContent = "You're all caught up";
+      notificationPreview.querySelector("small").textContent = "No unread notifications right now.";
+      notificationPreview.href = "notifications.html";
+    }
+
+    function closeUserMenu(){ userMenu.hidden = true; userMenuButton.setAttribute("aria-expanded","false"); }
+    function closeNotifications(){ notificationPopover.hidden = true; notificationButton.setAttribute("aria-expanded","false"); }
+    userMenuButton.addEventListener("click", event => { event.stopPropagation(); const open = userMenu.hidden; closeNotifications(); userMenu.hidden = !open; userMenuButton.setAttribute("aria-expanded", String(open)); });
+    notificationButton.addEventListener("click", event => { event.stopPropagation(); const open = notificationPopover.hidden; closeUserMenu(); notificationPopover.hidden = !open; notificationButton.setAttribute("aria-expanded", String(open)); });
+    document.addEventListener("click", () => { closeUserMenu(); closeNotifications(); });
+    userMenu.addEventListener("click", event => event.stopPropagation());
+    notificationPopover.addEventListener("click", event => event.stopPropagation());
+    logoutButton.addEventListener("click", () => { localStorage.removeItem("maguire_demo_authenticated"); localStorage.removeItem("maguire_demo_user"); localStorage.removeItem("maguire_demo_company"); window.location.href = "login.html"; });
+
+    function setMobileSidebar(open){ sidebar.classList.toggle("is-open",open); mobileOverlay.hidden = !open; mobileMenuButton.setAttribute("aria-expanded",String(open)); document.body.classList.toggle("sidebar-open",open); }
+    mobileMenuButton.addEventListener("click", () => setMobileSidebar(!sidebar.classList.contains("is-open")));
+    mobileOverlay.addEventListener("click", () => setMobileSidebar(false));
+    window.addEventListener("resize", () => { if (window.innerWidth > 760) setMobileSidebar(false); });
+
+    loadSettings();
+    activateSection(location.hash.replace("#", "") || "workspace", false);
+  </script>
+</body>
+</html>

@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Readiness Assessment — Maguire.id</title>
+  <meta name="description" content="Tender readiness assessment for Pengadaan Pembangunan Gardu Induk 150kV." />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/app.css" />
+</head>
+<body class="app-page">
+  <div class="app-shell">
+    <aside class="app-sidebar" id="app-sidebar" aria-label="Main navigation">
+      <div class="app-sidebar-brand">
+        <a class="logo" href="dashboard.html" aria-label="Maguire.id dashboard">Maguire<span>.id</span></a>
+      </div>
+
+      <div class="app-sidebar-section-label">Workspace</div>
+      <nav class="app-nav">
+        <a class="app-nav-link" href="dashboard.html">
+          <span class="app-nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"></rect><rect x="14" y="3" width="7" height="7" rx="1.5"></rect><rect x="3" y="14" width="7" height="7" rx="1.5"></rect><rect x="14" y="14" width="7" height="7" rx="1.5"></rect></svg></span>
+          Dashboard
+        </a>
+        <a class="app-nav-link is-active" href="discover.html" aria-current="page">
+          <span class="app-nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.4-3.4"></path></svg></span>
+          Discover
+          <span class="app-nav-badge">12</span>
+        </a>
+        <a class="app-nav-link" href="my-tenders.html">
+          <span class="app-nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14a1 1 0 0 1 1 1v15H4V5a1 1 0 0 1 1-1Z"></path><path d="M8 8h8M8 12h8M8 16h5"></path></svg></span>
+          My Tenders
+          <span class="app-nav-badge app-nav-badge-muted">3</span>
+        </a>
+        <a class="app-nav-link" href="documents.html">
+          <span class="app-nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4H10l2 2h5.5A2.5 2.5 0 0 1 20 8.5v9A2.5 2.5 0 0 1 17.5 20h-11A2.5 2.5 0 0 1 4 17.5Z"></path></svg></span>
+          Documents
+        </a>
+        <a class="app-nav-link" href="company-profile.html">
+          <span class="app-nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V7l8-4 8 4v14"></path><path d="M8 10h1M8 14h1M8 18h1M15 10h1M15 14h1M15 18h1"></path></svg></span>
+          Company Profile
+        </a>
+      </nav>
+
+      <div class="app-sidebar-section-label">Account</div>
+      <nav class="app-nav">
+        <a class="app-nav-link" href="notifications.html">
+          <span class="app-nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"></path><path d="M10 21h4"></path></svg></span>
+          Notifications
+          <span class="app-notification-dot" aria-label="1 unread notification"></span>
+        </a>
+        <a class="app-nav-link" href="settings.html">
+          <span class="app-nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06-2.83 2.83-.06-.06A1.7 1.7 0 0 0 15 19.4a1.7 1.7 0 0 0-1 .6 1.7 1.7 0 0 0-.4 1.1V21h-4v-.1A1.7 1.7 0 0 0 8.6 19.4a1.7 1.7 0 0 0-1.88.34l-.06.06-2.83-2.83.06-.06A1.7 1.7 0 0 0 4.6 15a1.7 1.7 0 0 0-.6-1 1.7 1.7 0 0 0-1.1-.4H3v-4h.1A1.7 1.7 0 0 0 4.6 8.6a1.7 1.7 0 0 0-.34-1.88l-.06-.06 2.83-2.83.06.06A1.7 1.7 0 0 0 9 4.6a1.7 1.7 0 0 0 1-.6 1.7 1.7 0 0 0 .4-1.1V3h4v.1A1.7 1.7 0 0 0 15.4 4.6a1.7 1.7 0 0 0 1.88-.34l.06-.06 2.83 2.83-.06.06A1.7 1.7 0 0 0 19.4 9c.27.36.48.7.6 1 .12.3.4.68 1 .8h.1v4H21a1.7 1.7 0 0 0-1.6.2Z"></path></svg></span>
+          Settings
+        </a>
+      </nav>
+
+      <div class="app-sidebar-footer">
+        <div class="app-sidebar-company">
+          <strong>PT Wijaya Infrastruktur Nusantara</strong>
+          <span>Infrastructure &amp; Engineering</span>
+        </div>
+      </div>
+    </aside>
+
+    <main class="app-main">
+      <header class="app-topbar">
+        <div class="app-topbar-left">
+          <button class="app-icon-button app-mobile-menu" id="mobile-menu-button" type="button" aria-label="Open navigation" aria-controls="app-sidebar" aria-expanded="false">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+          </button>
+          <div>
+            <div class="app-topbar-title">Readiness Assessment</div>
+            <div class="app-topbar-company">PT Wijaya Infrastruktur Nusantara</div>
+          </div>
+        </div>
+
+        <div class="app-topbar-actions">
+          <button class="app-icon-button app-topbar-notification" id="notification-button" type="button" aria-label="Notifications" aria-expanded="false">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"></path><path d="M10 21h4"></path></svg>
+            <span class="notification-count">1</span>
+          </button>
+          <div class="app-user-menu-wrap">
+            <button class="app-user-button" id="user-menu-button" type="button" aria-expanded="false">
+              <span class="app-user-avatar">BS</span>
+              <span class="app-user-meta"><strong>Budi Santoso</strong><span>Business Development</span></span>
+              <svg class="app-user-chevron" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+            </button>
+            <div class="app-dropdown" id="user-menu" hidden>
+              <a href="company-profile.html">Company Profile</a>
+              <a href="settings.html">Settings</a>
+              <button type="button" id="logout-button">Sign out</button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="app-mobile-overlay" id="mobile-overlay" hidden></div>
+
+      <section class="app-content readiness-content">
+        <nav class="detail-breadcrumb" aria-label="Breadcrumb">
+          <a href="discover.html"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg>Tender Discovery</a>
+          <span>/</span>
+          <a href="tender-detail.html">PLN Gardu Induk 150kV</a>
+          <span>/</span>
+          <span>Readiness Assessment</span>
+        </nav>
+
+        <div class="readiness-page-heading">
+          <div>
+            <div class="readiness-title-row">
+              <span class="readiness-analysis-badge"><span>✓</span> Analysis complete</span>
+              <span class="readiness-updated">Updated 9 Aug 2026</span>
+            </div>
+            <h1>Pengadaan Pembangunan Gardu Induk 150kV</h1>
+            <p>PT PLN (Persero) · Submission deadline 21 Aug 2026 · 12 days remaining</p>
+          </div>
+          <a class="btn btn-secondary" href="analysis.html">View Analysis</a>
+        </div>
+
+        <section class="app-card readiness-hero-card">
+          <div class="readiness-hero-main">
+            <span class="readiness-eyebrow">Tender readiness</span>
+            <div class="readiness-score-row">
+              <div class="readiness-score-ring" aria-label="82 percent readiness">
+                <svg viewBox="0 0 120 120" aria-hidden="true">
+                  <circle class="readiness-ring-track" cx="60" cy="60" r="51"></circle>
+                  <circle class="readiness-ring-value" cx="60" cy="60" r="51"></circle>
+                </svg>
+                <div><strong>82%</strong><span>Readiness</span></div>
+              </div>
+              <div class="readiness-score-copy">
+                <div class="readiness-score-heading">
+                  <h2>Most requirements are covered.</h2>
+                  <button class="readiness-info-link" id="score-info-button" type="button">Why 82%?</button>
+                </div>
+                <p>Your company currently matches 38 of 44 identified tender requirements. Six items still need review before submission preparation is considered complete.</p>
+                <div class="readiness-summary-chips">
+                  <span class="is-match"><strong>38</strong> Matched</span>
+                  <span class="is-attention"><strong>3</strong> Attention</span>
+                  <span class="is-gap"><strong>3</strong> Gaps</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="readiness-eligibility-panel">
+            <span class="readiness-eyebrow">Eligibility status</span>
+            <div class="eligibility-status"><span>!</span><strong>At Risk</strong></div>
+            <p><strong>2 mandatory gaps</strong> may prevent qualification if they remain unresolved.</p>
+            <div class="eligibility-callout">Readiness measures coverage. Eligibility highlights requirements that may be disqualifying.</div>
+            <button class="btn btn-primary readiness-participate-button" id="participate-button" type="button">Participate in Tender →</button>
+          </div>
+        </section>
+
+        <div class="readiness-layout">
+          <div class="readiness-main-column">
+            <section class="app-card readiness-section-card">
+              <div class="readiness-section-heading readiness-section-heading-inline">
+                <div><span class="readiness-kicker">Category readiness</span><h2>Where your company stands</h2></div>
+                <span class="readiness-section-note">44 requirements analyzed</span>
+              </div>
+
+              <div class="readiness-category-list">
+                <div class="readiness-category-row">
+                  <div class="readiness-category-name"><span class="category-status is-ready">✓</span><div><strong>Administrative</strong><small>8 of 8 requirements matched</small></div></div>
+                  <div class="readiness-category-progress"><span style="width:100%"></span></div>
+                  <strong class="readiness-category-score is-ready-text">100%</strong>
+                  <span class="readiness-category-state is-ready-state">Ready</span>
+                </div>
+                <div class="readiness-category-row">
+                  <div class="readiness-category-name"><span class="category-status is-ready">✓</span><div><strong>Legal</strong><small>6 of 6 requirements matched</small></div></div>
+                  <div class="readiness-category-progress"><span style="width:100%"></span></div>
+                  <strong class="readiness-category-score is-ready-text">100%</strong>
+                  <span class="readiness-category-state is-ready-state">Ready</span>
+                </div>
+                <div class="readiness-category-row">
+                  <div class="readiness-category-name"><span class="category-status is-attention">!</span><div><strong>Technical</strong><small>13 of 17 covered · 4 need review</small></div></div>
+                  <div class="readiness-category-progress is-attention"><span style="width:76%"></span></div>
+                  <strong class="readiness-category-score">76%</strong>
+                  <span class="readiness-category-state is-attention-state">Attention</span>
+                </div>
+                <div class="readiness-category-row">
+                  <div class="readiness-category-name"><span class="category-status is-attention">!</span><div><strong>Financial</strong><small>6 of 7 covered · bank guarantee pending</small></div></div>
+                  <div class="readiness-category-progress is-attention"><span style="width:85%"></span></div>
+                  <strong class="readiness-category-score">85%</strong>
+                  <span class="readiness-category-state is-attention-state">Attention</span>
+                </div>
+                <div class="readiness-category-row">
+                  <div class="readiness-category-name"><span class="category-status is-gap">!</span><div><strong>Experience</strong><small>5 of 6 covered · mandatory project gap</small></div></div>
+                  <div class="readiness-category-progress is-gap"><span style="width:60%"></span></div>
+                  <strong class="readiness-category-score is-gap-text">60%</strong>
+                  <span class="readiness-category-state is-gap-state">High Risk</span>
+                </div>
+              </div>
+            </section>
+
+            <section class="app-card readiness-section-card">
+              <div class="readiness-section-heading readiness-section-heading-inline">
+                <div><span class="readiness-kicker">Priority review</span><h2>Critical gaps &amp; risks</h2></div>
+                <span class="readiness-count-badge">3 highlighted</span>
+              </div>
+              <p class="readiness-section-intro">Resolve these items first. Two are currently interpreted as mandatory qualification requirements.</p>
+
+              <div class="readiness-gap-list">
+                <article class="readiness-gap-card is-critical">
+                  <div class="readiness-gap-marker">!</div>
+                  <div class="readiness-gap-content">
+                    <div class="readiness-gap-title-row"><div><span class="readiness-gap-label">Mandatory gap</span><h3>Similar project experience</h3></div><span class="readiness-severity is-critical">Critical</span></div>
+                    <div class="readiness-gap-comparison">
+                      <div><span>Requirement</span><p>Minimum <strong>3 similar projects</strong> with contract value ≥ Rp10B completed within the last 5 years.</p></div>
+                      <div><span>Your company</span><p><strong>2 qualifying projects</strong> were found in your project experience records.</p></div>
+                    </div>
+                    <div class="readiness-gap-conclusion"><span>Gap</span><strong>1 additional qualifying project is required.</strong></div>
+                    <div class="readiness-gap-footer">
+                      <button class="readiness-source-button" type="button" data-source-title="Similar project experience" data-source-ref="Tender Document / RKS · Section 4.2.3 · Page 104" data-source-copy="Participants must demonstrate at least three similar electrical infrastructure projects, each with a contract value of at least Rp10 billion, completed within the previous five years.">RKS · §4.2.3 · p.104 ↗</button>
+                      <a href="company-profile.html#project-experience">Review Company Experience →</a>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="readiness-gap-card is-critical">
+                  <div class="readiness-gap-marker">!</div>
+                  <div class="readiness-gap-content">
+                    <div class="readiness-gap-title-row"><div><span class="readiness-gap-label">Mandatory gap</span><h3>Project Manager certification</h3></div><span class="readiness-severity is-critical">Critical</span></div>
+                    <div class="readiness-gap-comparison">
+                      <div><span>Requirement</span><p>Project Manager must hold a valid <strong>SKA relevant to electrical infrastructure work</strong>.</p></div>
+                      <div><span>Your company</span><p>No matching SKA certification was found across <strong>28 personnel profiles</strong>.</p></div>
+                    </div>
+                    <div class="readiness-gap-conclusion"><span>Gap</span><strong>Required personnel evidence is not currently available.</strong></div>
+                    <div class="readiness-gap-footer">
+                      <button class="readiness-source-button" type="button" data-source-title="Project Manager certification" data-source-ref="Technical Specification · Section 2.8 · Page 18" data-source-copy="The proposed Project Manager must hold a valid competency certification appropriate to the electrical infrastructure scope of the project.">Tech Spec · §2.8 · p.18 ↗</button>
+                      <a href="company-profile.html#personnel">Review Personnel →</a>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="readiness-gap-card is-warning">
+                  <div class="readiness-gap-marker">!</div>
+                  <div class="readiness-gap-content">
+                    <div class="readiness-gap-title-row"><div><span class="readiness-gap-label">Validity risk</span><h3>ISO 45001 expires soon</h3></div><span class="readiness-severity is-warning">Attention</span></div>
+                    <div class="readiness-gap-comparison">
+                      <div><span>Requirement</span><p>ISO 45001 must remain valid through the qualification and project commencement period.</p></div>
+                      <div><span>Your company</span><p>Certificate is available but <strong>expires in 23 days</strong>.</p></div>
+                    </div>
+                    <div class="readiness-gap-conclusion is-warning"><span>Risk</span><strong>Renewal may be required before the qualification process completes.</strong></div>
+                    <div class="readiness-gap-footer">
+                      <button class="readiness-source-button" type="button" data-source-title="ISO 45001 validity" data-source-ref="Tender Document / RKS · Section 3.4 · Page 87" data-source-copy="Occupational health and safety certification must be valid throughout the qualification process and remain valid at the expected project commencement date.">RKS · §3.4 · p.87 ↗</button>
+                      <a href="documents.html#certifications">View Certificate →</a>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </section>
+
+            <section class="app-card readiness-section-card readiness-requirements-summary">
+              <div class="readiness-section-heading readiness-section-heading-inline">
+                <div><span class="readiness-kicker">Requirement coverage</span><h2>44 requirements reviewed</h2></div>
+                <a class="btn btn-secondary" href="requirements.html">View All Requirements →</a>
+              </div>
+              <div class="readiness-requirement-stats">
+                <div class="is-total"><span>Total</span><strong>44</strong><small>identified</small></div>
+                <div class="is-match"><span>Matched</span><strong>38</strong><small>with evidence</small></div>
+                <div class="is-attention"><span>Attention</span><strong>3</strong><small>need review</small></div>
+                <div class="is-gap"><span>Gaps</span><strong>3</strong><small>not satisfied</small></div>
+              </div>
+              <div class="readiness-coverage-bar" aria-label="Requirement coverage: 38 matched, 3 attention, 3 gaps">
+                <span class="is-match" style="width:86.36%"></span><span class="is-attention" style="width:6.82%"></span><span class="is-gap" style="width:6.82%"></span>
+              </div>
+              <p>Every requirement includes the source document, page reference, matching company evidence, and Maguire's assessment status.</p>
+            </section>
+
+            <section class="app-card readiness-section-card">
+              <div class="readiness-section-heading"><span class="readiness-kicker">Recommended next actions</span><h2>What your team should do next</h2></div>
+              <div class="readiness-action-list">
+                <div class="readiness-action-row"><span class="readiness-action-number">1</span><div><strong>Verify a third qualifying project</strong><p>Check whether another ≥ Rp10B electrical infrastructure project can be added to company experience.</p><small>Owner · Business Development</small></div><span class="readiness-action-priority is-critical">Critical</span></div>
+                <div class="readiness-action-row"><span class="readiness-action-number">2</span><div><strong>Upload Project Manager SKA</strong><p>Confirm the proposed Project Manager and add the required competency certification.</p><small>Owner · Engineering</small></div><span class="readiness-action-priority is-critical">Critical</span></div>
+                <div class="readiness-action-row"><span class="readiness-action-number">3</span><div><strong>Start ISO 45001 renewal</strong><p>Confirm renewal timing so the certificate remains valid throughout qualification.</p><small>Owner · Legal &amp; Compliance</small></div><span class="readiness-action-priority is-high">High</span></div>
+              </div>
+            </section>
+          </div>
+
+          <aside class="readiness-side-column">
+            <section class="app-card readiness-side-card readiness-decision-card">
+              <span class="readiness-kicker">Decision support</span>
+              <h3>Proceed with caution</h3>
+              <p>Maguire found strong overall alignment, but the two mandatory gaps should be verified before your team commits significant bid resources.</p>
+              <div class="readiness-decision-list">
+                <div><span>✓</span><p><strong>38 requirements</strong> already supported</p></div>
+                <div class="is-warning"><span>!</span><p><strong>3 items</strong> need manual review</p></div>
+                <div class="is-critical"><span>!</span><p><strong>2 mandatory gaps</strong> may disqualify</p></div>
+              </div>
+              <button class="btn btn-primary" id="participate-side-button" type="button">Participate in Tender →</button>
+              <a class="readiness-text-link" href="requirements.html">Review requirement checklist</a>
+            </section>
+
+            <section class="app-card readiness-side-card">
+              <div class="readiness-side-heading"><h3>Assessment Details</h3></div>
+              <dl class="readiness-info-list">
+                <div><dt>Analyzed</dt><dd>9 Aug 2026</dd></div>
+                <div><dt>Source files</dt><dd>4 files · 184 pages</dd></div>
+                <div><dt>Requirements</dt><dd>44 identified</dd></div>
+                <div><dt>Company records</dt><dd>65 checked</dd></div>
+                <div><dt>Match score</dt><dd>94% preliminary</dd></div>
+                <div><dt>Readiness</dt><dd>82%</dd></div>
+              </dl>
+              <a class="readiness-text-link readiness-text-link-left" href="analysis.html">View analysis process →</a>
+            </section>
+
+            <section class="readiness-trust-card">
+              <span class="readiness-trust-icon">↗</span>
+              <div><strong>Verify every finding</strong><p>Maguire links assessments back to the exact tender document and page. Your team stays in control of the final decision.</p></div>
+            </section>
+          </aside>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="notification-popover" id="notification-popover" hidden>
+    <div class="notification-popover-header"><strong>Notifications</strong><a href="notifications.html">View all</a></div>
+    <a class="notification-preview" href="documents.html"><span class="notification-preview-icon" aria-hidden="true">!</span><span><strong>ISO 45001 expires soon</strong><small>Your certificate expires in 23 days.</small></span></a>
+  </div>
+
+  <div class="detail-modal-backdrop" id="readiness-modal" hidden>
+    <div class="detail-modal readiness-modal" role="dialog" aria-modal="true" aria-labelledby="readiness-modal-title">
+      <button class="detail-modal-close" id="readiness-modal-close" type="button" aria-label="Close">×</button>
+      <div class="detail-modal-icon" id="readiness-modal-icon">i</div>
+      <h2 id="readiness-modal-title">Information</h2>
+      <p id="readiness-modal-copy"></p>
+      <div class="readiness-modal-detail" id="readiness-modal-detail" hidden></div>
+      <div class="readiness-modal-actions" id="readiness-modal-actions">
+        <button class="btn btn-primary detail-modal-action" id="readiness-modal-primary" type="button">Got it</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const isAuthenticated = localStorage.getItem("maguire_demo_authenticated") === "true";
+    if (!isAuthenticated) window.location.replace("login.html");
+
+    localStorage.setItem("maguire_active_tender", "pln-150kv");
+    localStorage.setItem("maguire_analysis_status", "completed");
+    localStorage.setItem("maguire_analysis_status_cached", "completed");
+    localStorage.setItem("maguire_readiness_score", "82");
+    localStorage.setItem("maguire_requirement_summary", JSON.stringify({ total: 44, matched: 38, attention: 3, missing: 3 }));
+
+    const modal = document.getElementById("readiness-modal");
+    const modalTitle = document.getElementById("readiness-modal-title");
+    const modalCopy = document.getElementById("readiness-modal-copy");
+    const modalIcon = document.getElementById("readiness-modal-icon");
+    const modalDetail = document.getElementById("readiness-modal-detail");
+    const modalClose = document.getElementById("readiness-modal-close");
+    const modalPrimary = document.getElementById("readiness-modal-primary");
+    let modalPrimaryHandler = null;
+
+    function openModal({ title, copy, icon = "i", detail = "", primaryLabel = "Got it", primaryHandler = null }) {
+      modalTitle.textContent = title;
+      modalCopy.textContent = copy;
+      modalIcon.textContent = icon;
+      modalDetail.textContent = detail;
+      modalDetail.hidden = !detail;
+      modalPrimary.textContent = primaryLabel;
+      modalPrimaryHandler = primaryHandler;
+      modal.hidden = false;
+      document.body.classList.add("detail-modal-open");
+      modalClose.focus();
+    }
+
+    function closeModal() {
+      modal.hidden = true;
+      document.body.classList.remove("detail-modal-open");
+      modalPrimaryHandler = null;
+    }
+
+    document.getElementById("score-info-button").addEventListener("click", () => {
+      openModal({
+        title: "How readiness is calculated",
+        copy: "The 82% readiness score summarizes how much of the identified tender requirement set is currently supported by your company evidence. It is not a probability of winning or a guarantee of eligibility.",
+        icon: "%",
+        detail: "Administrative 100% · Legal 100% · Technical 76% · Financial 85% · Experience 60%. Mandatory gaps are surfaced separately in Eligibility Status because one missing mandatory item can matter more than the overall score."
+      });
+    });
+
+    document.querySelectorAll(".readiness-source-button").forEach((button) => {
+      button.addEventListener("click", () => {
+        openModal({
+          title: button.dataset.sourceTitle,
+          copy: button.dataset.sourceCopy,
+          icon: "↗",
+          detail: button.dataset.sourceRef
+        });
+      });
+    });
+
+    function openParticipationModal() {
+      openModal({
+        title: "Create tender workspace?",
+        copy: "This tender currently has 2 mandatory gaps that may affect qualification. You can still participate and use Maguire to resolve the gaps during preparation.",
+        icon: "!",
+        detail: "Readiness 82% · Eligibility: At Risk · 12 days until submission deadline",
+        primaryLabel: "Continue Anyway →",
+        primaryHandler: () => {
+          localStorage.setItem("maguire_tender_participation", "preparing");
+          localStorage.setItem("maguire_workspace_tender", "pln-150kv");
+          window.location.href = "workspace.html";
+        }
+      });
+    }
+
+    document.getElementById("participate-button").addEventListener("click", openParticipationModal);
+    document.getElementById("participate-side-button").addEventListener("click", openParticipationModal);
+    modalClose.addEventListener("click", closeModal);
+    modalPrimary.addEventListener("click", () => {
+      if (modalPrimaryHandler) modalPrimaryHandler();
+      else closeModal();
+    });
+    modal.addEventListener("click", (event) => { if (event.target === modal) closeModal(); });
+    document.addEventListener("keydown", (event) => { if (event.key === "Escape" && !modal.hidden) closeModal(); });
+
+    const userMenuButton = document.getElementById("user-menu-button");
+    const userMenu = document.getElementById("user-menu");
+    const logoutButton = document.getElementById("logout-button");
+    const notificationButton = document.getElementById("notification-button");
+    const notificationPopover = document.getElementById("notification-popover");
+    const mobileMenuButton = document.getElementById("mobile-menu-button");
+    const sidebar = document.getElementById("app-sidebar");
+    const mobileOverlay = document.getElementById("mobile-overlay");
+
+    function closeUserMenu() { userMenu.hidden = true; userMenuButton.setAttribute("aria-expanded", "false"); }
+    function closeNotifications() { notificationPopover.hidden = true; notificationButton.setAttribute("aria-expanded", "false"); }
+
+    userMenuButton.addEventListener("click", (event) => {
+      event.stopPropagation();
+      const willOpen = userMenu.hidden;
+      closeNotifications();
+      userMenu.hidden = !willOpen;
+      userMenuButton.setAttribute("aria-expanded", String(willOpen));
+    });
+    notificationButton.addEventListener("click", (event) => {
+      event.stopPropagation();
+      const willOpen = notificationPopover.hidden;
+      closeUserMenu();
+      notificationPopover.hidden = !willOpen;
+      notificationButton.setAttribute("aria-expanded", String(willOpen));
+    });
+    document.addEventListener("click", () => { closeUserMenu(); closeNotifications(); });
+    userMenu.addEventListener("click", (event) => event.stopPropagation());
+    notificationPopover.addEventListener("click", (event) => event.stopPropagation());
+
+    logoutButton.addEventListener("click", () => {
+      localStorage.removeItem("maguire_demo_authenticated");
+      localStorage.removeItem("maguire_demo_user");
+      localStorage.removeItem("maguire_demo_company");
+      window.location.href = "login.html";
+    });
+
+    function setMobileSidebar(open) {
+      sidebar.classList.toggle("is-open", open);
+      mobileOverlay.hidden = !open;
+      mobileMenuButton.setAttribute("aria-expanded", String(open));
+      document.body.classList.toggle("sidebar-open", open);
+    }
+    mobileMenuButton.addEventListener("click", () => setMobileSidebar(!sidebar.classList.contains("is-open")));
+    mobileOverlay.addEventListener("click", () => setMobileSidebar(false));
+    window.addEventListener("resize", () => { if (window.innerWidth > 760) setMobileSidebar(false); });
+  </script>
+</body>
+</html>

@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Analyze Tender — Maguire.id</title>
+  <meta name="description" content="Maguire tender analysis for Pengadaan Pembangunan Gardu Induk 150kV." />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/app.css" />
+</head>
+<body class="app-page">
+  <div class="app-shell">
+    <aside class="app-sidebar" id="app-sidebar" aria-label="Main navigation">
+      <div class="app-sidebar-brand">
+        <a class="logo" href="dashboard.html" aria-label="Maguire.id dashboard">Maguire<span>.id</span></a>
+      </div>
+
+      <div class="app-sidebar-section-label">Workspace</div>
+      <nav class="app-nav">
+        <a class="app-nav-link" href="dashboard.html">
+          <span class="app-nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"></rect><rect x="14" y="3" width="7" height="7" rx="1.5"></rect><rect x="3" y="14" width="7" height="7" rx="1.5"></rect><rect x="14" y="14" width="7" height="7" rx="1.5"></rect></svg>
+          </span>
+          Dashboard
+        </a>
+
+        <a class="app-nav-link is-active" href="discover.html" aria-current="page">
+          <span class="app-nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.4-3.4"></path></svg>
+          </span>
+          Discover
+          <span class="app-nav-badge">12</span>
+        </a>
+
+        <a class="app-nav-link" href="my-tenders.html">
+          <span class="app-nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14a1 1 0 0 1 1 1v15H4V5a1 1 0 0 1 1-1Z"></path><path d="M8 8h8M8 12h8M8 16h5"></path></svg>
+          </span>
+          My Tenders
+          <span class="app-nav-badge app-nav-badge-muted">3</span>
+        </a>
+
+        <a class="app-nav-link" href="documents.html">
+          <span class="app-nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4H10l2 2h5.5A2.5 2.5 0 0 1 20 8.5v9A2.5 2.5 0 0 1 17.5 20h-11A2.5 2.5 0 0 1 4 17.5Z"></path></svg>
+          </span>
+          Documents
+        </a>
+
+        <a class="app-nav-link" href="company-profile.html">
+          <span class="app-nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V7l8-4 8 4v14"></path><path d="M8 10h1M8 14h1M8 18h1M15 10h1M15 14h1M15 18h1"></path></svg>
+          </span>
+          Company Profile
+        </a>
+      </nav>
+
+      <div class="app-sidebar-section-label">Account</div>
+      <nav class="app-nav">
+        <a class="app-nav-link" href="notifications.html">
+          <span class="app-nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"></path><path d="M10 21h4"></path></svg>
+          </span>
+          Notifications
+          <span class="app-notification-dot" aria-label="1 unread notification"></span>
+        </a>
+
+        <a class="app-nav-link" href="settings.html">
+          <span class="app-nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06-2.83 2.83-.06-.06A1.7 1.7 0 0 0 15 19.4a1.7 1.7 0 0 0-1 .6 1.7 1.7 0 0 0-.4 1.1V21h-4v-.1A1.7 1.7 0 0 0 8.6 19.4a1.7 1.7 0 0 0-1.88.34l-.06.06-2.83-2.83.06-.06A1.7 1.7 0 0 0 4.6 15a1.7 1.7 0 0 0-.6-1 1.7 1.7 0 0 0-1.1-.4H3v-4h.1A1.7 1.7 0 0 0 4.6 8.6a1.7 1.7 0 0 0-.34-1.88l-.06-.06 2.83-2.83.06.06A1.7 1.7 0 0 0 9 4.6a1.7 1.7 0 0 0 1-.6 1.7 1.7 0 0 0 .4-1.1V3h4v.1A1.7 1.7 0 0 0 15.4 4.6a1.7 1.7 0 0 0 1.88-.34l.06-.06 2.83 2.83-.06.06A1.7 1.7 0 0 0 19.4 9c.27.36.48.7.6 1 .12.3.4.68 1 .8h.1v4H21a1.7 1.7 0 0 0-1.6.2Z"></path></svg>
+          </span>
+          Settings
+        </a>
+      </nav>
+
+      <div class="app-sidebar-footer">
+        <div class="app-sidebar-company">
+          <strong>PT Wijaya Infrastruktur Nusantara</strong>
+          <span>Infrastructure &amp; Engineering</span>
+        </div>
+      </div>
+    </aside>
+
+    <main class="app-main">
+      <header class="app-topbar">
+        <div class="app-topbar-left">
+          <button class="app-icon-button app-mobile-menu" id="mobile-menu-button" type="button" aria-label="Open navigation" aria-controls="app-sidebar" aria-expanded="false">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+          </button>
+          <div>
+            <div class="app-topbar-title">Tender Analysis</div>
+            <div class="app-topbar-company">PT Wijaya Infrastruktur Nusantara</div>
+          </div>
+        </div>
+
+        <div class="app-topbar-actions">
+          <button class="app-icon-button app-topbar-notification" id="notification-button" type="button" aria-label="Notifications" aria-expanded="false">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"></path><path d="M10 21h4"></path></svg>
+            <span class="notification-count">1</span>
+          </button>
+
+          <div class="app-user-menu-wrap">
+            <button class="app-user-button" id="user-menu-button" type="button" aria-expanded="false">
+              <span class="app-user-avatar">BS</span>
+              <span class="app-user-meta"><strong>Budi Santoso</strong><span>Business Development</span></span>
+              <svg class="app-user-chevron" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+            </button>
+            <div class="app-dropdown" id="user-menu" hidden>
+              <a href="company-profile.html">Company Profile</a>
+              <a href="settings.html">Settings</a>
+              <button type="button" id="logout-button">Sign out</button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="app-mobile-overlay" id="mobile-overlay" hidden></div>
+
+      <section class="app-content analysis-content">
+        <nav class="detail-breadcrumb" aria-label="Breadcrumb">
+          <a href="discover.html">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg>
+            Tender Discovery
+          </a>
+          <span>/</span>
+          <a href="tender-detail.html">PLN Gardu Induk 150kV</a>
+          <span>/</span>
+          <span>Analysis</span>
+        </nav>
+
+        <div class="analysis-page-header">
+          <div>
+            <span class="analysis-kicker">AI tender analysis</span>
+            <h1>Analyzing tender requirements</h1>
+            <p>Pengadaan Pembangunan Gardu Induk 150kV · PT PLN (Persero)</p>
+          </div>
+          <span class="analysis-status-pill" id="analysis-status-pill">
+            <span class="analysis-status-dot"></span>
+            <span id="analysis-status-text">Analysis in progress</span>
+          </span>
+        </div>
+
+        <div class="analysis-layout">
+          <div class="analysis-main-column">
+            <section class="app-card analysis-progress-card">
+              <div class="analysis-progress-heading">
+                <div>
+                  <span id="analysis-progress-label">Reading tender package</span>
+                  <strong id="analysis-progress-percent">0%</strong>
+                </div>
+                <span id="analysis-progress-detail">Preparing 4 source files...</span>
+              </div>
+
+              <div class="analysis-progress-track" role="progressbar" aria-label="Tender analysis progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="analysis-progress-track">
+                <span id="analysis-progress-bar"></span>
+              </div>
+
+              <div class="analysis-live-metrics" aria-live="polite">
+                <div>
+                  <span>Pages processed</span>
+                  <strong><span id="pages-count">0</span><small>/184</small></strong>
+                </div>
+                <div>
+                  <span>Requirements found</span>
+                  <strong id="requirements-count">0</strong>
+                </div>
+                <div>
+                  <span>Company records checked</span>
+                  <strong id="records-count">0</strong>
+                </div>
+                <div>
+                  <span>Potential issues</span>
+                  <strong id="issues-count">0</strong>
+                </div>
+              </div>
+            </section>
+
+            <section class="app-card analysis-steps-card">
+              <div class="analysis-section-heading">
+                <div>
+                  <span class="analysis-kicker">Analysis process</span>
+                  <h2>What Maguire is checking</h2>
+                </div>
+              </div>
+
+              <div class="analysis-step-list">
+                <div class="analysis-step is-active" data-step="1">
+                  <div class="analysis-step-state"><span class="analysis-step-spinner"></span><span class="analysis-step-check">✓</span></div>
+                  <div class="analysis-step-content">
+                    <div><strong>Read tender package</strong><span class="analysis-step-status">In progress</span></div>
+                    <p>Reading 4 source files and preserving page-level references for every extracted finding.</p>
+                    <div class="analysis-step-evidence" id="step-one-evidence" hidden>
+                      <span>Tender Document / RKS</span><span>Bill of Quantity</span><span>Technical Specification</span><span>Administrative Requirements</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="analysis-step" data-step="2">
+                  <div class="analysis-step-state"><span class="analysis-step-spinner"></span><span class="analysis-step-check">✓</span></div>
+                  <div class="analysis-step-content">
+                    <div><strong>Extract tender requirements</strong><span class="analysis-step-status">Waiting</span></div>
+                    <p>Identifying administrative, legal, technical, financial, experience, and personnel requirements.</p>
+                    <div class="analysis-step-result" id="step-two-result" hidden><strong>44 requirements</strong><span>identified across 6 categories</span></div>
+                  </div>
+                </div>
+
+                <div class="analysis-step" data-step="3">
+                  <div class="analysis-step-state"><span class="analysis-step-spinner"></span><span class="analysis-step-check">✓</span></div>
+                  <div class="analysis-step-content">
+                    <div><strong>Match against company records</strong><span class="analysis-step-status">Waiting</span></div>
+                    <p>Comparing requirements with company documents, certifications, project experience, and personnel records.</p>
+                    <div class="analysis-step-result analysis-step-result-success" id="step-three-result" hidden><strong>38 matched</strong><span>requirements have supporting company evidence</span></div>
+                  </div>
+                </div>
+
+                <div class="analysis-step" data-step="4">
+                  <div class="analysis-step-state"><span class="analysis-step-spinner"></span><span class="analysis-step-check">✓</span></div>
+                  <div class="analysis-step-content">
+                    <div><strong>Evaluate gaps and readiness</strong><span class="analysis-step-status">Waiting</span></div>
+                    <p>Prioritizing missing, expiring, or potentially disqualifying requirements before your team commits.</p>
+                    <div class="analysis-step-result analysis-step-result-warning" id="step-four-result" hidden><strong>6 items need review</strong><span>3 attention · 3 missing</span></div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="app-card analysis-findings-card" id="analysis-findings" hidden>
+              <div class="analysis-section-heading analysis-section-heading-inline">
+                <div>
+                  <span class="analysis-kicker">Analysis complete</span>
+                  <h2>Readiness assessment is ready</h2>
+                </div>
+                <div class="analysis-readiness-score"><strong>82%</strong><span>Readiness</span></div>
+              </div>
+
+              <p class="analysis-findings-intro">Maguire found strong overall alignment, but six requirements need review before your team should proceed with submission preparation.</p>
+
+              <div class="analysis-result-grid">
+                <div class="analysis-result-card analysis-result-card-success"><span>Matched</span><strong>38</strong><small>requirements</small></div>
+                <div class="analysis-result-card analysis-result-card-warning"><span>Attention</span><strong>3</strong><small>requirements</small></div>
+                <div class="analysis-result-card analysis-result-card-danger"><span>Missing</span><strong>3</strong><small>requirements</small></div>
+              </div>
+
+              <div class="analysis-risk-preview">
+                <div class="analysis-risk-row is-danger">
+                  <span class="analysis-risk-icon">!</span>
+                  <div><strong>Similar project experience may not meet the minimum</strong><p>3 qualifying projects ≥ Rp10B are required; Maguire found 2.</p></div>
+                  <span class="analysis-source-ref">RKS · p.104</span>
+                </div>
+                <div class="analysis-risk-row is-warning">
+                  <span class="analysis-risk-icon">!</span>
+                  <div><strong>ISO 45001 expires soon</strong><p>The certificate expires in 23 days and may require renewal before project commencement.</p></div>
+                  <span class="analysis-source-ref">RKS · p.87</span>
+                </div>
+                <div class="analysis-risk-row is-danger">
+                  <span class="analysis-risk-icon">!</span>
+                  <div><strong>Project Manager certification not found</strong><p>No matching SKA certification was found in your current personnel records.</p></div>
+                  <span class="analysis-source-ref">Tech Spec · p.18</span>
+                </div>
+              </div>
+
+              <div class="analysis-complete-actions">
+                <button class="btn btn-secondary" id="rerun-analysis-button" type="button">Run Analysis Again</button>
+                <a class="btn btn-primary" href="readiness.html">View Readiness Assessment →</a>
+              </div>
+            </section>
+          </div>
+
+          <aside class="analysis-side-column">
+            <section class="app-card analysis-context-card">
+              <span class="analysis-kicker">Tender package</span>
+              <h3>4 files · 184 pages</h3>
+              <div class="analysis-file-list">
+                <div><span class="analysis-file-type">PDF</span><span><strong>Tender Document / RKS</strong><small>124 pages</small></span><span class="analysis-file-state" data-file-state="1">Queued</span></div>
+                <div><span class="analysis-file-type analysis-file-type-xls">XLS</span><span><strong>Bill of Quantity</strong><small>32 pages</small></span><span class="analysis-file-state" data-file-state="2">Queued</span></div>
+                <div><span class="analysis-file-type">PDF</span><span><strong>Technical Specification</strong><small>24 pages</small></span><span class="analysis-file-state" data-file-state="3">Queued</span></div>
+                <div><span class="analysis-file-type">PDF</span><span><strong>Administrative Requirements</strong><small>4 pages</small></span><span class="analysis-file-state" data-file-state="4">Queued</span></div>
+              </div>
+            </section>
+
+            <section class="app-card analysis-context-card">
+              <span class="analysis-kicker">Company evidence</span>
+              <h3>Matching against your workspace</h3>
+              <div class="analysis-source-list">
+                <div><span>Company documents</span><strong>18 files</strong></div>
+                <div><span>Certifications</span><strong>7 records</strong></div>
+                <div><span>Project experience</span><strong>12 projects</strong></div>
+                <div><span>Personnel</span><strong>28 profiles</strong></div>
+              </div>
+            </section>
+
+            <section class="analysis-trust-note">
+              <span class="analysis-trust-icon">↗</span>
+              <div><strong>Source-linked findings</strong><p>Each extracted requirement is linked back to its tender document and page so your team can verify the evidence.</p></div>
+            </section>
+          </aside>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="notification-popover" id="notification-popover" hidden>
+    <div class="notification-popover-header"><strong>Notifications</strong><a href="notifications.html">View all</a></div>
+    <a class="notification-preview" href="documents.html"><span class="notification-preview-icon" aria-hidden="true">!</span><span><strong>ISO 45001 expires soon</strong><small>Your certificate expires in 23 days.</small></span></a>
+  </div>
+
+  <script>
+    const isAuthenticated = localStorage.getItem("maguire_demo_authenticated") === "true";
+    // preview: auth redirect disabled
+
+    const TENDER_ID = "pln-150kv";
+    localStorage.setItem("maguire_active_tender", TENDER_ID);
+    localStorage.setItem("maguire_analysis_tender", TENDER_ID);
+
+    const progressBar = document.getElementById("analysis-progress-bar");
+    const progressTrack = document.getElementById("analysis-progress-track");
+    const progressPercent = document.getElementById("analysis-progress-percent");
+    const progressLabel = document.getElementById("analysis-progress-label");
+    const progressDetail = document.getElementById("analysis-progress-detail");
+    const pagesCount = document.getElementById("pages-count");
+    const requirementsCount = document.getElementById("requirements-count");
+    const recordsCount = document.getElementById("records-count");
+    const issuesCount = document.getElementById("issues-count");
+    const statusPill = document.getElementById("analysis-status-pill");
+    const statusText = document.getElementById("analysis-status-text");
+    const findings = document.getElementById("analysis-findings");
+    const steps = [...document.querySelectorAll(".analysis-step")];
+    const fileStates = [...document.querySelectorAll(".analysis-file-state")];
+    let animationTimer = null;
+
+    const phases = [
+      { start: 0, end: 27, step: 1, label: "Reading tender package", detail: "Processing source files with page-level references..." },
+      { start: 27, end: 55, step: 2, label: "Extracting requirements", detail: "Classifying administrative, legal, technical, and commercial requirements..." },
+      { start: 55, end: 82, step: 3, label: "Matching company evidence", detail: "Checking documents, certifications, projects, and personnel..." },
+      { start: 82, end: 100, step: 4, label: "Evaluating readiness", detail: "Prioritizing gaps, warnings, and potential qualification risks..." }
+    ];
+
+    function getPhase(progress) {
+      return phases.find((phase) => progress < phase.end) || phases[phases.length - 1];
+    }
+
+    function setStepState(activeStep, progress) {
+      steps.forEach((stepEl, index) => {
+        const number = index + 1;
+        const status = stepEl.querySelector(".analysis-step-status");
+        const complete = number < activeStep || progress >= 100;
+        const active = number === activeStep && progress < 100;
+        stepEl.classList.toggle("is-complete", complete);
+        stepEl.classList.toggle("is-active", active);
+        status.textContent = complete ? "Complete" : active ? "In progress" : "Waiting";
+      });
+
+      document.getElementById("step-one-evidence").hidden = progress < 27;
+      document.getElementById("step-two-result").hidden = progress < 55;
+      document.getElementById("step-three-result").hidden = progress < 82;
+      document.getElementById("step-four-result").hidden = progress < 100;
+    }
+
+    function setFileStates(progress) {
+      const thresholds = [8, 15, 22, 27];
+      fileStates.forEach((state, index) => {
+        const done = progress >= thresholds[index];
+        state.textContent = done ? "Read" : progress >= Math.max(1, thresholds[index] - 7) ? "Reading" : "Queued";
+        state.classList.toggle("is-complete", done);
+        state.classList.toggle("is-active", !done && progress >= Math.max(1, thresholds[index] - 7));
+      });
+    }
+
+    function renderProgress(progress) {
+      const rounded = Math.min(100, Math.round(progress));
+      const phase = getPhase(progress);
+      progressBar.style.width = `${rounded}%`;
+      progressTrack.setAttribute("aria-valuenow", String(rounded));
+      progressPercent.textContent = `${rounded}%`;
+      progressLabel.textContent = phase.label;
+      progressDetail.textContent = phase.detail;
+
+      pagesCount.textContent = String(Math.min(184, Math.round((Math.min(progress, 27) / 27) * 184)));
+      requirementsCount.textContent = String(progress < 27 ? 0 : Math.min(44, Math.round(((Math.min(progress, 55) - 27) / 28) * 44)));
+      recordsCount.textContent = String(progress < 55 ? 0 : Math.min(65, Math.round(((Math.min(progress, 82) - 55) / 27) * 65)));
+      issuesCount.textContent = String(progress < 82 ? 0 : Math.min(6, Math.round(((Math.min(progress, 100) - 82) / 18) * 6)));
+
+      setStepState(phase.step, progress);
+      setFileStates(progress);
+    }
+
+    function completeAnalysis() {
+      localStorage.setItem("maguire_analysis_status", "completed");
+      localStorage.setItem("maguire_readiness_score", "82");
+      localStorage.setItem("maguire_requirement_summary", JSON.stringify({ total: 44, matched: 38, attention: 3, missing: 3 }));
+      statusPill.classList.add("is-complete");
+      statusText.textContent = "Analysis complete";
+      progressLabel.textContent = "Analysis complete";
+      progressDetail.textContent = "44 requirements identified and checked against your company workspace.";
+      findings.hidden = false;
+      findings.classList.add("is-visible");
+      findings.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }
+
+    function runAnalysis(forceReplay = false) {
+      if (animationTimer) clearInterval(animationTimer);
+      findings.hidden = true;
+      findings.classList.remove("is-visible");
+      statusPill.classList.remove("is-complete");
+      statusText.textContent = "Analysis in progress";
+      localStorage.setItem("maguire_analysis_status", "started");
+
+      if (!forceReplay && localStorage.getItem("maguire_analysis_status_cached") === "completed") {
+        renderProgress(100);
+        completeAnalysis();
+        return;
+      }
+
+      let progress = 0;
+      renderProgress(progress);
+      const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const increment = reducedMotion ? 20 : 1;
+      const interval = reducedMotion ? 20 : 58;
+
+      animationTimer = setInterval(() => {
+        const variableStep = progress < 27 ? 1.25 : progress < 55 ? 0.95 : progress < 82 ? 0.85 : 0.7;
+        progress += reducedMotion ? increment : variableStep;
+        renderProgress(progress);
+        if (progress >= 100) {
+          clearInterval(animationTimer);
+          animationTimer = null;
+          renderProgress(100);
+          localStorage.setItem("maguire_analysis_status_cached", "completed");
+          completeAnalysis();
+        }
+      }, interval);
+    }
+
+    document.getElementById("rerun-analysis-button").addEventListener("click", () => {
+      localStorage.removeItem("maguire_analysis_status_cached");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      runAnalysis(true);
+    });
+
+    const userMenuButton = document.getElementById("user-menu-button");
+    const userMenu = document.getElementById("user-menu");
+    const logoutButton = document.getElementById("logout-button");
+    const notificationButton = document.getElementById("notification-button");
+    const notificationPopover = document.getElementById("notification-popover");
+    const mobileMenuButton = document.getElementById("mobile-menu-button");
+    const sidebar = document.getElementById("app-sidebar");
+    const mobileOverlay = document.getElementById("mobile-overlay");
+
+    function closeUserMenu() { userMenu.hidden = true; userMenuButton.setAttribute("aria-expanded", "false"); }
+    function closeNotifications() { notificationPopover.hidden = true; notificationButton.setAttribute("aria-expanded", "false"); }
+
+    userMenuButton.addEventListener("click", (event) => {
+      event.stopPropagation();
+      const willOpen = userMenu.hidden;
+      closeNotifications();
+      userMenu.hidden = !willOpen;
+      userMenuButton.setAttribute("aria-expanded", String(willOpen));
+    });
+
+    notificationButton.addEventListener("click", (event) => {
+      event.stopPropagation();
+      const willOpen = notificationPopover.hidden;
+      closeUserMenu();
+      notificationPopover.hidden = !willOpen;
+      notificationButton.setAttribute("aria-expanded", String(willOpen));
+    });
+
+    document.addEventListener("click", () => { closeUserMenu(); closeNotifications(); });
+    userMenu.addEventListener("click", (event) => event.stopPropagation());
+    notificationPopover.addEventListener("click", (event) => event.stopPropagation());
+
+    logoutButton.addEventListener("click", () => {
+      localStorage.removeItem("maguire_demo_authenticated");
+      localStorage.removeItem("maguire_demo_user");
+      localStorage.removeItem("maguire_demo_company");
+      window.location.href = "login.html";
+    });
+
+    function setMobileSidebar(open) {
+      sidebar.classList.toggle("is-open", open);
+      mobileOverlay.hidden = !open;
+      mobileMenuButton.setAttribute("aria-expanded", String(open));
+      document.body.classList.toggle("sidebar-open", open);
+    }
+
+    mobileMenuButton.addEventListener("click", () => setMobileSidebar(!sidebar.classList.contains("is-open")));
+    mobileOverlay.addEventListener("click", () => setMobileSidebar(false));
+    window.addEventListener("resize", () => { if (window.innerWidth > 760) setMobileSidebar(false); });
+
+    const requestedFreshAnalysis = localStorage.getItem("maguire_analysis_status") === "started";
+    const alreadyCompleted = localStorage.getItem("maguire_analysis_status_cached") === "completed";
+
+    if (requestedFreshAnalysis) {
+      localStorage.removeItem("maguire_analysis_status_cached");
+      runAnalysis(true);
+    } else if (alreadyCompleted) {
+      renderProgress(100);
+      completeAnalysis();
+    } else {
+      runAnalysis();
+    }
+  </script>
+</body>
+</html>

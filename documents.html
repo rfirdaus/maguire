@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Documents — Maguire.id</title>
+  <meta name="description" content="Manage reusable company documents and tender evidence in Maguire." />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/app.css" />
+</head>
+<body class="app-page">
+  <div class="app-shell">
+    <aside class="app-sidebar" id="app-sidebar" aria-label="Main navigation">
+      <div class="app-sidebar-brand">
+        <a class="logo" href="dashboard.html" aria-label="Maguire.id dashboard">Maguire<span>.id</span></a>
+      </div>
+
+      <div class="app-sidebar-section-label">Workspace</div>
+      <nav class="app-nav">
+        <a class="app-nav-link" href="dashboard.html">
+          <span class="app-nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"></rect><rect x="14" y="3" width="7" height="7" rx="1.5"></rect><rect x="3" y="14" width="7" height="7" rx="1.5"></rect><rect x="14" y="14" width="7" height="7" rx="1.5"></rect></svg></span>
+          Dashboard
+        </a>
+        <a class="app-nav-link" href="discover.html">
+          <span class="app-nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.4-3.4"></path></svg></span>
+          Discover
+          <span class="app-nav-badge">12</span>
+        </a>
+        <a class="app-nav-link" href="my-tenders.html">
+          <span class="app-nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14a1 1 0 0 1 1 1v15H4V5a1 1 0 0 1 1-1Z"></path><path d="M8 8h8M8 12h8M8 16h5"></path></svg></span>
+          My Tenders
+          <span class="app-nav-badge app-nav-badge-muted">3</span>
+        </a>
+        <a class="app-nav-link is-active" href="documents.html" aria-current="page">
+          <span class="app-nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4H10l2 2h5.5A2.5 2.5 0 0 1 20 8.5v9A2.5 2.5 0 0 1 17.5 20h-11A2.5 2.5 0 0 1 4 17.5Z"></path></svg></span>
+          Documents
+        </a>
+        <a class="app-nav-link" href="company-profile.html">
+          <span class="app-nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V7l8-4 8 4v14"></path><path d="M8 10h1M8 14h1M8 18h1M15 10h1M15 14h1M15 18h1"></path></svg></span>
+          Company Profile
+        </a>
+      </nav>
+
+      <div class="app-sidebar-section-label">Account</div>
+      <nav class="app-nav">
+        <a class="app-nav-link" href="notifications.html">
+          <span class="app-nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"></path><path d="M10 21h4"></path></svg></span>
+          Notifications
+          <span class="app-notification-dot" aria-label="1 unread notification"></span>
+        </a>
+        <a class="app-nav-link" href="settings.html">
+          <span class="app-nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06-2.83 2.83-.06-.06A1.7 1.7 0 0 0 15 19.4a1.7 1.7 0 0 0-1 .6 1.7 1.7 0 0 0-.4 1.1V21h-4v-.1A1.7 1.7 0 0 0 8.6 19.4a1.7 1.7 0 0 0-1.88.34l-.06.06-2.83-2.83.06-.06A1.7 1.7 0 0 0 4.6 15a1.7 1.7 0 0 0-.6-1 1.7 1.7 0 0 0-1.1-.4H3v-4h.1A1.7 1.7 0 0 0 4.6 8.6a1.7 1.7 0 0 0-.34-1.88l-.06-.06 2.83-2.83.06.06A1.7 1.7 0 0 0 9 4.6a1.7 1.7 0 0 0 1-.6 1.7 1.7 0 0 0 .4-1.1V3h4v.1A1.7 1.7 0 0 0 15.4 4.6a1.7 1.7 0 0 0 1.88-.34l.06-.06 2.83 2.83-.06.06A1.7 1.7 0 0 0 19.4 9c.27.36.48.7.6 1 .12.3.4.68 1 .8h.1v4H21a1.7 1.7 0 0 0-1.6.2Z"></path></svg></span>
+          Settings
+        </a>
+      </nav>
+
+      <div class="app-sidebar-footer">
+        <div class="app-sidebar-company">
+          <strong>PT Wijaya Infrastruktur Nusantara</strong>
+          <span>Infrastructure &amp; Engineering</span>
+        </div>
+      </div>
+    </aside>
+
+    <main class="app-main">
+      <header class="app-topbar">
+        <div class="app-topbar-left">
+          <button class="app-icon-button app-mobile-menu" id="mobile-menu-button" type="button" aria-label="Open navigation" aria-controls="app-sidebar" aria-expanded="false">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+          </button>
+          <div>
+            <div class="app-topbar-title">Documents</div>
+            <div class="app-topbar-company">PT Wijaya Infrastruktur Nusantara</div>
+          </div>
+        </div>
+
+        <div class="app-topbar-actions">
+          <button class="app-icon-button app-topbar-notification" id="notification-button" type="button" aria-label="Notifications" aria-expanded="false">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"></path><path d="M10 21h4"></path></svg>
+            <span class="notification-count">1</span>
+          </button>
+          <div class="app-user-menu-wrap">
+            <button class="app-user-button" id="user-menu-button" type="button" aria-expanded="false">
+              <span class="app-user-avatar">BS</span>
+              <span class="app-user-meta"><strong>Budi Santoso</strong><span>Business Development</span></span>
+              <svg class="app-user-chevron" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+            </button>
+            <div class="app-dropdown" id="user-menu" hidden>
+              <a href="company-profile.html">Company Profile</a>
+              <a href="settings.html">Settings</a>
+              <button type="button" id="logout-button">Sign out</button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="app-mobile-overlay" id="mobile-overlay" hidden></div>
+
+      <section class="app-content documents-content">
+        <div class="app-page-header documents-page-header">
+          <div>
+            <h1>Company Documents</h1>
+            <p>Maintain reusable evidence that Maguire can match against tender requirements automatically.</p>
+          </div>
+          <button class="btn btn-primary" id="upload-document-button" type="button">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4M7 9l5-5 5 5"></path><path d="M5 20h14"></path></svg>
+            Upload Document
+          </button>
+        </div>
+
+        <div class="documents-info-strip">
+          <span class="documents-info-icon" aria-hidden="true">i</span>
+          <div>
+            <strong>Company evidence is reusable across tenders.</strong>
+            <p>NIB, certifications, financial statements, project evidence, and personnel credentials live here once. Tender-specific bid files stay inside each tender workspace.</p>
+          </div>
+        </div>
+
+        <section class="documents-summary-grid" aria-label="Document library summary">
+          <article class="app-card documents-summary-card">
+            <div class="documents-summary-icon is-blue"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4H10l2 2h5.5A2.5 2.5 0 0 1 20 8.5v9A2.5 2.5 0 0 1 17.5 20h-11A2.5 2.5 0 0 1 4 17.5Z"></path></svg></div>
+            <div><span>Total Records</span><strong id="summary-total">18</strong><small>Across 5 evidence categories</small></div>
+          </article>
+          <article class="app-card documents-summary-card">
+            <div class="documents-summary-icon is-green"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"></path></svg></div>
+            <div><span>Tender Ready</span><strong id="summary-ready">15</strong><small>Reusable without immediate action</small></div>
+          </article>
+          <article class="app-card documents-summary-card">
+            <div class="documents-summary-icon is-amber"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v6M12 17h.01"></path></svg></div>
+            <div><span>Expiring Soon</span><strong id="summary-expiring">1</strong><small>ISO 45001 · 23 days remaining</small></div>
+          </article>
+          <article class="app-card documents-summary-card">
+            <div class="documents-summary-icon is-slate"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h8l1 4H7l1-4ZM6 7h12v14H6z"></path><path d="M9 11h6M9 15h4"></path></svg></div>
+            <div><span>Need Review</span><strong id="summary-review">2</strong><small>Not blocking the PLN tender</small></div>
+          </article>
+        </section>
+
+        <div class="documents-layout">
+          <section class="documents-main-column">
+            <section class="app-card documents-library-card">
+              <div class="documents-tabs" role="tablist" aria-label="Document categories">
+                <button class="documents-tab is-active" type="button" data-category="all" role="tab" aria-selected="true">All <span id="tab-all-count">18</span></button>
+                <button class="documents-tab" type="button" data-category="Corporate" role="tab" aria-selected="false">Corporate <span data-category-count="Corporate">4</span></button>
+                <button class="documents-tab" type="button" data-category="Certifications" role="tab" aria-selected="false">Certifications <span data-category-count="Certifications">4</span></button>
+                <button class="documents-tab" type="button" data-category="Financial" role="tab" aria-selected="false">Financial <span data-category-count="Financial">4</span></button>
+                <button class="documents-tab" type="button" data-category="Project Experience" role="tab" aria-selected="false">Project Experience <span data-category-count="Project Experience">3</span></button>
+                <button class="documents-tab" type="button" data-category="Personnel" role="tab" aria-selected="false">Personnel <span data-category-count="Personnel">3</span></button>
+              </div>
+
+              <div class="documents-toolbar">
+                <div class="documents-search-wrap">
+                  <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.4-3.4"></path></svg>
+                  <input id="document-search" type="search" placeholder="Search documents, owner, or linked evidence..." aria-label="Search documents" />
+                </div>
+                <div class="documents-toolbar-filters">
+                  <select id="document-status-filter" aria-label="Filter by status">
+                    <option value="all">All statuses</option>
+                    <option value="ready">Tender ready</option>
+                    <option value="expiring">Expiring soon</option>
+                    <option value="review">Needs review</option>
+                  </select>
+                  <select id="document-sort" aria-label="Sort documents">
+                    <option value="recent">Recently updated</option>
+                    <option value="name">Document name</option>
+                    <option value="expiry">Expiry date</option>
+                    <option value="usage">Most used</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="documents-result-bar">
+                <div><strong id="document-visible-count">18</strong> documents shown</div>
+                <div class="documents-result-note">Reusable evidence library · Last synced 9 Aug 2026</div>
+              </div>
+
+              <div class="documents-table-wrap">
+                <div class="documents-table-head" aria-hidden="true">
+                  <span>Document</span><span>Category</span><span>Status</span><span>Owner</span><span>Used In</span><span>Updated</span><span></span>
+                </div>
+                <div id="documents-list" class="documents-list"></div>
+                <div id="documents-empty" class="documents-empty" hidden>
+                  <div>⌕</div>
+                  <strong>No documents found</strong>
+                  <p>Try changing your search, category, or status filter.</p>
+                  <button class="btn btn-secondary" id="documents-clear-filters" type="button">Clear Filters</button>
+                </div>
+              </div>
+            </section>
+          </section>
+
+          <aside class="documents-side-column">
+            <section class="app-card documents-action-card">
+              <div class="documents-side-heading">
+                <div><span class="documents-side-kicker">Action required</span><h2>Evidence gaps to resolve</h2></div>
+                <span class="documents-action-count">3</span>
+              </div>
+              <p class="documents-side-intro">These items are currently affecting the PLN 150kV tender workspace.</p>
+
+              <div class="documents-action-list">
+                <button type="button" class="documents-action-item is-critical" data-action="pm-ska">
+                  <span class="documents-action-symbol">!</span>
+                  <span><strong>Project Manager SKA not found</strong><small>Mandatory · Technical qualification</small></span>
+                  <span>›</span>
+                </button>
+                <button type="button" class="documents-action-item is-warning" data-doc-id="cert-iso45001">
+                  <span class="documents-action-symbol">!</span>
+                  <span><strong>ISO 45001 expires soon</strong><small>Expires 1 Sep 2026 · 23 days</small></span>
+                  <span>›</span>
+                </button>
+                <button type="button" class="documents-action-item is-critical" data-action="third-project">
+                  <span class="documents-action-symbol">!</span>
+                  <span><strong>Third project evidence missing</strong><small>Only 2 qualifying projects recorded</small></span>
+                  <span>›</span>
+                </button>
+              </div>
+
+              <a class="btn btn-secondary documents-side-button" href="workspace.html#documents">Open PLN Workspace</a>
+            </section>
+
+            <section class="app-card documents-usage-card">
+              <div class="documents-side-heading compact">
+                <div><span class="documents-side-kicker">Evidence reuse</span><h2>Active tender coverage</h2></div>
+              </div>
+              <div class="documents-usage-row"><span><strong>PLN Gardu Induk 150kV</strong><small>Preparing · 21 Aug</small></span><b>21 / 24</b></div>
+              <div class="documents-usage-progress"><span style="width:87.5%"></span></div>
+              <div class="documents-usage-row"><span><strong>DKI Drainage Rehabilitation</strong><small>Preparing · 28 Aug</small></span><b>18 / 20</b></div>
+              <div class="documents-usage-progress"><span style="width:90%"></span></div>
+              <div class="documents-usage-row"><span><strong>Telkom Network Modernization</strong><small>Evaluating · 2 Sep</small></span><b>11 / 14</b></div>
+              <div class="documents-usage-progress"><span style="width:78.6%"></span></div>
+              <p class="documents-usage-note">Counts include reusable company evidence plus tender-specific files inside each workspace.</p>
+            </section>
+          </aside>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="notification-popover" id="notification-popover" hidden>
+    <div class="notification-popover-header"><strong>Notifications</strong><a href="notifications.html">View all</a></div>
+    <a class="notification-preview" href="documents.html"><span class="notification-preview-icon" aria-hidden="true">!</span><span><strong>ISO 45001 expires soon</strong><small>Your certificate expires in 23 days.</small></span></a>
+  </div>
+
+  <div class="documents-drawer-backdrop" id="document-drawer-backdrop" hidden></div>
+  <aside class="documents-drawer" id="document-drawer" aria-hidden="true" aria-labelledby="document-drawer-title">
+    <div class="documents-drawer-header">
+      <div>
+        <span class="documents-drawer-kicker" id="document-drawer-category">Category</span>
+        <h2 id="document-drawer-title">Document</h2>
+      </div>
+      <button class="documents-drawer-close" id="document-drawer-close" type="button" aria-label="Close document detail">×</button>
+    </div>
+    <div class="documents-drawer-body">
+      <div class="documents-drawer-status-row">
+        <span class="documents-status-pill" id="document-drawer-status">Tender ready</span>
+        <span class="documents-file-type" id="document-drawer-type">PDF</span>
+      </div>
+
+      <section class="documents-drawer-section">
+        <span>Document information</span>
+        <dl class="documents-drawer-meta">
+          <div><dt>Owner</dt><dd id="document-drawer-owner">—</dd></div>
+          <div><dt>Issued</dt><dd id="document-drawer-issued">—</dd></div>
+          <div><dt>Expiry</dt><dd id="document-drawer-expiry">—</dd></div>
+          <div><dt>Last updated</dt><dd id="document-drawer-updated">—</dd></div>
+        </dl>
+      </section>
+
+      <section class="documents-drawer-section">
+        <span>Maguire evidence mapping</span>
+        <p id="document-drawer-mapping">—</p>
+      </section>
+
+      <section class="documents-drawer-section">
+        <span>Active tender usage</span>
+        <div id="document-drawer-usage" class="documents-drawer-usage"></div>
+      </section>
+
+      <section class="documents-drawer-section" id="document-drawer-note-section">
+        <span>Attention</span>
+        <div class="documents-drawer-alert" id="document-drawer-note">—</div>
+      </section>
+    </div>
+    <div class="documents-drawer-footer">
+      <button class="btn btn-secondary" id="document-preview-button" type="button">Preview Document</button>
+      <button class="btn btn-primary" id="document-replace-button" type="button">Replace File</button>
+    </div>
+  </aside>
+
+  <div class="detail-modal-backdrop" id="upload-modal" hidden>
+    <div class="detail-modal documents-upload-modal" role="dialog" aria-modal="true" aria-labelledby="upload-modal-title">
+      <button class="detail-modal-close" id="upload-modal-close" type="button" aria-label="Close">×</button>
+      <div class="detail-modal-icon">↑</div>
+      <h2 id="upload-modal-title">Upload Company Document</h2>
+      <p>Add reusable company evidence to Maguire. This prototype will store the new record locally in your browser.</p>
+      <form class="documents-upload-form" id="upload-form">
+        <label><span>Document name</span><input id="upload-name" type="text" placeholder="e.g. ISO 14001 Certificate" required /></label>
+        <label><span>Category</span><select id="upload-category" required><option value="Corporate">Corporate</option><option value="Certifications" selected>Certifications</option><option value="Financial">Financial</option><option value="Project Experience">Project Experience</option><option value="Personnel">Personnel</option></select></label>
+        <label><span>File</span><div class="documents-upload-drop"><strong>Choose PDF, DOCX, XLSX, or ZIP</strong><small>Prototype file picker · no real upload occurs</small></div></label>
+        <div class="documents-upload-grid">
+          <label><span>Issue date</span><input id="upload-issued" type="date" value="2026-08-09" /></label>
+          <label><span>Expiry date</span><input id="upload-expiry" type="date" /></label>
+        </div>
+        <div class="documents-upload-actions"><button class="btn btn-secondary" id="upload-cancel" type="button">Cancel</button><button class="btn btn-primary" type="submit">Add Document</button></div>
+      </form>
+    </div>
+  </div>
+
+  <div class="prototype-toast" id="documents-toast" aria-live="polite">
+    <strong id="documents-toast-title">Updated</strong>
+    <span id="documents-toast-copy">Document library updated.</span>
+  </div>
+
+  <script>
+    const isAuthenticated = localStorage.getItem("maguire_demo_authenticated") === "true";
+    if (!isAuthenticated) window.location.replace("login.html");
+
+    const baseDocuments = [
+      {id:"corp-nib", name:"Nomor Induk Berusaha (NIB)", type:"PDF", category:"Corporate", status:"ready", owner:"Legal", issued:"12 Feb 2024", expiry:"No expiry", expirySort:99999999, updated:"4 Aug 2026", updatedSort:20260804, usage:3, usageNames:["PLN Gardu Induk 150kV","DKI Drainage Rehabilitation","Telkom Network Modernization"], mapping:"Business registration and legal identity evidence. Matched automatically to administrative qualification requirements.", note:""},
+      {id:"corp-npwp", name:"NPWP Perusahaan", type:"PDF", category:"Corporate", status:"ready", owner:"Finance", issued:"18 Jan 2019", expiry:"No expiry", expirySort:99999999, updated:"3 Aug 2026", updatedSort:20260803, usage:3, usageNames:["PLN Gardu Induk 150kV","DKI Drainage Rehabilitation","Telkom Network Modernization"], mapping:"Tax registration evidence used for administrative and tax compliance checks.", note:""},
+      {id:"corp-akta", name:"Akta Pendirian & Perubahan Terakhir", type:"PDF", category:"Corporate", status:"ready", owner:"Legal", issued:"20 Mar 2025", expiry:"No expiry", expirySort:99999999, updated:"29 Jul 2026", updatedSort:20260729, usage:2, usageNames:["PLN Gardu Induk 150kV","Telkom Network Modernization"], mapping:"Corporate deed evidence mapped to legal establishment and authorized company information.", note:""},
+      {id:"corp-sbu", name:"SBU Jasa Konstruksi", type:"PDF", category:"Corporate", status:"ready", owner:"Legal", issued:"8 Oct 2025", expiry:"8 Oct 2028", expirySort:20281008, updated:"27 Jul 2026", updatedSort:20260727, usage:2, usageNames:["PLN Gardu Induk 150kV","DKI Drainage Rehabilitation"], mapping:"Construction business certification used to validate business classification and permitted construction scope.", note:""},
+
+      {id:"cert-iso9001", name:"ISO 9001 Certificate", type:"PDF", category:"Certifications", status:"ready", owner:"Dina Natalia", issued:"5 Nov 2025", expiry:"4 Nov 2028", expirySort:20281104, updated:"8 Aug 2026", updatedSort:20260808, usage:3, usageNames:["PLN Gardu Induk 150kV","DKI Drainage Rehabilitation","Telkom Network Modernization"], mapping:"Quality management certification. Matched to technical and quality-system requirements.", note:""},
+      {id:"cert-iso45001", name:"ISO 45001 Certificate", type:"PDF", category:"Certifications", status:"expiring", owner:"Dina Natalia", issued:"2 Sep 2023", expiry:"1 Sep 2026", expirySort:20260901, updated:"8 Aug 2026", updatedSort:20260808, usage:2, usageNames:["PLN Gardu Induk 150kV","DKI Drainage Rehabilitation"], mapping:"Occupational health and safety certification used for HSE qualification requirements.", note:"This certificate expires in 23 days. The PLN tender requires relevant certification to remain valid through the qualification period. Renewal evidence is recommended before the 15 Aug internal review."},
+      {id:"cert-iso14001", name:"ISO 14001 Certificate", type:"PDF", category:"Certifications", status:"ready", owner:"Dina Natalia", issued:"15 Jan 2026", expiry:"14 Jan 2029", expirySort:20290114, updated:"2 Aug 2026", updatedSort:20260802, usage:1, usageNames:["DKI Drainage Rehabilitation"], mapping:"Environmental management certification mapped to environmental and project management qualification requirements.", note:""},
+      {id:"cert-smk3", name:"SMK3 Certificate", type:"PDF", category:"Certifications", status:"review", owner:"Dina Natalia", issued:"11 Apr 2023", expiry:"10 Apr 2026", expirySort:20260410, updated:"18 Jul 2026", updatedSort:20260718, usage:0, usageNames:[], mapping:"Historical occupational safety certification retained as supporting evidence. No active tender currently relies on this record.", note:"This certificate is past its listed validity date. Upload the renewed record if your company still maintains SMK3 certification."},
+
+      {id:"fin-audit2025", name:"Audited Financial Statement 2025", type:"PDF", category:"Financial", status:"ready", owner:"Finance", issued:"28 Mar 2026", expiry:"No expiry", expirySort:99999999, updated:"7 Aug 2026", updatedSort:20260807, usage:3, usageNames:["PLN Gardu Induk 150kV","DKI Drainage Rehabilitation","Telkom Network Modernization"], mapping:"Audited annual financial statements used for financial capacity, turnover, and solvency requirements.", note:""},
+      {id:"fin-audit2024", name:"Audited Financial Statement 2024", type:"PDF", category:"Financial", status:"ready", owner:"Finance", issued:"25 Mar 2025", expiry:"No expiry", expirySort:99999999, updated:"21 Jul 2026", updatedSort:20260721, usage:2, usageNames:["PLN Gardu Induk 150kV","Telkom Network Modernization"], mapping:"Prior-year audited financial statements used when tenders request multi-year financial history.", note:""},
+      {id:"fin-spt2025", name:"SPT Tahunan Badan 2025", type:"PDF", category:"Financial", status:"ready", owner:"Finance", issued:"20 Apr 2026", expiry:"No expiry", expirySort:99999999, updated:"31 Jul 2026", updatedSort:20260731, usage:2, usageNames:["PLN Gardu Induk 150kV","DKI Drainage Rehabilitation"], mapping:"Annual corporate tax filing used for tax-compliance and administrative requirements.", note:""},
+      {id:"fin-bank", name:"Bank Reference Letter", type:"PDF", category:"Financial", status:"review", owner:"Finance", issued:"10 Jan 2026", expiry:"10 Jul 2026", expirySort:20260710, updated:"12 Jul 2026", updatedSort:20260712, usage:0, usageNames:[], mapping:"General banking reference retained for financial credibility checks. Tender-specific bank guarantees are created inside individual workspaces.", note:"This general bank reference letter is older than the preferred six-month freshness window. It does not replace the PLN tender-specific bank guarantee."},
+
+      {id:"proj-pln2025", name:"PLN UID Jabar — Electrical Infrastructure Project", type:"ZIP", category:"Project Experience", status:"ready", owner:"Budi Santoso", issued:"18 Dec 2025", expiry:"No expiry", expirySort:99999999, updated:"9 Aug 2026", updatedSort:20260809, usage:2, usageNames:["PLN Gardu Induk 150kV","Telkom Network Modernization"], mapping:"Contract, BAST, completion record, and owner reference supporting similar-project experience above Rp10B.", note:""},
+      {id:"proj-ptenergi2024", name:"PT Energi Nusantara — Substation EPC Project", type:"ZIP", category:"Project Experience", status:"ready", owner:"Budi Santoso", issued:"30 Sep 2024", expiry:"No expiry", expirySort:99999999, updated:"9 Aug 2026", updatedSort:20260809, usage:2, usageNames:["PLN Gardu Induk 150kV","DKI Drainage Rehabilitation"], mapping:"Contract and BAST package supporting similar electrical-infrastructure project experience above Rp10B.", note:""},
+      {id:"proj-jakarta2023", name:"Jakarta Utility Relocation Project", type:"ZIP", category:"Project Experience", status:"ready", owner:"Budi Santoso", issued:"14 Jun 2023", expiry:"No expiry", expirySort:99999999, updated:"20 Jul 2026", updatedSort:20260720, usage:1, usageNames:["DKI Drainage Rehabilitation"], mapping:"Civil and utility project evidence used for broader infrastructure experience requirements.", note:""},
+
+      {id:"pers-skaelectrical", name:"SKA Electrical Engineer — Andi Rahman", type:"PDF", category:"Personnel", status:"ready", owner:"Andi Rahman", issued:"6 May 2025", expiry:"5 May 2028", expirySort:20280505, updated:"5 Aug 2026", updatedSort:20260805, usage:2, usageNames:["PLN Gardu Induk 150kV","Telkom Network Modernization"], mapping:"Electrical engineering competency evidence. The credential is relevant, but Maguire does not classify it as the specific Project Manager SKA required by the PLN tender.", note:""},
+      {id:"pers-hse", name:"Ahli K3 Konstruksi — Sari Wijaya", type:"PDF", category:"Personnel", status:"ready", owner:"Sari Wijaya", issued:"9 Sep 2024", expiry:"8 Sep 2027", expirySort:20270908, updated:"1 Aug 2026", updatedSort:20260801, usage:2, usageNames:["PLN Gardu Induk 150kV","DKI Drainage Rehabilitation"], mapping:"Health and safety personnel competency evidence used for project HSE staffing requirements.", note:""},
+      {id:"pers-cvpm", name:"Project Manager CV — Andi Rahman", type:"PDF", category:"Personnel", status:"ready", owner:"Andi Rahman", issued:"1 Aug 2026", expiry:"No expiry", expirySort:99999999, updated:"6 Aug 2026", updatedSort:20260806, usage:2, usageNames:["PLN Gardu Induk 150kV","Telkom Network Modernization"], mapping:"Personnel CV and project history used to evaluate experience, tenure, and role-fit requirements. Certification evidence is evaluated separately.", note:""}
+    ];
+
+    let uploadedDocuments = [];
+    try {
+      const stored = JSON.parse(localStorage.getItem("maguire_uploaded_documents"));
+      uploadedDocuments = Array.isArray(stored) ? stored : [];
+    } catch { uploadedDocuments = []; }
+
+    let documents = [...uploadedDocuments, ...baseDocuments];
+    let activeCategory = "all";
+    let activeDocument = null;
+
+    const list = document.getElementById("documents-list");
+    const empty = document.getElementById("documents-empty");
+    const visibleCount = document.getElementById("document-visible-count");
+    const searchInput = document.getElementById("document-search");
+    const statusFilter = document.getElementById("document-status-filter");
+    const sortSelect = document.getElementById("document-sort");
+
+    const statusMeta = {
+      ready: {label:"Tender ready", symbol:"✓"},
+      expiring: {label:"Expiring soon", symbol:"!"},
+      review: {label:"Needs review", symbol:"!"}
+    };
+
+    function escapeHTML(value) {
+      return String(value).replace(/[&<>'"]/g, char => ({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;",'"':"&quot;"}[char]));
+    }
+
+    function getFilteredDocuments() {
+      const query = searchInput.value.trim().toLowerCase();
+      let filtered = documents.filter(doc => {
+        if (activeCategory !== "all" && doc.category !== activeCategory) return false;
+        if (statusFilter.value !== "all" && doc.status !== statusFilter.value) return false;
+        if (!query) return true;
+        return [doc.name, doc.category, doc.owner, doc.mapping, ...(doc.usageNames || [])].some(value => String(value).toLowerCase().includes(query));
+      });
+
+      const sort = sortSelect.value;
+      filtered.sort((a,b) => {
+        if (sort === "name") return a.name.localeCompare(b.name);
+        if (sort === "expiry") return a.expirySort - b.expirySort;
+        if (sort === "usage") return b.usage - a.usage || b.updatedSort - a.updatedSort;
+        return b.updatedSort - a.updatedSort;
+      });
+      return filtered;
+    }
+
+    function renderDocuments() {
+      documents = [...uploadedDocuments, ...baseDocuments];
+      const filtered = getFilteredDocuments();
+      visibleCount.textContent = filtered.length;
+      document.getElementById("summary-total").textContent = documents.length;
+      document.getElementById("summary-ready").textContent = documents.filter(d => d.status === "ready").length;
+      document.getElementById("summary-expiring").textContent = documents.filter(d => d.status === "expiring").length;
+      document.getElementById("summary-review").textContent = documents.filter(d => d.status === "review").length;
+      document.getElementById("tab-all-count").textContent = documents.length;
+      document.querySelectorAll("[data-category-count]").forEach(counter => {
+        counter.textContent = documents.filter(doc => doc.category === counter.dataset.categoryCount).length;
+      });
+
+      list.innerHTML = filtered.map(doc => {
+        const meta = statusMeta[doc.status];
+        return `<button class="documents-row" type="button" data-id="${escapeHTML(doc.id)}" aria-label="Open ${escapeHTML(doc.name)}">
+          <span class="documents-name-cell"><span class="documents-file-icon is-${doc.type.toLowerCase()}">${escapeHTML(doc.type)}</span><span><strong>${escapeHTML(doc.name)}</strong><small>${doc.status === "expiring" ? "Expiry requires attention" : doc.status === "review" ? "Review metadata or validity" : "Ready for reuse"}</small></span></span>
+          <span><span class="documents-category-pill">${escapeHTML(doc.category)}</span></span>
+          <span><span class="documents-status-pill is-${doc.status}"><i>${meta.symbol}</i>${meta.label}</span>${doc.status === "expiring" ? `<small class="documents-status-note">${escapeHTML(doc.expiry)}</small>` : ""}</span>
+          <span class="documents-owner-cell"><span class="documents-owner-avatar">${escapeHTML(doc.owner.split(" ").map(x=>x[0]).join("").slice(0,2).toUpperCase())}</span><strong>${escapeHTML(doc.owner)}</strong></span>
+          <span class="documents-usage-cell"><strong>${doc.usage}</strong><small>${doc.usage === 1 ? "active tender" : "active tenders"}</small></span>
+          <span class="documents-updated-cell"><strong>${escapeHTML(doc.updated)}</strong><small>${escapeHTML(doc.expiry)}</small></span>
+          <span class="documents-row-chevron">›</span>
+        </button>`;
+      }).join("");
+
+      empty.hidden = filtered.length !== 0;
+      list.hidden = filtered.length === 0;
+      list.querySelectorAll(".documents-row").forEach(row => row.addEventListener("click", () => openDocumentDrawer(row.dataset.id)));
+    }
+
+    document.querySelectorAll(".documents-tab").forEach(tab => {
+      tab.addEventListener("click", () => {
+        activeCategory = tab.dataset.category;
+        document.querySelectorAll(".documents-tab").forEach(item => {
+          const active = item === tab;
+          item.classList.toggle("is-active", active);
+          item.setAttribute("aria-selected", String(active));
+        });
+        renderDocuments();
+      });
+    });
+
+    [searchInput, statusFilter, sortSelect].forEach(control => control.addEventListener(control === searchInput ? "input" : "change", renderDocuments));
+    document.getElementById("documents-clear-filters").addEventListener("click", () => {
+      searchInput.value = "";
+      statusFilter.value = "all";
+      sortSelect.value = "recent";
+      activeCategory = "all";
+      document.querySelectorAll(".documents-tab").forEach(tab => {
+        const active = tab.dataset.category === "all";
+        tab.classList.toggle("is-active", active);
+        tab.setAttribute("aria-selected", String(active));
+      });
+      renderDocuments();
+    });
+
+    const drawer = document.getElementById("document-drawer");
+    const drawerBackdrop = document.getElementById("document-drawer-backdrop");
+    const drawerStatus = document.getElementById("document-drawer-status");
+    const drawerNoteSection = document.getElementById("document-drawer-note-section");
+
+    function openDocumentDrawer(id) {
+      activeDocument = documents.find(doc => doc.id === id);
+      if (!activeDocument) return;
+      const meta = statusMeta[activeDocument.status];
+      document.getElementById("document-drawer-category").textContent = activeDocument.category;
+      document.getElementById("document-drawer-title").textContent = activeDocument.name;
+      document.getElementById("document-drawer-type").textContent = activeDocument.type;
+      drawerStatus.className = `documents-status-pill is-${activeDocument.status}`;
+      drawerStatus.innerHTML = `<i>${meta.symbol}</i>${meta.label}`;
+      document.getElementById("document-drawer-owner").textContent = activeDocument.owner;
+      document.getElementById("document-drawer-issued").textContent = activeDocument.issued;
+      document.getElementById("document-drawer-expiry").textContent = activeDocument.expiry;
+      document.getElementById("document-drawer-updated").textContent = activeDocument.updated;
+      document.getElementById("document-drawer-mapping").textContent = activeDocument.mapping;
+      const usage = document.getElementById("document-drawer-usage");
+      usage.innerHTML = activeDocument.usageNames.length
+        ? activeDocument.usageNames.map(name => `<span><i></i>${escapeHTML(name)}</span>`).join("")
+        : `<p>Not currently referenced by an active tender.</p>`;
+      drawerNoteSection.hidden = !activeDocument.note;
+      document.getElementById("document-drawer-note").textContent = activeDocument.note || "";
+      drawer.classList.add("is-open");
+      drawer.setAttribute("aria-hidden", "false");
+      drawerBackdrop.hidden = false;
+      document.body.classList.add("documents-drawer-open");
+    }
+
+    function closeDocumentDrawer() {
+      drawer.classList.remove("is-open");
+      drawer.setAttribute("aria-hidden", "true");
+      drawerBackdrop.hidden = true;
+      document.body.classList.remove("documents-drawer-open");
+    }
+
+    document.getElementById("document-drawer-close").addEventListener("click", closeDocumentDrawer);
+    drawerBackdrop.addEventListener("click", closeDocumentDrawer);
+
+    function showToast(title, copy) {
+      const toast = document.getElementById("documents-toast");
+      document.getElementById("documents-toast-title").textContent = title;
+      document.getElementById("documents-toast-copy").textContent = copy;
+      toast.classList.add("is-visible");
+      clearTimeout(showToast.timer);
+      showToast.timer = setTimeout(() => toast.classList.remove("is-visible"), 2600);
+    }
+
+    document.getElementById("document-preview-button").addEventListener("click", () => {
+      if (activeDocument) showToast("Document preview", `${activeDocument.name} would open in the secure document viewer.`);
+    });
+    document.getElementById("document-replace-button").addEventListener("click", () => {
+      if (activeDocument) showToast("Replace file", `A new version of ${activeDocument.name} can be uploaded while preserving its evidence mapping.`);
+    });
+
+    document.querySelectorAll("[data-doc-id]").forEach(button => button.addEventListener("click", () => openDocumentDrawer(button.dataset.docId)));
+    document.querySelectorAll("[data-action]").forEach(button => button.addEventListener("click", () => {
+      if (button.dataset.action === "pm-ska") showToast("Missing evidence", "Upload the specific Project Manager SKA or update the personnel record if the credential already exists.");
+      if (button.dataset.action === "third-project") showToast("Experience gap", "Add another qualifying project in Company Profile with contract and BAST evidence.");
+    }));
+
+    const uploadModal = document.getElementById("upload-modal");
+    function openUploadModal() { uploadModal.hidden = false; document.body.classList.add("detail-modal-open"); setTimeout(() => document.getElementById("upload-name").focus(), 30); }
+    function closeUploadModal() { uploadModal.hidden = true; document.body.classList.remove("detail-modal-open"); }
+    document.getElementById("upload-document-button").addEventListener("click", openUploadModal);
+    document.getElementById("upload-modal-close").addEventListener("click", closeUploadModal);
+    document.getElementById("upload-cancel").addEventListener("click", closeUploadModal);
+    uploadModal.addEventListener("click", event => { if (event.target === uploadModal) closeUploadModal(); });
+
+    document.getElementById("upload-form").addEventListener("submit", event => {
+      event.preventDefault();
+      const name = document.getElementById("upload-name").value.trim();
+      const category = document.getElementById("upload-category").value;
+      if (!name) return;
+      const issuedInput = document.getElementById("upload-issued").value;
+      const expiryInput = document.getElementById("upload-expiry").value;
+      const formatDate = value => value ? new Date(value + "T00:00:00").toLocaleDateString("en-GB", {day:"numeric",month:"short",year:"numeric"}) : "No expiry";
+      const sortDate = value => value ? Number(value.replaceAll("-", "")) : 99999999;
+      const newDoc = {
+        id:`uploaded-${Date.now()}`, name, type:"PDF", category, status:"ready", owner:"Budi Santoso",
+        issued:formatDate(issuedInput), expiry:formatDate(expiryInput), expirySort:sortDate(expiryInput), updated:"9 Aug 2026", updatedSort:20260809,
+        usage:0, usageNames:[], mapping:"Newly uploaded company evidence. Maguire will map this record to compatible tender requirements during future analyses.", note:""
+      };
+      uploadedDocuments.unshift(newDoc);
+      localStorage.setItem("maguire_uploaded_documents", JSON.stringify(uploadedDocuments));
+      closeUploadModal();
+      event.target.reset();
+      document.getElementById("upload-issued").value = "2026-08-09";
+      activeCategory = "all";
+      document.querySelectorAll(".documents-tab").forEach(tab => {
+        const active = tab.dataset.category === "all";
+        tab.classList.toggle("is-active", active);
+        tab.setAttribute("aria-selected", String(active));
+      });
+      renderDocuments();
+      showToast("Document added", `${name} is now available in the company evidence library.`);
+    });
+
+    const userMenuButton = document.getElementById("user-menu-button");
+    const userMenu = document.getElementById("user-menu");
+    const logoutButton = document.getElementById("logout-button");
+    const notificationButton = document.getElementById("notification-button");
+    const notificationPopover = document.getElementById("notification-popover");
+    const mobileMenuButton = document.getElementById("mobile-menu-button");
+    const sidebar = document.getElementById("app-sidebar");
+    const mobileOverlay = document.getElementById("mobile-overlay");
+
+    function closeUserMenu(){ userMenu.hidden = true; userMenuButton.setAttribute("aria-expanded","false"); }
+    function closeNotifications(){ notificationPopover.hidden = true; notificationButton.setAttribute("aria-expanded","false"); }
+    userMenuButton.addEventListener("click", event => { event.stopPropagation(); const willOpen = userMenu.hidden; closeNotifications(); userMenu.hidden = !willOpen; userMenuButton.setAttribute("aria-expanded",String(willOpen)); });
+    notificationButton.addEventListener("click", event => { event.stopPropagation(); const willOpen = notificationPopover.hidden; closeUserMenu(); notificationPopover.hidden = !willOpen; notificationButton.setAttribute("aria-expanded",String(willOpen)); });
+    document.addEventListener("click", () => { closeUserMenu(); closeNotifications(); });
+    userMenu.addEventListener("click", event => event.stopPropagation());
+    notificationPopover.addEventListener("click", event => event.stopPropagation());
+    logoutButton.addEventListener("click", () => { localStorage.removeItem("maguire_demo_authenticated"); localStorage.removeItem("maguire_demo_user"); localStorage.removeItem("maguire_demo_company"); window.location.href = "login.html"; });
+
+    function setMobileSidebar(open){ sidebar.classList.toggle("is-open",open); mobileOverlay.hidden = !open; mobileMenuButton.setAttribute("aria-expanded",String(open)); document.body.classList.toggle("sidebar-open",open); }
+    mobileMenuButton.addEventListener("click", () => setMobileSidebar(!sidebar.classList.contains("is-open")));
+    mobileOverlay.addEventListener("click", () => setMobileSidebar(false));
+    window.addEventListener("resize", () => { if (window.innerWidth > 760) setMobileSidebar(false); });
+
+    document.addEventListener("keydown", event => {
+      if (event.key !== "Escape") return;
+      if (!uploadModal.hidden) closeUploadModal();
+      if (drawer.classList.contains("is-open")) closeDocumentDrawer();
+    });
+
+    renderDocuments();
+  </script>
+</body>
+</html>

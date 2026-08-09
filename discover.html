@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Discover Tenders — Maguire.id</title>
+  <meta
+    name="description"
+    content="Discover tender opportunities matched to PT Wijaya Infrastruktur Nusantara's company profile."
+  />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/app.css" />
+</head>
+<body class="app-page">
+  <div class="app-shell">
+    <aside class="app-sidebar" id="app-sidebar" aria-label="Main navigation">
+      <div class="app-sidebar-brand">
+        <a class="logo" href="dashboard.html" aria-label="Maguire.id dashboard">
+          Maguire<span>.id</span>
+        </a>
+      </div>
+
+      <div class="app-sidebar-section-label">Workspace</div>
+      <nav class="app-nav">
+        <a class="app-nav-link" href="dashboard.html">
+          <span class="app-nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="7" height="7" rx="1.5"></rect>
+              <rect x="14" y="3" width="7" height="7" rx="1.5"></rect>
+              <rect x="3" y="14" width="7" height="7" rx="1.5"></rect>
+              <rect x="14" y="14" width="7" height="7" rx="1.5"></rect>
+            </svg>
+          </span>
+          Dashboard
+        </a>
+
+        <a class="app-nav-link is-active" href="discover.html" aria-current="page">
+          <span class="app-nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="7"></circle>
+              <path d="m20 20-3.4-3.4"></path>
+            </svg>
+          </span>
+          Discover
+          <span class="app-nav-badge">12</span>
+        </a>
+
+        <a class="app-nav-link" href="my-tenders.html">
+          <span class="app-nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 4h14a1 1 0 0 1 1 1v15H4V5a1 1 0 0 1 1-1Z"></path>
+              <path d="M8 8h8M8 12h8M8 16h5"></path>
+            </svg>
+          </span>
+          My Tenders
+          <span class="app-nav-badge app-nav-badge-muted">3</span>
+        </a>
+
+        <a class="app-nav-link" href="documents.html">
+          <span class="app-nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 6.5A2.5 2.5 0 0 1 6.5 4H10l2 2h5.5A2.5 2.5 0 0 1 20 8.5v9A2.5 2.5 0 0 1 17.5 20h-11A2.5 2.5 0 0 1 4 17.5Z"></path>
+            </svg>
+          </span>
+          Documents
+        </a>
+
+        <a class="app-nav-link" href="company-profile.html">
+          <span class="app-nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 21V7l8-4 8 4v14"></path>
+              <path d="M8 10h1M8 14h1M8 18h1M15 10h1M15 14h1M15 18h1"></path>
+            </svg>
+          </span>
+          Company Profile
+        </a>
+      </nav>
+
+      <div class="app-sidebar-section-label">Account</div>
+      <nav class="app-nav">
+        <a class="app-nav-link" href="notifications.html">
+          <span class="app-nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"></path>
+              <path d="M10 21h4"></path>
+            </svg>
+          </span>
+          Notifications
+          <span class="app-notification-dot" aria-label="1 unread notification"></span>
+        </a>
+
+        <a class="app-nav-link" href="settings.html">
+          <span class="app-nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="3"></circle>
+              <path d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06-2.83 2.83-.06-.06A1.7 1.7 0 0 0 15 19.4a1.7 1.7 0 0 0-1 .6 1.7 1.7 0 0 0-.4 1.1V21h-4v-.1A1.7 1.7 0 0 0 8.6 19.4a1.7 1.7 0 0 0-1.88.34l-.06.06-2.83-2.83.06-.06A1.7 1.7 0 0 0 4.6 15a1.7 1.7 0 0 0-.6-1 1.7 1.7 0 0 0-1.1-.4H3v-4h.1A1.7 1.7 0 0 0 4.6 8.6a1.7 1.7 0 0 0-.34-1.88l-.06-.06 2.83-2.83.06.06A1.7 1.7 0 0 0 9 4.6a1.7 1.7 0 0 0 1-.6 1.7 1.7 0 0 0 .4-1.1V3h4v.1A1.7 1.7 0 0 0 15.4 4.6a1.7 1.7 0 0 0 1.88-.34l.06-.06 2.83 2.83-.06.06A1.7 1.7 0 0 0 19.4 9c.27.36.48.7.6 1 .12.3.4.68 1 .8h.1v4H21a1.7 1.7 0 0 0-1.6.2Z"></path>
+            </svg>
+          </span>
+          Settings
+        </a>
+      </nav>
+
+      <div class="app-sidebar-footer">
+        <div class="app-sidebar-company">
+          <strong>PT Wijaya Infrastruktur Nusantara</strong>
+          <span>Infrastructure &amp; Engineering</span>
+        </div>
+      </div>
+    </aside>
+
+    <main class="app-main">
+      <header class="app-topbar">
+        <div class="app-topbar-left">
+          <button class="app-icon-button app-mobile-menu" id="mobile-menu-button" type="button" aria-label="Open navigation" aria-controls="app-sidebar" aria-expanded="false">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <path d="M4 7h16M4 12h16M4 17h16"></path>
+            </svg>
+          </button>
+          <div>
+            <div class="app-topbar-title">Tender Discovery</div>
+            <div class="app-topbar-company">PT Wijaya Infrastruktur Nusantara</div>
+          </div>
+        </div>
+
+        <div class="app-topbar-actions">
+          <button class="app-icon-button app-topbar-notification" id="notification-button" type="button" aria-label="Notifications" aria-expanded="false">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"></path>
+              <path d="M10 21h4"></path>
+            </svg>
+            <span class="notification-count">1</span>
+          </button>
+
+          <div class="app-user-menu-wrap">
+            <button class="app-user-button" id="user-menu-button" type="button" aria-expanded="false">
+              <span class="app-user-avatar">BS</span>
+              <span class="app-user-meta">
+                <strong>Budi Santoso</strong>
+                <span>Business Development</span>
+              </span>
+              <svg class="app-user-chevron" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="m6 9 6 6 6-6"></path>
+              </svg>
+            </button>
+
+            <div class="app-dropdown" id="user-menu" hidden>
+              <a href="company-profile.html">Company Profile</a>
+              <a href="settings.html">Settings</a>
+              <button type="button" id="logout-button">Sign out</button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="app-mobile-overlay" id="mobile-overlay" hidden></div>
+
+      <section class="app-content discover-content">
+        <div class="app-page-header discover-page-header">
+          <div>
+            <h1>Discover Tenders</h1>
+            <p>Opportunities matched to your company profile, capabilities, and project experience.</p>
+          </div>
+          <button class="btn btn-secondary discover-saved-header-button" id="saved-header-button" type="button">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M6 4h12a1 1 0 0 1 1 1v16l-7-4-7 4V5a1 1 0 0 1 1-1Z"></path>
+            </svg>
+            Saved <span id="saved-header-count">2</span>
+          </button>
+        </div>
+
+        <section class="app-card discover-control-panel" aria-label="Tender search and filters">
+          <div class="discover-search-row">
+            <label class="discover-search" for="tender-search">
+              <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="7"></circle>
+                <path d="m20 20-3.4-3.4"></path>
+              </svg>
+              <input id="tender-search" type="search" placeholder="Search tender, buyer, category, or location..." autocomplete="off" />
+            </label>
+
+            <select class="discover-select" id="category-filter" aria-label="Filter by category">
+              <option value="all">All categories</option>
+              <option value="Infrastructure">Infrastructure</option>
+              <option value="Civil Engineering">Civil Engineering</option>
+              <option value="Telecommunications">Telecommunications</option>
+              <option value="Water & Utilities">Water &amp; Utilities</option>
+              <option value="Energy">Energy</option>
+            </select>
+
+            <select class="discover-select" id="location-filter" aria-label="Filter by location">
+              <option value="all">All locations</option>
+              <option value="Jakarta">Jakarta</option>
+              <option value="West Java">West Java</option>
+              <option value="Central Java">Central Java</option>
+              <option value="East Java">East Java</option>
+              <option value="Banten">Banten</option>
+              <option value="National">National</option>
+            </select>
+
+            <select class="discover-select discover-select-deadline" id="deadline-filter" aria-label="Filter by closing date">
+              <option value="all">Any deadline</option>
+              <option value="7">Closing in 7 days</option>
+              <option value="14">Closing in 14 days</option>
+              <option value="30">Closing in 30 days</option>
+            </select>
+
+            <button class="discover-reset-button" id="reset-filters" type="button" hidden>Reset</button>
+          </div>
+
+          <div class="discover-tabs-row">
+            <div class="discover-tabs" role="tablist" aria-label="Tender result type">
+              <button class="discover-tab is-active" type="button" role="tab" aria-selected="true" data-tab="recommended">
+                Recommended <span>12</span>
+              </button>
+              <button class="discover-tab" type="button" role="tab" aria-selected="false" data-tab="all">
+                All Tenders <span>48</span>
+              </button>
+              <button class="discover-tab" type="button" role="tab" aria-selected="false" data-tab="saved">
+                Saved <span id="saved-tab-count">2</span>
+              </button>
+            </div>
+
+            <label class="discover-sort-label" for="sort-filter">
+              <span>Sort by</span>
+              <select class="discover-sort" id="sort-filter">
+                <option value="match">Best match</option>
+                <option value="deadline">Closing soon</option>
+                <option value="value">Highest value</option>
+              </select>
+            </label>
+          </div>
+        </section>
+
+        <div class="discover-result-summary">
+          <div>
+            <strong id="result-count">12 recommended tenders</strong>
+            <span id="result-context">Matched against your KBLI, certifications, location, and project experience.</span>
+          </div>
+          <span class="discover-updated">Updated today, 08:45 WIB</span>
+        </div>
+
+        <section class="discover-results" id="tender-results" aria-live="polite"></section>
+
+        <div class="app-card discover-empty-state" id="empty-state" hidden>
+          <div class="discover-empty-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="7"></circle>
+              <path d="m20 20-3.4-3.4"></path>
+            </svg>
+          </div>
+          <h2>No tenders found</h2>
+          <p>Try changing your search or filters to see more opportunities.</p>
+          <button class="btn btn-secondary" id="empty-reset-button" type="button">Clear filters</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="notification-popover" id="notification-popover" hidden>
+    <div class="notification-popover-header">
+      <strong>Notifications</strong>
+      <a href="notifications.html">View all</a>
+    </div>
+    <a class="notification-preview" href="documents.html">
+      <span class="notification-preview-icon" aria-hidden="true">!</span>
+      <span>
+        <strong>ISO 45001 expires soon</strong>
+        <small>Your certificate expires in 23 days.</small>
+      </span>
+    </a>
+  </div>
+
+  <script>
+    const isAuthenticated = localStorage.getItem("maguire_demo_authenticated") === "true";
+    if (!isAuthenticated) {
+      window.location.replace("login.html");
+    }
+
+    const tenders = [
+      {
+        id: "pln-150kv",
+        title: "Pengadaan Pembangunan Gardu Induk 150kV",
+        buyer: "PT PLN (Persero)",
+        buyerMark: "PLN",
+        buyerClass: "discover-buyer-pln",
+        category: "Infrastructure",
+        location: "Jakarta",
+        value: 48.2,
+        valueLabel: "Rp48.2B",
+        deadline: "21 Aug 2026",
+        daysLeft: 12,
+        match: 94,
+        recommended: true,
+        newTender: true,
+        href: "tender-detail.html",
+        reasons: ["KBLI 42201 matched", "2 similar projects found", "Core certifications available"],
+        source: "PLN e-Procurement"
+      },
+      {
+        id: "telkom-fiber",
+        title: "Pengadaan Infrastruktur Jaringan Fiber Optik Regional",
+        buyer: "PT Telkom Indonesia",
+        buyerMark: "T",
+        category: "Telecommunications",
+        location: "West Java",
+        value: 17.5,
+        valueLabel: "Rp17.5B",
+        deadline: "19 Aug 2026",
+        daysLeft: 10,
+        match: 89,
+        recommended: true,
+        newTender: true,
+        href: "tender-detail.html?tender=telkom-network",
+        reasons: ["Relevant engineering scope", "West Java operations", "Experience requirement matched"],
+        source: "Telkom e-Procurement"
+      },
+      {
+        id: "pupr-road",
+        title: "Peningkatan Jalan dan Jembatan Koridor Jawa Barat",
+        buyer: "Kementerian PUPR",
+        buyerMark: "PU",
+        category: "Civil Engineering",
+        location: "West Java",
+        value: 72.0,
+        valueLabel: "Rp72.0B",
+        deadline: "25 Aug 2026",
+        daysLeft: 16,
+        match: 86,
+        recommended: true,
+        newTender: false,
+        href: "tender-detail.html?tender=pupr-road",
+        reasons: ["KBLI 42919 matched", "Project scale compatible", "Civil engineering experience"],
+        source: "LPSE Kementerian PUPR"
+      },
+      {
+        id: "jakarta-drainage",
+        title: "Rehabilitasi Sistem Drainase Kawasan Jakarta Timur",
+        buyer: "Dinas Sumber Daya Air DKI Jakarta",
+        buyerMark: "DKI",
+        category: "Water & Utilities",
+        location: "Jakarta",
+        value: 21.8,
+        valueLabel: "Rp21.8B",
+        deadline: "17 Aug 2026",
+        daysLeft: 8,
+        match: 85,
+        recommended: true,
+        newTender: false,
+        href: "tender-detail.html?tender=jakarta-drainage",
+        reasons: ["Jakarta project coverage", "Utility construction KBLI", "Past drainage project found"],
+        source: "LPSE DKI Jakarta"
+      },
+      {
+        id: "pertamina-substation",
+        title: "Engineering & Construction of Electrical Substation Upgrade",
+        buyer: "PT Pertamina (Persero)",
+        buyerMark: "P",
+        category: "Energy",
+        location: "Banten",
+        value: 36.4,
+        valueLabel: "Rp36.4B",
+        deadline: "28 Aug 2026",
+        daysLeft: 19,
+        match: 84,
+        recommended: true,
+        newTender: true,
+        href: "tender-detail.html?tender=pertamina-substation",
+        reasons: ["Electrical infrastructure fit", "Project value within experience", "Safety certification matched"],
+        source: "Pertamina e-Procurement"
+      },
+      {
+        id: "semarang-water",
+        title: "Pembangunan Jaringan Distribusi Air Minum Tahap II",
+        buyer: "PDAM Kota Semarang",
+        buyerMark: "PD",
+        category: "Water & Utilities",
+        location: "Central Java",
+        value: 14.3,
+        valueLabel: "Rp14.3B",
+        deadline: "16 Aug 2026",
+        daysLeft: 7,
+        match: 83,
+        recommended: true,
+        newTender: false,
+        href: "tender-detail.html?tender=semarang-water",
+        reasons: ["Utility construction matched", "Similar pipeline work", "Qualification profile aligned"],
+        source: "LPSE Kota Semarang"
+      },
+      {
+        id: "kai-electrical",
+        title: "Pekerjaan Upgrade Sistem Kelistrikan Depo dan Stasiun",
+        buyer: "PT Kereta Api Indonesia",
+        buyerMark: "KAI",
+        category: "Infrastructure",
+        location: "East Java",
+        value: 29.7,
+        valueLabel: "Rp29.7B",
+        deadline: "31 Aug 2026",
+        daysLeft: 22,
+        match: 82,
+        recommended: true,
+        newTender: false,
+        href: "tender-detail.html?tender=kai-electrical",
+        reasons: ["Infrastructure experience", "Electrical works capability", "Financial threshold matched"],
+        source: "KAI e-Procurement"
+      },
+      {
+        id: "banten-road",
+        title: "Rekonstruksi Jalan Provinsi Ruas Serang–Pandeglang",
+        buyer: "Dinas PUPR Provinsi Banten",
+        buyerMark: "BT",
+        category: "Civil Engineering",
+        location: "Banten",
+        value: 58.6,
+        valueLabel: "Rp58.6B",
+        deadline: "2 Sep 2026",
+        daysLeft: 24,
+        match: 81,
+        recommended: true,
+        newTender: false,
+        href: "tender-detail.html?tender=banten-road",
+        reasons: ["Civil engineering KBLI", "Regional project experience", "Turnover requirement likely met"],
+        source: "LPSE Provinsi Banten"
+      },
+      {
+        id: "pln-distribution",
+        title: "Pengadaan Konstruksi Jaringan Distribusi 20kV Area Bekasi",
+        buyer: "PT PLN (Persero)",
+        buyerMark: "PLN",
+        buyerClass: "discover-buyer-pln",
+        category: "Infrastructure",
+        location: "West Java",
+        value: 11.9,
+        valueLabel: "Rp11.9B",
+        deadline: "14 Aug 2026",
+        daysLeft: 5,
+        match: 80,
+        recommended: true,
+        newTender: true,
+        href: "tender-detail.html?tender=pln-distribution",
+        reasons: ["Electrical construction fit", "KBLI 42201 matched", "West Java coverage"],
+        source: "PLN e-Procurement"
+      },
+      {
+        id: "surabaya-bridge",
+        title: "Pemeliharaan Berkala Struktur Jembatan Kota Surabaya",
+        buyer: "Pemerintah Kota Surabaya",
+        buyerMark: "SBY",
+        category: "Civil Engineering",
+        location: "East Java",
+        value: 9.8,
+        valueLabel: "Rp9.8B",
+        deadline: "23 Aug 2026",
+        daysLeft: 14,
+        match: 79,
+        recommended: true,
+        newTender: false,
+        href: "tender-detail.html?tender=surabaya-bridge",
+        reasons: ["Civil works capability", "Relevant personnel profile", "Project size compatible"],
+        source: "LPSE Kota Surabaya"
+      },
+      {
+        id: "jasa-marga-toll",
+        title: "Pekerjaan Perkuatan Infrastruktur Jalan Tol Paket 2026-B",
+        buyer: "PT Jasa Marga (Persero) Tbk",
+        buyerMark: "JM",
+        category: "Civil Engineering",
+        location: "National",
+        value: 83.5,
+        valueLabel: "Rp83.5B",
+        deadline: "5 Sep 2026",
+        daysLeft: 27,
+        match: 78,
+        recommended: true,
+        newTender: false,
+        href: "tender-detail.html?tender=jasa-marga-toll",
+        reasons: ["Road construction experience", "National project coverage", "KBLI aligned"],
+        source: "Jasa Marga Procurement"
+      },
+      {
+        id: "kominfo-network",
+        title: "Pembangunan Infrastruktur Backbone Jaringan Pemerintah",
+        buyer: "Kementerian Komunikasi dan Digital",
+        buyerMark: "KM",
+        category: "Telecommunications",
+        location: "National",
+        value: 41.0,
+        valueLabel: "Rp41.0B",
+        deadline: "8 Sep 2026",
+        daysLeft: 30,
+        match: 77,
+        recommended: true,
+        newTender: true,
+        href: "tender-detail.html?tender=kominfo-network",
+        reasons: ["Infrastructure capability", "National delivery footprint", "Financial capacity matched"],
+        source: "LPSE Komdigi"
+      },
+      {
+        id: "airport-utility",
+        title: "Utility Infrastructure Improvement — Terminal Support Area",
+        buyer: "PT Angkasa Pura Indonesia",
+        buyerMark: "API",
+        category: "Infrastructure",
+        location: "Banten",
+        value: 18.4,
+        valueLabel: "Rp18.4B",
+        deadline: "10 Sep 2026",
+        daysLeft: 32,
+        match: 72,
+        recommended: false,
+        newTender: false,
+        href: "tender-detail.html?tender=airport-utility",
+        reasons: ["General infrastructure fit", "Relevant certifications", "Location coverage"],
+        source: "InJourney Airports Procurement"
+      },
+      {
+        id: "solo-water",
+        title: "Pengembangan Reservoir dan Distribusi Air Kawasan Selatan",
+        buyer: "Perumda Air Minum Kota Surakarta",
+        buyerMark: "SA",
+        category: "Water & Utilities",
+        location: "Central Java",
+        value: 8.7,
+        valueLabel: "Rp8.7B",
+        deadline: "12 Sep 2026",
+        daysLeft: 34,
+        match: 69,
+        recommended: false,
+        newTender: false,
+        href: "tender-detail.html?tender=solo-water",
+        reasons: ["Utility construction scope", "Central Java capability", "Past pipeline project"],
+        source: "LPSE Kota Surakarta"
+      }
+    ];
+
+    const DEFAULT_SAVED = ["pln-150kv", "jakarta-drainage"];
+    let savedIds;
+    try {
+      const storedSaved = JSON.parse(localStorage.getItem("maguire_saved_tenders"));
+      savedIds = Array.isArray(storedSaved) ? storedSaved : DEFAULT_SAVED;
+    } catch {
+      savedIds = DEFAULT_SAVED;
+    }
+    savedIds = new Set(savedIds);
+
+    let activeTab = "recommended";
+
+    const results = document.getElementById("tender-results");
+    const emptyState = document.getElementById("empty-state");
+    const searchInput = document.getElementById("tender-search");
+    const categoryFilter = document.getElementById("category-filter");
+    const locationFilter = document.getElementById("location-filter");
+    const deadlineFilter = document.getElementById("deadline-filter");
+    const sortFilter = document.getElementById("sort-filter");
+    const resetFiltersButton = document.getElementById("reset-filters");
+    const emptyResetButton = document.getElementById("empty-reset-button");
+    const savedHeaderButton = document.getElementById("saved-header-button");
+    const resultCount = document.getElementById("result-count");
+    const resultContext = document.getElementById("result-context");
+    const savedHeaderCount = document.getElementById("saved-header-count");
+    const savedTabCount = document.getElementById("saved-tab-count");
+    const tabButtons = [...document.querySelectorAll(".discover-tab")];
+
+    function escapeHtml(value) {
+      return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    function saveState() {
+      localStorage.setItem("maguire_saved_tenders", JSON.stringify([...savedIds]));
+      savedHeaderCount.textContent = savedIds.size;
+      savedTabCount.textContent = savedIds.size;
+    }
+
+    function matchClass(score) {
+      if (score >= 88) return "match-badge-high";
+      if (score >= 80) return "discover-match-good";
+      return "discover-match-medium";
+    }
+
+    function buildTenderCard(tender) {
+      const isSaved = savedIds.has(tender.id);
+      const urgent = tender.daysLeft <= 7;
+      const featured = tender.id === "pln-150kv" && activeTab !== "saved";
+      const reasons = tender.reasons.map((reason) => `
+        <span class="discover-reason-chip">
+          <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m5 12 4 4L19 6"></path>
+          </svg>
+          ${escapeHtml(reason)}
+        </span>`).join("");
+
+      return `
+        <article class="app-card discover-tender-card${featured ? " discover-tender-card-featured" : ""}" data-id="${escapeHtml(tender.id)}">
+          <div class="discover-card-accent"></div>
+          <div class="discover-tender-head">
+            <div class="discover-buyer-mark ${tender.buyerClass || ""}">${escapeHtml(tender.buyerMark)}</div>
+            <div class="discover-tender-heading">
+              <div class="discover-tender-badges">
+                <span class="match-badge ${matchClass(tender.match)}">${tender.match}% match</span>
+                ${tender.newTender ? '<span class="discover-new-badge">New</span>' : ""}
+                ${urgent ? '<span class="discover-urgent-badge">Closing soon</span>' : ""}
+              </div>
+              <a class="discover-tender-title" href="${escapeHtml(tender.href)}">${escapeHtml(tender.title)}</a>
+              <div class="discover-tender-meta">
+                <span>${escapeHtml(tender.buyer)}</span>
+                <span class="meta-dot"></span>
+                <span>${escapeHtml(tender.category)}</span>
+                <span class="meta-dot"></span>
+                <span>${escapeHtml(tender.location)}</span>
+              </div>
+            </div>
+            <button class="discover-save-button${isSaved ? " is-saved" : ""}" type="button" data-save-id="${escapeHtml(tender.id)}" aria-label="${isSaved ? "Remove from saved tenders" : "Save tender"}" aria-pressed="${isSaved}">
+              <svg viewBox="0 0 24 24" width="17" height="17" fill="${isSaved ? "currentColor" : "none"}" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M6 4h12a1 1 0 0 1 1 1v16l-7-4-7 4V5a1 1 0 0 1 1-1Z"></path>
+              </svg>
+            </button>
+          </div>
+
+          <div class="discover-tender-stat-grid">
+            <div>
+              <span>Estimated value</span>
+              <strong>${escapeHtml(tender.valueLabel)}</strong>
+            </div>
+            <div>
+              <span>Deadline</span>
+              <strong>${escapeHtml(tender.deadline)}</strong>
+              <small class="${urgent ? "discover-deadline-urgent" : ""}">${tender.daysLeft} days left</small>
+            </div>
+            <div>
+              <span>Source</span>
+              <strong>${escapeHtml(tender.source)}</strong>
+            </div>
+          </div>
+
+          <div class="discover-match-reasons">
+            <span class="discover-match-label">Why it matches</span>
+            <div class="discover-reason-list">${reasons}</div>
+          </div>
+
+          <div class="discover-card-footer">
+            <span class="discover-analysis-note">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 3 4.5 6v5.6c0 4.3 2.8 7.5 7.5 9.4 4.7-1.9 7.5-5.1 7.5-9.4V6L12 3Z"></path>
+                <path d="m9 12 2 2 4-4"></path>
+              </svg>
+              Match based on your company profile
+            </span>
+            <a class="btn btn-secondary discover-view-button" href="${escapeHtml(tender.href)}">View Tender <span aria-hidden="true">→</span></a>
+          </div>
+        </article>`;
+    }
+
+    function currentFiltersAreActive() {
+      return Boolean(
+        searchInput.value.trim() ||
+        categoryFilter.value !== "all" ||
+        locationFilter.value !== "all" ||
+        deadlineFilter.value !== "all"
+      );
+    }
+
+    function filteredTenders() {
+      const query = searchInput.value.trim().toLowerCase();
+      const category = categoryFilter.value;
+      const location = locationFilter.value;
+      const deadline = deadlineFilter.value === "all" ? null : Number(deadlineFilter.value);
+
+      let list = tenders.filter((tender) => {
+        if (activeTab === "recommended" && !tender.recommended) return false;
+        if (activeTab === "saved" && !savedIds.has(tender.id)) return false;
+        if (category !== "all" && tender.category !== category) return false;
+        if (location !== "all" && tender.location !== location) return false;
+        if (deadline !== null && tender.daysLeft > deadline) return false;
+
+        if (query) {
+          const haystack = [tender.title, tender.buyer, tender.category, tender.location, tender.source].join(" ").toLowerCase();
+          if (!haystack.includes(query)) return false;
+        }
+        return true;
+      });
+
+      const sort = sortFilter.value;
+      list = [...list].sort((a, b) => {
+        if (sort === "deadline") return a.daysLeft - b.daysLeft || b.match - a.match;
+        if (sort === "value") return b.value - a.value || b.match - a.match;
+        return b.match - a.match || a.daysLeft - b.daysLeft;
+      });
+
+      return list;
+    }
+
+    function updateSummary(count) {
+      const label = activeTab === "recommended" ? "recommended tender" : activeTab === "saved" ? "saved tender" : "tender";
+      resultCount.textContent = `${count} ${label}${count === 1 ? "" : "s"}`;
+
+      if (activeTab === "saved") {
+        resultContext.textContent = "Opportunities you saved for review with your team.";
+      } else if (activeTab === "all") {
+        resultContext.textContent = "Showing available opportunities across your monitored procurement sources.";
+      } else {
+        resultContext.textContent = "Matched against your KBLI, certifications, location, and project experience.";
+      }
+    }
+
+    function render() {
+      const list = filteredTenders();
+      results.innerHTML = list.map(buildTenderCard).join("");
+      results.hidden = list.length === 0;
+      emptyState.hidden = list.length !== 0;
+      resetFiltersButton.hidden = !currentFiltersAreActive();
+      updateSummary(list.length);
+      saveState();
+
+      results.querySelectorAll("[data-save-id]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const id = button.dataset.saveId;
+          if (savedIds.has(id)) savedIds.delete(id);
+          else savedIds.add(id);
+          render();
+        });
+      });
+    }
+
+    function resetFilters() {
+      searchInput.value = "";
+      categoryFilter.value = "all";
+      locationFilter.value = "all";
+      deadlineFilter.value = "all";
+      render();
+    }
+
+    searchInput.addEventListener("input", render);
+    categoryFilter.addEventListener("change", render);
+    locationFilter.addEventListener("change", render);
+    deadlineFilter.addEventListener("change", render);
+    sortFilter.addEventListener("change", render);
+    resetFiltersButton.addEventListener("click", resetFilters);
+    emptyResetButton.addEventListener("click", resetFilters);
+
+    tabButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        activeTab = button.dataset.tab;
+        tabButtons.forEach((tab) => {
+          const selected = tab === button;
+          tab.classList.toggle("is-active", selected);
+          tab.setAttribute("aria-selected", String(selected));
+        });
+        render();
+      });
+    });
+
+    savedHeaderButton.addEventListener("click", () => {
+      const savedTab = tabButtons.find((button) => button.dataset.tab === "saved");
+      savedTab.click();
+      savedTab.scrollIntoView({ behavior: "smooth", block: "center" });
+    });
+
+    const userMenuButton = document.getElementById("user-menu-button");
+    const userMenu = document.getElementById("user-menu");
+    const logoutButton = document.getElementById("logout-button");
+    const notificationButton = document.getElementById("notification-button");
+    const notificationPopover = document.getElementById("notification-popover");
+    const mobileMenuButton = document.getElementById("mobile-menu-button");
+    const sidebar = document.getElementById("app-sidebar");
+    const mobileOverlay = document.getElementById("mobile-overlay");
+
+    function closeUserMenu() {
+      userMenu.hidden = true;
+      userMenuButton.setAttribute("aria-expanded", "false");
+    }
+
+    function closeNotifications() {
+      notificationPopover.hidden = true;
+      notificationButton.setAttribute("aria-expanded", "false");
+    }
+
+    userMenuButton.addEventListener("click", (event) => {
+      event.stopPropagation();
+      const willOpen = userMenu.hidden;
+      closeNotifications();
+      userMenu.hidden = !willOpen;
+      userMenuButton.setAttribute("aria-expanded", String(willOpen));
+    });
+
+    notificationButton.addEventListener("click", (event) => {
+      event.stopPropagation();
+      const willOpen = notificationPopover.hidden;
+      closeUserMenu();
+      notificationPopover.hidden = !willOpen;
+      notificationButton.setAttribute("aria-expanded", String(willOpen));
+    });
+
+    document.addEventListener("click", () => {
+      closeUserMenu();
+      closeNotifications();
+    });
+
+    userMenu.addEventListener("click", (event) => event.stopPropagation());
+    notificationPopover.addEventListener("click", (event) => event.stopPropagation());
+
+    logoutButton.addEventListener("click", () => {
+      localStorage.removeItem("maguire_demo_authenticated");
+      localStorage.removeItem("maguire_demo_user");
+      localStorage.removeItem("maguire_demo_company");
+      window.location.href = "login.html";
+    });
+
+    function setMobileSidebar(open) {
+      sidebar.classList.toggle("is-open", open);
+      mobileOverlay.hidden = !open;
+      mobileMenuButton.setAttribute("aria-expanded", String(open));
+      document.body.classList.toggle("sidebar-open", open);
+    }
+
+    mobileMenuButton.addEventListener("click", () => {
+      setMobileSidebar(!sidebar.classList.contains("is-open"));
+    });
+
+    mobileOverlay.addEventListener("click", () => setMobileSidebar(false));
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 760) setMobileSidebar(false);
+    });
+
+    render();
+  </script>
+</body>
+</html>

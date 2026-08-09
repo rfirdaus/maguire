@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login — Maguire.id</title>
+  <meta
+    name="description"
+    content="Sign in to Maguire.id to manage tender opportunities, readiness assessments, documents, and submissions."
+  />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/app.css" />
+</head>
+<body class="auth-page">
+  <main class="auth-simple-layout">
+    <section class="auth-card" aria-labelledby="login-title">
+      <div class="auth-brand-row">
+        <a class="logo" href="index.html" aria-label="Maguire.id homepage">
+          Maguire<span>.id</span>
+        </a>
+      </div>
+
+      <div class="auth-copy auth-copy-centered">
+        <h1 id="login-title">Welcome back</h1>
+        <p>Sign in to continue to your Maguire workspace.</p>
+      </div>
+
+      <form class="auth-form" id="login-form" novalidate>
+        <div class="form-group">
+          <label for="email">Work email</label>
+          <input
+            class="form-control"
+            type="email"
+            id="email"
+            name="email"
+            autocomplete="email"
+            value="demo@maguire.id"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <div class="form-label-row">
+            <label for="password">Password</label>
+          </div>
+
+          <div class="password-field">
+            <input
+              class="form-control"
+              type="password"
+              id="password"
+              name="password"
+              autocomplete="current-password"
+              value="demo123"
+              required
+            />
+            <button
+              class="password-toggle"
+              type="button"
+              id="password-toggle"
+              aria-label="Show password"
+              aria-pressed="false"
+            >
+              Show
+            </button>
+          </div>
+        </div>
+
+        <label class="checkbox-row">
+          <input type="checkbox" id="remember" name="remember" checked />
+          <span>Keep me signed in on this device</span>
+        </label>
+
+        <div class="form-message" id="form-message" role="status" aria-live="polite"></div>
+
+        <button class="btn btn-primary auth-submit" type="submit" id="login-button">
+          Sign In
+          <span aria-hidden="true">→</span>
+        </button>
+      </form>
+
+      <a class="auth-return-link" href="index.html">← Back to Maguire.id</a>
+    </section>
+  </main>
+
+  <script>
+    const form = document.getElementById("login-form");
+    const emailInput = document.getElementById("email");
+    const passwordInput = document.getElementById("password");
+    const rememberInput = document.getElementById("remember");
+    const loginButton = document.getElementById("login-button");
+    const formMessage = document.getElementById("form-message");
+    const passwordToggle = document.getElementById("password-toggle");
+
+    const DEFAULT_EMAIL = "demo@maguire.id";
+    const DEFAULT_PASSWORD = "demo123";
+
+    emailInput.value = localStorage.getItem("maguire_cached_email") || DEFAULT_EMAIL;
+    passwordInput.value = localStorage.getItem("maguire_cached_password") || DEFAULT_PASSWORD;
+
+    passwordToggle.addEventListener("click", () => {
+      const isPassword = passwordInput.type === "password";
+      passwordInput.type = isPassword ? "text" : "password";
+      passwordToggle.textContent = isPassword ? "Hide" : "Show";
+      passwordToggle.setAttribute("aria-label", isPassword ? "Hide password" : "Show password");
+      passwordToggle.setAttribute("aria-pressed", String(isPassword));
+    });
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const email = emailInput.value.trim().toLowerCase();
+      const password = passwordInput.value;
+
+      if (!email || !password) {
+        formMessage.textContent = "Enter your email and password to continue.";
+        formMessage.className = "form-message is-error";
+        return;
+      }
+
+      if (email !== DEFAULT_EMAIL || password !== DEFAULT_PASSWORD) {
+        formMessage.textContent = "Incorrect email or password.";
+        formMessage.className = "form-message is-error";
+        return;
+      }
+
+      if (rememberInput.checked) {
+        localStorage.setItem("maguire_cached_email", email);
+        localStorage.setItem("maguire_cached_password", password);
+      } else {
+        localStorage.removeItem("maguire_cached_email");
+        localStorage.removeItem("maguire_cached_password");
+      }
+
+      loginButton.disabled = true;
+      loginButton.innerHTML = '<span class="button-spinner" aria-hidden="true"></span> Signing in...';
+      formMessage.textContent = "Signing you in...";
+      formMessage.className = "form-message is-success";
+
+      localStorage.setItem("maguire_demo_authenticated", "true");
+      localStorage.setItem("maguire_demo_user", "Budi Santoso");
+      localStorage.setItem("maguire_demo_company", "PT Wijaya Infrastruktur Nusantara");
+
+      window.setTimeout(() => {
+        window.location.href = "dashboard.html";
+      }, 450);
+    });
+  </script>
+</body>
+</html>

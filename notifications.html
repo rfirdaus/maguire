@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notifications — Maguire.id</title>
+  <meta name="description" content="Review tender matches, deadlines, evidence risks, assignments, and activity notifications in Maguire." />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/app.css" />
+</head>
+<body class="app-page">
+  <div class="app-shell">
+    <aside class="app-sidebar" id="app-sidebar" aria-label="Main navigation">
+      <div class="app-sidebar-brand">
+        <a class="logo" href="dashboard.html" aria-label="Maguire.id dashboard">Maguire<span>.id</span></a>
+      </div>
+
+      <div class="app-sidebar-section-label">Workspace</div>
+      <nav class="app-nav">
+        <a class="app-nav-link" href="dashboard.html">
+          <span class="app-nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"></rect><rect x="14" y="3" width="7" height="7" rx="1.5"></rect><rect x="3" y="14" width="7" height="7" rx="1.5"></rect><rect x="14" y="14" width="7" height="7" rx="1.5"></rect></svg></span>
+          Dashboard
+        </a>
+        <a class="app-nav-link" href="discover.html">
+          <span class="app-nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.4-3.4"></path></svg></span>
+          Discover
+          <span class="app-nav-badge">12</span>
+        </a>
+        <a class="app-nav-link" href="my-tenders.html">
+          <span class="app-nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14a1 1 0 0 1 1 1v15H4V5a1 1 0 0 1 1-1Z"></path><path d="M8 8h8M8 12h8M8 16h5"></path></svg></span>
+          My Tenders
+          <span class="app-nav-badge app-nav-badge-muted">3</span>
+        </a>
+        <a class="app-nav-link" href="documents.html">
+          <span class="app-nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4H10l2 2h5.5A2.5 2.5 0 0 1 20 8.5v9A2.5 2.5 0 0 1 17.5 20h-11A2.5 2.5 0 0 1 4 17.5Z"></path></svg></span>
+          Documents
+        </a>
+        <a class="app-nav-link" href="company-profile.html">
+          <span class="app-nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V7l8-4 8 4v14"></path><path d="M8 10h1M8 14h1M8 18h1M15 10h1M15 14h1M15 18h1"></path></svg></span>
+          Company Profile
+        </a>
+      </nav>
+
+      <div class="app-sidebar-section-label">Account</div>
+      <nav class="app-nav">
+        <a class="app-nav-link is-active" href="notifications.html" aria-current="page">
+          <span class="app-nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"></path><path d="M10 21h4"></path></svg></span>
+          Notifications
+          <span class="app-notification-dot" id="sidebar-notification-dot" aria-label="1 unread notification"></span>
+        </a>
+        <a class="app-nav-link" href="settings.html">
+          <span class="app-nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06-2.83 2.83-.06-.06A1.7 1.7 0 0 0 15 19.4a1.7 1.7 0 0 0-1 .6 1.7 1.7 0 0 0-.4 1.1V21h-4v-.1A1.7 1.7 0 0 0 8.6 19.4a1.7 1.7 0 0 0-1.88.34l-.06.06-2.83-2.83.06-.06A1.7 1.7 0 0 0 4.6 15a1.7 1.7 0 0 0-.6-1 1.7 1.7 0 0 0-1.1-.4H3v-4h.1A1.7 1.7 0 0 0 4.6 8.6a1.7 1.7 0 0 0-.34-1.88l-.06-.06 2.83-2.83.06.06A1.7 1.7 0 0 0 9 4.6a1.7 1.7 0 0 0 1-.6 1.7 1.7 0 0 0 .4-1.1V3h4v.1A1.7 1.7 0 0 0 15.4 4.6a1.7 1.7 0 0 0 1.88-.34l.06-.06 2.83 2.83-.06.06A1.7 1.7 0 0 0 19.4 9c.27.36.48.7.6 1 .12.3.4.68 1 .8h.1v4H21a1.7 1.7 0 0 0-1.6.2Z"></path></svg></span>
+          Settings
+        </a>
+      </nav>
+
+      <div class="app-sidebar-footer">
+        <div class="app-sidebar-company">
+          <strong>PT Wijaya Infrastruktur Nusantara</strong>
+          <span>Infrastructure &amp; Engineering</span>
+        </div>
+      </div>
+    </aside>
+
+    <main class="app-main">
+      <header class="app-topbar">
+        <div class="app-topbar-left">
+          <button class="app-icon-button app-mobile-menu" id="mobile-menu-button" type="button" aria-label="Open navigation" aria-controls="app-sidebar" aria-expanded="false">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+          </button>
+          <div>
+            <div class="app-topbar-title">Notifications</div>
+            <div class="app-topbar-company">PT Wijaya Infrastruktur Nusantara</div>
+          </div>
+        </div>
+
+        <div class="app-topbar-actions">
+          <button class="app-icon-button app-topbar-notification" id="notification-button" type="button" aria-label="Notifications" aria-expanded="false">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"></path><path d="M10 21h4"></path></svg>
+            <span class="notification-count" id="notification-count">1</span>
+          </button>
+          <div class="app-user-menu-wrap">
+            <button class="app-user-button" id="user-menu-button" type="button" aria-expanded="false">
+              <span class="app-user-avatar">BS</span>
+              <span class="app-user-meta"><strong>Budi Santoso</strong><span>Business Development</span></span>
+              <svg class="app-user-chevron" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+            </button>
+            <div class="app-dropdown" id="user-menu" hidden>
+              <a href="company-profile.html">Company Profile</a>
+              <a href="settings.html">Settings</a>
+              <button type="button" id="logout-button">Sign out</button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="app-mobile-overlay" id="mobile-overlay" hidden></div>
+
+      <section class="app-content notifications-content">
+        <div class="app-page-header notifications-page-header">
+          <div>
+            <h1>Notifications</h1>
+            <p>Important tender activity, deadlines, company evidence risks, and team updates.</p>
+          </div>
+          <div class="notifications-header-actions">
+            <button class="btn btn-secondary" id="mark-all-read" type="button">Mark all as read</button>
+            <a class="btn btn-primary" href="settings.html#notifications">Notification Settings</a>
+          </div>
+        </div>
+
+        <section class="notifications-summary-grid" aria-label="Notification summary">
+          <article class="app-card notifications-summary-card">
+            <span class="notifications-summary-icon is-blue"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"></path><path d="M10 21h4"></path></svg></span>
+            <div><span>Unread</span><strong id="summary-unread">1</strong><small>Needs your attention</small></div>
+          </article>
+          <article class="app-card notifications-summary-card">
+            <span class="notifications-summary-icon is-green"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.4-3.4"></path></svg></span>
+            <div><span>Tender Updates</span><strong>3</strong><small>Matches &amp; procurement activity</small></div>
+          </article>
+          <article class="app-card notifications-summary-card">
+            <span class="notifications-summary-icon is-amber"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></span>
+            <div><span>Upcoming Deadlines</span><strong>2</strong><small>Within the next 7 days</small></div>
+          </article>
+          <article class="app-card notifications-summary-card">
+            <span class="notifications-summary-icon is-red"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2.8 19h18.4L12 3Z"></path><path d="M12 9v4M12 16h.01"></path></svg></span>
+            <div><span>Evidence Risks</span><strong>1</strong><small>ISO 45001 expires soon</small></div>
+          </article>
+        </section>
+
+        <div class="notifications-layout">
+          <section class="app-card notifications-feed-card">
+            <div class="notifications-toolbar">
+              <div class="notifications-search-wrap">
+                <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.4-3.4"></path></svg>
+                <input id="notification-search" type="search" placeholder="Search notifications..." aria-label="Search notifications" />
+              </div>
+              <select id="notification-type-filter" aria-label="Filter notifications by type">
+                <option value="all">All activity</option>
+                <option value="tender">Tender updates</option>
+                <option value="deadline">Deadlines</option>
+                <option value="task">Tasks &amp; team</option>
+                <option value="evidence">Evidence</option>
+                <option value="analysis">Analysis</option>
+              </select>
+            </div>
+
+            <div class="notifications-tabs" role="tablist" aria-label="Notification read status">
+              <button class="notifications-tab is-active" type="button" data-status="all">All <span id="all-count">9</span></button>
+              <button class="notifications-tab" type="button" data-status="unread">Unread <span id="unread-count">1</span></button>
+            </div>
+
+            <div id="notifications-feed" class="notifications-feed"></div>
+            <div id="notifications-empty" class="notifications-empty" hidden>
+              <div>✓</div>
+              <strong>No notifications found</strong>
+              <p>Try changing your search or filters.</p>
+              <button class="btn btn-secondary" id="clear-notification-filters" type="button">Clear Filters</button>
+            </div>
+          </section>
+
+          <aside class="notifications-side-column">
+            <section class="app-card notifications-side-card">
+              <div class="notifications-side-heading">
+                <span>Today</span>
+                <h2>What needs attention</h2>
+              </div>
+              <a class="notifications-attention-item" href="documents.html">
+                <span class="notifications-attention-icon is-red">!</span>
+                <span><strong>ISO 45001 expires in 23 days</strong><small>Used by 3 active tender assessments</small></span>
+                <span>›</span>
+              </a>
+              <a class="notifications-attention-item" href="workspace.html#timeline">
+                <span class="notifications-attention-icon is-amber">2d</span>
+                <span><strong>PLN clarification meeting</strong><small>11 Aug 2026 · 10:00 WIB</small></span>
+                <span>›</span>
+              </a>
+            </section>
+
+            <section class="app-card notifications-side-card">
+              <div class="notifications-side-heading">
+                <span>Delivery</span>
+                <h2>Notification channels</h2>
+              </div>
+              <div class="notifications-channel-row"><span><strong>In-app alerts</strong><small>Immediate</small></span><span class="notifications-channel-status is-on" id="channel-inapp">On</span></div>
+              <div class="notifications-channel-row"><span><strong>Email digest</strong><small id="channel-email-detail">Weekdays · 08:00</small></span><span class="notifications-channel-status is-on" id="channel-email">On</span></div>
+              <div class="notifications-channel-row"><span><strong>Deadline reminders</strong><small>7d, 3d, 1d before</small></span><span class="notifications-channel-status is-on" id="channel-deadlines">On</span></div>
+              <a class="notifications-manage-link" href="settings.html#notifications">Manage preferences →</a>
+            </section>
+
+            <section class="app-card notifications-side-card notifications-tip-card">
+              <div class="notifications-tip-icon">i</div>
+              <div><strong>Keep alerts actionable</strong><p>Maguire prioritizes changes that can affect tender relevance, eligibility, preparation, or submission timing.</p></div>
+            </section>
+          </aside>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="notification-popover" id="notification-popover" hidden>
+    <div class="notification-popover-header"><strong>Notifications</strong><a href="notifications.html">View all</a></div>
+    <a class="notification-preview" href="documents.html"><span class="notification-preview-icon" aria-hidden="true">!</span><span><strong>ISO 45001 expires soon</strong><small>Your certificate expires in 23 days.</small></span></a>
+  </div>
+
+  <script>
+    const isAuthenticated = localStorage.getItem("maguire_demo_authenticated") === "true";
+    if (!isAuthenticated) window.location.replace("login.html");
+
+    let notificationSettings = {};
+    try { notificationSettings = JSON.parse(localStorage.getItem("maguire_settings_v1")) || {}; } catch {}
+    const channelDefaults = { notifyInapp:true, notifyEmail:true, digestTime:"08:00", eventDeadlines:true };
+    notificationSettings = { ...channelDefaults, ...notificationSettings };
+    function syncChannelStatus(id, enabled) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.textContent = enabled ? "On" : "Off";
+      el.classList.toggle("is-on", enabled);
+      el.classList.toggle("is-off", !enabled);
+    }
+    syncChannelStatus("channel-inapp", notificationSettings.notifyInapp);
+    syncChannelStatus("channel-email", notificationSettings.notifyEmail);
+    syncChannelStatus("channel-deadlines", notificationSettings.eventDeadlines);
+    const emailDetail = document.getElementById("channel-email-detail");
+    if (emailDetail) emailDetail.textContent = notificationSettings.notifyEmail ? `Weekdays · ${notificationSettings.digestTime || "08:00"}` : "Disabled";
+
+    const notifications = [
+      { id:"iso-expiry", date:"Today", time:"22:10", type:"evidence", unread:true, tone:"danger", title:"ISO 45001 expires in 23 days", copy:"The certificate is currently used as evidence across 3 active tender assessments. Renew or replace it to avoid readiness risk.", meta:"Company Documents", href:"documents.html", icon:"!" },
+      { id:"pln-clarification", date:"Today", time:"18:30", type:"deadline", unread:false, tone:"warning", title:"PLN clarification meeting is in 2 days", copy:"Clarification meeting for Pengadaan Pembangunan Gardu Induk 150kV is scheduled for 11 Aug 2026 at 10:00 WIB.", meta:"PLN Gardu Induk 150kV", href:"workspace.html#timeline", icon:"2d" },
+      { id:"project-task", date:"Today", time:"16:05", type:"task", unread:false, tone:"blue", title:"You were assigned a critical tender action", copy:"Verify whether a third qualifying project can satisfy PLN's minimum similar-project requirement.", meta:"Assigned by Sari Wibowo · Due 12 Aug", href:"workspace.html#tasks", icon:"✓" },
+      { id:"pln-analysis", date:"Today", time:"14:42", type:"analysis", unread:false, tone:"blue", title:"PLN readiness assessment completed", copy:"Readiness is 82%. Eligibility is currently At Risk because 2 mandatory gaps were detected.", meta:"44 requirements analyzed", href:"readiness.html", icon:"82" },
+      { id:"telkom-match", date:"Yesterday", time:"15:20", type:"tender", unread:false, tone:"green", title:"New 91% tender match: Telkom Network Modernization", copy:"Maguire matched the opportunity to your infrastructure capabilities, project experience, and operating coverage.", meta:"Estimated value Rp29.8B", href:"my-tenders.html", icon:"91" },
+      { id:"pln-match", date:"Yesterday", time:"09:12", type:"tender", unread:false, tone:"green", title:"New 94% tender match from PT PLN (Persero)", copy:"Pengadaan Pembangunan Gardu Induk 150kV strongly matches your KBLI 42201 and 150kV infrastructure profile.", meta:"Published 8 Aug 2026", href:"tender-detail.html", icon:"94" },
+      { id:"govcloud-status", date:"Earlier", time:"7 Aug", type:"tender", unread:false, tone:"neutral", title:"Government Cloud Phase II moved to evaluation", copy:"The submitted tender is now under buyer evaluation. No action is required from your team at this time.", meta:"Submitted tender", href:"my-tenders.html", icon:"→" },
+      { id:"internal-review", date:"Earlier", time:"7 Aug", type:"deadline", unread:false, tone:"warning", title:"Internal PLN bid review scheduled for 15 Aug", copy:"The workspace milestone is six days away. Three unresolved evidence items remain before internal review.", meta:"PLN Gardu Induk 150kV", href:"workspace.html#timeline", icon:"6d" },
+      { id:"profile-updated", date:"Earlier", time:"6 Aug", type:"task", unread:false, tone:"neutral", title:"Company profile evidence mapping updated", copy:"Andi Pratama's electrical engineering certification was linked to the personnel profile and can now be reused during assessment.", meta:"Company Profile", href:"company-profile.html", icon:"✓" }
+    ];
+
+    let readIds;
+    try { readIds = new Set(JSON.parse(localStorage.getItem("maguire_notification_read_ids")) || []); }
+    catch { readIds = new Set(); }
+    // Seed all notifications except the deliberate single unread alert as read.
+    notifications.filter(n => !n.unread).forEach(n => readIds.add(n.id));
+
+    let activeStatus = "all";
+    const feed = document.getElementById("notifications-feed");
+    const empty = document.getElementById("notifications-empty");
+    const searchInput = document.getElementById("notification-search");
+    const typeFilter = document.getElementById("notification-type-filter");
+
+    function isUnread(n) { return !readIds.has(n.id); }
+    function persistReadState() { localStorage.setItem("maguire_notification_read_ids", JSON.stringify([...readIds])); }
+    function escapeHTML(value) { const d=document.createElement("div"); d.textContent=String(value); return d.innerHTML; }
+
+    function updateUnreadUI() {
+      const unreadTotal = notifications.filter(isUnread).length;
+      document.getElementById("summary-unread").textContent = unreadTotal;
+      document.getElementById("unread-count").textContent = unreadTotal;
+      const topCount = document.getElementById("notification-count");
+      const sidebarDot = document.getElementById("sidebar-notification-dot");
+      topCount.textContent = unreadTotal;
+      topCount.hidden = unreadTotal === 0;
+      sidebarDot.hidden = unreadTotal === 0;
+      document.getElementById("mark-all-read").disabled = unreadTotal === 0;
+    }
+
+    function filteredNotifications() {
+      const query = searchInput.value.trim().toLowerCase();
+      return notifications.filter(n => {
+        if (activeStatus === "unread" && !isUnread(n)) return false;
+        if (typeFilter.value !== "all" && n.type !== typeFilter.value) return false;
+        if (!query) return true;
+        return [n.title,n.copy,n.meta,n.date].some(v => v.toLowerCase().includes(query));
+      });
+    }
+
+    function renderNotifications() {
+      const filtered = filteredNotifications();
+      feed.innerHTML = "";
+      const groups = ["Today","Yesterday","Earlier"];
+      groups.forEach(group => {
+        const items = filtered.filter(n => n.date === group);
+        if (!items.length) return;
+        const section = document.createElement("section");
+        section.className = "notifications-date-group";
+        section.innerHTML = `<div class="notifications-date-label">${group}</div><div class="notifications-date-list"></div>`;
+        const list = section.querySelector(".notifications-date-list");
+        items.forEach(n => {
+          const row = document.createElement("article");
+          row.className = `notification-feed-item ${isUnread(n) ? "is-unread" : ""}`;
+          row.dataset.id = n.id;
+          row.innerHTML = `
+            <button class="notification-feed-main" type="button" data-open="${escapeHTML(n.href)}" aria-label="Open ${escapeHTML(n.title)}">
+              <span class="notification-feed-icon is-${n.tone}">${escapeHTML(n.icon)}</span>
+              <span class="notification-feed-copy">
+                <span class="notification-feed-title-row"><strong>${escapeHTML(n.title)}</strong>${isUnread(n) ? '<i class="notification-unread-dot" aria-label="Unread"></i>' : ''}</span>
+                <span class="notification-feed-description">${escapeHTML(n.copy)}</span>
+                <span class="notification-feed-meta">${escapeHTML(n.meta)} · ${escapeHTML(n.time)}</span>
+              </span>
+              <span class="notification-feed-chevron">›</span>
+            </button>
+            <button class="notification-read-toggle" type="button" data-read="${n.id}" aria-label="${isUnread(n) ? "Mark as read" : "Mark as unread"}" title="${isUnread(n) ? "Mark as read" : "Mark as unread"}">${isUnread(n) ? "Mark read" : "Mark unread"}</button>`;
+          list.appendChild(row);
+        });
+        feed.appendChild(section);
+      });
+      empty.hidden = filtered.length !== 0;
+      feed.hidden = filtered.length === 0;
+      updateUnreadUI();
+
+      feed.querySelectorAll("[data-open]").forEach(btn => btn.addEventListener("click", () => {
+        const row = btn.closest(".notification-feed-item");
+        readIds.add(row.dataset.id); persistReadState();
+        window.location.href = btn.dataset.open;
+      }));
+      feed.querySelectorAll("[data-read]").forEach(btn => btn.addEventListener("click", event => {
+        event.stopPropagation();
+        const id = btn.dataset.read;
+        if (readIds.has(id)) readIds.delete(id); else readIds.add(id);
+        persistReadState(); renderNotifications();
+      }));
+    }
+
+    document.querySelectorAll(".notifications-tab").forEach(tab => tab.addEventListener("click", () => {
+      document.querySelectorAll(".notifications-tab").forEach(t => t.classList.remove("is-active"));
+      tab.classList.add("is-active"); activeStatus = tab.dataset.status; renderNotifications();
+    }));
+    searchInput.addEventListener("input", renderNotifications);
+    typeFilter.addEventListener("change", renderNotifications);
+    document.getElementById("mark-all-read").addEventListener("click", () => {
+      notifications.forEach(n => readIds.add(n.id)); persistReadState(); renderNotifications();
+    });
+    document.getElementById("clear-notification-filters").addEventListener("click", () => {
+      searchInput.value=""; typeFilter.value="all"; activeStatus="all";
+      document.querySelectorAll(".notifications-tab").forEach(t => t.classList.toggle("is-active", t.dataset.status === "all"));
+      renderNotifications();
+    });
+
+    const userMenuButton = document.getElementById("user-menu-button");
+    const userMenu = document.getElementById("user-menu");
+    const logoutButton = document.getElementById("logout-button");
+    const notificationButton = document.getElementById("notification-button");
+    const notificationPopover = document.getElementById("notification-popover");
+    const mobileMenuButton = document.getElementById("mobile-menu-button");
+    const sidebar = document.getElementById("app-sidebar");
+    const mobileOverlay = document.getElementById("mobile-overlay");
+
+    function closeUserMenu(){ userMenu.hidden=true; userMenuButton.setAttribute("aria-expanded","false"); }
+    function closeNotifications(){ notificationPopover.hidden=true; notificationButton.setAttribute("aria-expanded","false"); }
+    userMenuButton.addEventListener("click", event => { event.stopPropagation(); const open=userMenu.hidden; closeNotifications(); userMenu.hidden=!open; userMenuButton.setAttribute("aria-expanded",String(open)); });
+    notificationButton.addEventListener("click", event => { event.stopPropagation(); const open=notificationPopover.hidden; closeUserMenu(); notificationPopover.hidden=!open; notificationButton.setAttribute("aria-expanded",String(open)); });
+    document.addEventListener("click", () => { closeUserMenu(); closeNotifications(); });
+    userMenu.addEventListener("click", event => event.stopPropagation());
+    notificationPopover.addEventListener("click", event => event.stopPropagation());
+    logoutButton.addEventListener("click", () => { localStorage.removeItem("maguire_demo_authenticated"); localStorage.removeItem("maguire_demo_user"); localStorage.removeItem("maguire_demo_company"); window.location.href="login.html"; });
+
+    function setMobileSidebar(open){ sidebar.classList.toggle("is-open",open); mobileOverlay.hidden=!open; mobileMenuButton.setAttribute("aria-expanded",String(open)); document.body.classList.toggle("sidebar-open",open); }
+    mobileMenuButton.addEventListener("click", () => setMobileSidebar(!sidebar.classList.contains("is-open")));
+    mobileOverlay.addEventListener("click", () => setMobileSidebar(false));
+    window.addEventListener("resize", () => { if(window.innerWidth>760) setMobileSidebar(false); });
+
+    renderNotifications();
+  </script>
+</body>
+</html>
