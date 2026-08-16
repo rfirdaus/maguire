@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Tenders — Maguire.id</title>
-  <meta name="description" content="Manage evaluating, preparing, submitted, and completed tenders in Maguire." />
+  <title>My Tenders — Tendigi</title>
+  <meta name="description" content="Manage evaluating, preparing, submitted, and completed tenders in Tendigi." />
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="css/app.css" />
 </head>
@@ -12,7 +12,9 @@
   <div class="app-shell">
     <aside class="app-sidebar" id="app-sidebar" aria-label="Main navigation">
       <div class="app-sidebar-brand">
-        <a class="logo" href="dashboard.html" aria-label="Maguire.id dashboard">Maguire<span>.id</span></a>
+        <a class="logo brand-logo" href="dashboard.html" aria-label="Tendigi dashboard">
+          <img src="assets/tendigi-logo.png" alt="" width="1200" height="202" />
+        </a>
       </div>
 
       <div class="app-sidebar-section-label">Workspace</div>
@@ -82,7 +84,7 @@
           <div class="app-user-menu-wrap">
             <button class="app-user-button" id="user-menu-button" type="button" aria-expanded="false">
               <span class="app-user-avatar">BS</span>
-              <span class="app-user-meta"><strong>Budi Santoso</strong><span>Business Development</span></span>
+              <span class="app-user-meta"><strong>Budi Santoso</strong><span>Superadmin</span></span>
               <svg class="app-user-chevron" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
             </button>
             <div class="app-dropdown" id="user-menu" hidden>
@@ -111,7 +113,7 @@
         <section class="myt-summary-grid" aria-label="Tender portfolio summary">
           <article class="app-card myt-summary-card">
             <div class="myt-summary-icon is-blue"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14a1 1 0 0 1 1 1v15H4V5a1 1 0 0 1 1-1Z"></path><path d="M8 8h8M8 12h8M8 16h5"></path></svg></div>
-            <div><span>Active Tenders</span><strong>3</strong><small>1 evaluating · 2 preparing</small></div>
+            <div><span>Active Tenders</span><strong>3</strong><small id="myt-active-breakdown">1 evaluating · 2 preparing</small></div>
           </article>
           <article class="app-card myt-summary-card">
             <div class="myt-summary-icon is-violet"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 5 5L20 6"></path></svg></div>
@@ -207,7 +209,7 @@
   </div>
 
   <script>
-    const isAuthenticated = localStorage.getItem("maguire_demo_authenticated") === "true";
+    const isAuthenticated = localStorage.getItem("octen_demo_authenticated") === "true";
     if (!isAuthenticated) window.location.replace("login.html");
 
     const tenders = [
@@ -276,6 +278,51 @@
       }
     ];
 
+    const hasPlnParticipation = localStorage.getItem("octen_tender_participation") === "preparing"
+      && localStorage.getItem("octen_workspace_tender") === "pln-150kv";
+    const directParticipationWithoutAnalysis = hasPlnParticipation
+      && localStorage.getItem("octen_participation_mode") === "direct"
+      && localStorage.getItem("octen_analysis_status") !== "completed"
+      && localStorage.getItem("octen_analysis_status_cached") !== "completed";
+    const plnTender = tenders.find(item => item.id === "pln-150kv");
+    if (!hasPlnParticipation) {
+      Object.assign(plnTender, {
+        status: "evaluating",
+        statusLabel: "Evaluating",
+        progress: 0,
+        health: "good",
+        healthLabel: "94% Match",
+        copy: "This opportunity is still under evaluation. Review the tender details to analyze it or start participating directly.",
+        action: "Review Tender",
+        href: "tender-detail.html"
+      });
+    } else if (directParticipationWithoutAnalysis) {
+      let directProgress = 0;
+      try {
+        const taskState = JSON.parse(localStorage.getItem("octen_workspace_tasks_direct") || "{}");
+        const taskValues = Object.values(taskState).filter(value => typeof value === "boolean");
+        if (taskValues.length) directProgress = Math.round((taskValues.filter(Boolean).length / taskValues.length) * 100);
+      } catch {}
+      Object.assign(plnTender, {
+        progress: directProgress,
+        health: "neutral",
+        healthLabel: "Not Analyzed",
+        copy: "Participation is active and the preparation workspace is ready. AI readiness analysis is optional and has not been run.",
+        action: "Open Workspace",
+        href: "workspace.html"
+      });
+    }
+
+    const evaluatingCount = tenders.filter(item => item.status === "evaluating").length;
+    const preparingCount = tenders.filter(item => item.status === "preparing").length;
+    document.getElementById("myt-active-breakdown").textContent = `${evaluatingCount} evaluating · ${preparingCount} preparing`;
+    document.querySelectorAll(".myt-tab").forEach(tab => {
+      const status = tab.dataset.status;
+      tab.querySelector("span").textContent = status === "all"
+        ? tenders.length
+        : tenders.filter(item => item.status === status).length;
+    });
+
     const list = document.getElementById("myt-list");
     const empty = document.getElementById("myt-empty");
     const visibleCount = document.getElementById("myt-visible-count");
@@ -293,7 +340,7 @@
     }
 
     function healthClass(health) {
-      return {risk:"is-risk", attention:"is-attention", good:"is-good", submitted:"is-submitted", won:"is-won", lost:"is-lost"}[health] || "";
+      return {risk:"is-risk", attention:"is-attention", good:"is-good", submitted:"is-submitted", won:"is-won", lost:"is-lost", neutral:"is-neutral"}[health] || "";
     }
 
     function getFilteredTenders() {
@@ -378,7 +425,7 @@
       const item = tenders.find(tender => tender.id === id);
       if (!item) return;
       if (id === "pln-150kv") {
-        window.location.href = "workspace.html";
+        window.location.href = item.href;
         return;
       }
       modalBuyer.textContent = item.buyerMark;
@@ -422,12 +469,12 @@
     document.addEventListener("click", () => { closeUserMenu(); closeNotifications(); });
     userMenu.addEventListener("click", event => event.stopPropagation());
     notificationPopover.addEventListener("click", event => event.stopPropagation());
-    logoutButton.addEventListener("click", () => { localStorage.removeItem("maguire_demo_authenticated"); localStorage.removeItem("maguire_demo_user"); localStorage.removeItem("maguire_demo_company"); window.location.href = "login.html"; });
+    logoutButton.addEventListener("click", () => { localStorage.removeItem("octen_demo_authenticated"); localStorage.removeItem("octen_demo_user"); localStorage.removeItem("octen_demo_company"); window.location.href = "login.html"; });
 
     function setMobileSidebar(open){ sidebar.classList.toggle("is-open",open); mobileOverlay.hidden = !open; mobileMenuButton.setAttribute("aria-expanded",String(open)); document.body.classList.toggle("sidebar-open",open); }
     mobileMenuButton.addEventListener("click", () => setMobileSidebar(!sidebar.classList.contains("is-open")));
     mobileOverlay.addEventListener("click", () => setMobileSidebar(false));
-    window.addEventListener("resize", () => { if (window.innerWidth > 760) setMobileSidebar(false); });
+    window.addEventListener("resize", () => { if (window.innerWidth > 1024) setMobileSidebar(false); });
 
     renderTenders();
   </script>

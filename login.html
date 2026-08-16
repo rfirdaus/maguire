@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login — Maguire.id</title>
+  <title>Login — Tendigi</title>
   <meta
     name="description"
-    content="Sign in to Maguire.id to manage tender opportunities, readiness assessments, documents, and submissions."
+    content="Sign in to Tendigi to manage tender opportunities, readiness assessments, documents, and submissions."
   />
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="css/app.css" />
@@ -15,14 +15,14 @@
   <main class="auth-simple-layout">
     <section class="auth-card" aria-labelledby="login-title">
       <div class="auth-brand-row">
-        <a class="logo" href="index.html" aria-label="Maguire.id homepage">
-          Maguire<span>.id</span>
+        <a class="logo brand-logo" href="index.html" aria-label="Tendigi homepage">
+          <img src="assets/tendigi-logo.png" alt="" width="1200" height="202" />
         </a>
       </div>
 
       <div class="auth-copy auth-copy-centered">
         <h1 id="login-title">Welcome back</h1>
-        <p>Sign in to continue to your Maguire workspace.</p>
+        <p>Sign in to continue to your Tendigi workspace.</p>
       </div>
 
       <form class="auth-form" id="login-form" novalidate>
@@ -34,7 +34,7 @@
             id="email"
             name="email"
             autocomplete="email"
-            value="demo@maguire.id"
+            value="demo@tendigi.id"
             required
           />
         </div>
@@ -79,7 +79,7 @@
         </button>
       </form>
 
-      <a class="auth-return-link" href="index.html">← Back to Maguire.id</a>
+      <a class="auth-return-link" href="index.html">← Back to Tendigi</a>
     </section>
   </main>
 
@@ -92,11 +92,12 @@
     const formMessage = document.getElementById("form-message");
     const passwordToggle = document.getElementById("password-toggle");
 
-    const DEFAULT_EMAIL = "demo@maguire.id";
+    const DEFAULT_EMAIL = "demo@tendigi.id";
     const DEFAULT_PASSWORD = "demo123";
 
-    emailInput.value = localStorage.getItem("maguire_cached_email") || DEFAULT_EMAIL;
-    passwordInput.value = localStorage.getItem("maguire_cached_password") || DEFAULT_PASSWORD;
+    const cachedEmail = localStorage.getItem("octen_cached_email");
+    emailInput.value = cachedEmail === DEFAULT_EMAIL ? cachedEmail : DEFAULT_EMAIL;
+    passwordInput.value = localStorage.getItem("octen_cached_password") || DEFAULT_PASSWORD;
 
     passwordToggle.addEventListener("click", () => {
       const isPassword = passwordInput.type === "password";
@@ -125,11 +126,11 @@
       }
 
       if (rememberInput.checked) {
-        localStorage.setItem("maguire_cached_email", email);
-        localStorage.setItem("maguire_cached_password", password);
+        localStorage.setItem("octen_cached_email", email);
+        localStorage.setItem("octen_cached_password", password);
       } else {
-        localStorage.removeItem("maguire_cached_email");
-        localStorage.removeItem("maguire_cached_password");
+        localStorage.removeItem("octen_cached_email");
+        localStorage.removeItem("octen_cached_password");
       }
 
       loginButton.disabled = true;
@@ -137,9 +138,9 @@
       formMessage.textContent = "Signing you in...";
       formMessage.className = "form-message is-success";
 
-      localStorage.setItem("maguire_demo_authenticated", "true");
-      localStorage.setItem("maguire_demo_user", "Budi Santoso");
-      localStorage.setItem("maguire_demo_company", "PT Wijaya Infrastruktur Nusantara");
+      localStorage.setItem("octen_demo_authenticated", "true");
+      localStorage.setItem("octen_demo_user", "Budi Santoso");
+      localStorage.setItem("octen_demo_company", "PT Wijaya Infrastruktur Nusantara");
 
       window.setTimeout(() => {
         window.location.href = "dashboard.html";

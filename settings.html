@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Settings — Maguire.id</title>
-  <meta name="description" content="Manage workspace, notification, security, team access, and data preferences in Maguire." />
+  <title>Settings — Tendigi</title>
+  <meta name="description" content="Manage workspace, notification, security, team access, and data preferences in Tendigi." />
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="css/app.css" />
 </head>
@@ -12,7 +12,9 @@
   <div class="app-shell">
     <aside class="app-sidebar" id="app-sidebar" aria-label="Main navigation">
       <div class="app-sidebar-brand">
-        <a class="logo" href="dashboard.html" aria-label="Maguire.id dashboard">Maguire<span>.id</span></a>
+        <a class="logo brand-logo" href="dashboard.html" aria-label="Tendigi dashboard">
+          <img src="assets/tendigi-logo.png" alt="" width="1200" height="202" />
+        </a>
       </div>
 
       <div class="app-sidebar-section-label">Workspace</div>
@@ -82,7 +84,7 @@
           <div class="app-user-menu-wrap">
             <button class="app-user-button" id="user-menu-button" type="button" aria-expanded="false">
               <span class="app-user-avatar">BS</span>
-              <span class="app-user-meta"><strong>Budi Santoso</strong><span>Business Development</span></span>
+              <span class="app-user-meta"><strong>Budi Santoso</strong><span>Superadmin</span></span>
               <svg class="app-user-chevron" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
             </button>
             <div class="app-dropdown" id="user-menu" hidden>
@@ -100,7 +102,7 @@
         <div class="app-page-header settings-page-header">
           <div>
             <h1>Settings</h1>
-            <p>Manage your Maguire workspace, notification preferences, access, and account security.</p>
+            <p>Manage your Tendigi workspace, notification preferences, access, and account security.</p>
           </div>
           <span class="settings-save-state" id="settings-save-state" aria-live="polite">All changes saved</span>
         </div>
@@ -133,7 +135,7 @@
             <section class="settings-panel is-active" id="settings-workspace" data-settings-panel="workspace">
               <div class="app-card settings-section-card">
                 <div class="settings-section-heading">
-                  <div><span>Workspace</span><h2>General preferences</h2><p>These defaults apply across your company's Maguire workspace.</p></div>
+                  <div><span>Workspace</span><h2>General preferences</h2><p>These defaults apply across your company's Tendigi workspace.</p></div>
                 </div>
                 <div class="settings-form-grid">
                   <label class="settings-field settings-field-wide"><span>Workspace name</span><input id="workspace-name" type="text" value="PT Wijaya Infrastruktur Nusantara" /></label>
@@ -145,7 +147,7 @@
               </div>
 
               <div class="app-card settings-section-card">
-                <div class="settings-section-heading"><div><span>Tender defaults</span><h2>Discovery &amp; assessment</h2><p>Choose how Maguire prioritizes new opportunities and assessment alerts.</p></div></div>
+                <div class="settings-section-heading"><div><span>Tender defaults</span><h2>Discovery &amp; assessment</h2><p>Choose how Tendigi prioritizes new opportunities and assessment alerts.</p></div></div>
                 <div class="settings-row-list">
                   <div class="settings-preference-row"><div><strong>Recommended tender threshold</strong><p>Only surface opportunities above this preliminary match score in Recommended.</p></div><label class="settings-compact-select"><select id="match-threshold"><option value="70">70% and above</option><option value="75">75% and above</option><option value="80">80% and above</option><option value="85">85% and above</option></select></label></div>
                   <div class="settings-preference-row"><div><strong>Mandatory gap escalation</strong><p>Highlight mandatory qualification gaps as eligibility risks during assessment.</p></div><label class="settings-switch"><input id="mandatory-escalation" type="checkbox" checked /><span></span></label></div>
@@ -156,9 +158,9 @@
 
             <section class="settings-panel" id="settings-notifications" data-settings-panel="notifications" hidden>
               <div class="app-card settings-section-card">
-                <div class="settings-section-heading"><div><span>Channels</span><h2>Notification delivery</h2><p>Choose where and when Maguire should alert you.</p></div></div>
+                <div class="settings-section-heading"><div><span>Channels</span><h2>Notification delivery</h2><p>Choose where and when Tendigi should alert you.</p></div></div>
                 <div class="settings-row-list">
-                  <div class="settings-preference-row"><div><strong>In-app notifications</strong><p>Show tender, task, evidence, and deadline alerts inside Maguire.</p></div><label class="settings-switch"><input id="notify-inapp" type="checkbox" checked /><span></span></label></div>
+                  <div class="settings-preference-row"><div><strong>In-app notifications</strong><p>Show tender, task, evidence, and deadline alerts inside Tendigi.</p></div><label class="settings-switch"><input id="notify-inapp" type="checkbox" checked /><span></span></label></div>
                   <div class="settings-preference-row"><div><strong>Email digest</strong><p>Receive a weekday summary of new matches, deadlines, and actions.</p></div><div class="settings-inline-controls"><label class="settings-switch"><input id="notify-email" type="checkbox" checked /><span></span></label><input class="settings-time-input" id="digest-time" type="time" value="08:00" /></div></div>
                   <div class="settings-preference-row"><div><strong>Weekly pipeline summary</strong><p>Get a Monday morning summary of evaluating, preparing, and submitted tenders.</p></div><label class="settings-switch"><input id="notify-weekly" type="checkbox" checked /><span></span></label></div>
                 </div>
@@ -178,34 +180,39 @@
             </section>
 
             <section class="settings-panel" id="settings-team" data-settings-panel="team" hidden>
-              <div class="app-card settings-section-card">
-                <div class="settings-section-heading settings-section-heading-actions">
-                  <div><span>Access</span><h2>Team members</h2><p>Six people currently have access to this workspace.</p></div>
-                  <button class="btn btn-primary" id="invite-member-button" type="button">Invite Member</button>
-                </div>
-                <div class="settings-team-list" id="settings-team-list">
-                  <div class="settings-team-row"><span class="settings-team-avatar">BS</span><span class="settings-team-copy"><strong>Budi Santoso</strong><small>budi@wijayainfra.co.id · Business Development</small></span><span class="settings-role-pill is-admin">Admin</span><span class="settings-team-status">Active</span></div>
-                  <div class="settings-team-row"><span class="settings-team-avatar">SW</span><span class="settings-team-copy"><strong>Sari Wibowo</strong><small>sari@wijayainfra.co.id · Bid Manager</small></span><span class="settings-role-pill">Manager</span><span class="settings-team-status">Active</span></div>
-                  <div class="settings-team-row"><span class="settings-team-avatar">AP</span><span class="settings-team-copy"><strong>Andi Pratama</strong><small>andi@wijayainfra.co.id · Engineering</small></span><span class="settings-role-pill">Member</span><span class="settings-team-status">Active</span></div>
-                  <div class="settings-team-row"><span class="settings-team-avatar">DL</span><span class="settings-team-copy"><strong>Dewi Lestari</strong><small>dewi@wijayainfra.co.id · Legal &amp; Compliance</small></span><span class="settings-role-pill">Member</span><span class="settings-team-status">Active</span></div>
-                  <div class="settings-team-row"><span class="settings-team-avatar">RH</span><span class="settings-team-copy"><strong>Rizky Hidayat</strong><small>rizky@wijayainfra.co.id · Finance</small></span><span class="settings-role-pill">Member</span><span class="settings-team-status">Active</span></div>
-                  <div class="settings-team-row"><span class="settings-team-avatar">MA</span><span class="settings-team-copy"><strong>Maya Anindita</strong><small>maya@wijayainfra.co.id · Commercial</small></span><span class="settings-role-pill">Member</span><span class="settings-team-status">Active</span></div>
-                </div>
+              <div class="settings-access-summary" aria-label="Team access summary">
+                <article class="app-card settings-access-summary-card"><span>Active members</span><strong id="access-member-count">6</strong><small>Workspace accounts</small></article>
+                <article class="app-card settings-access-summary-card"><span>Access roles</span><strong id="access-role-count">6</strong><small>Permission profiles</small></article>
+                <article class="app-card settings-access-summary-card"><span>Your role</span><strong class="settings-access-summary-role">Superadmin</strong><small>Full workspace access</small></article>
               </div>
 
               <div class="app-card settings-section-card">
-                <div class="settings-section-heading"><div><span>Roles</span><h2>Access model</h2><p>Prototype permissions are simplified into three roles.</p></div></div>
-                <div class="settings-role-grid">
-                  <article><span class="settings-role-icon">A</span><div><strong>Admin</strong><p>Manage workspace settings, members, company profile, documents, and all tenders.</p></div></article>
-                  <article><span class="settings-role-icon">M</span><div><strong>Manager</strong><p>Create tender workspaces, assign tasks, manage evidence, and review assessments.</p></div></article>
-                  <article><span class="settings-role-icon">U</span><div><strong>Member</strong><p>Work on assigned tenders, tasks, documents, and requirements.</p></div></article>
+                <div class="settings-section-heading settings-section-heading-actions">
+                  <div><span>Access</span><h2>Team members</h2><p id="settings-team-summary" aria-live="polite">6 people currently have access to this workspace.</p></div>
+                  <button class="btn btn-primary" id="add-member-button" type="button">Add Member</button>
                 </div>
+                <div class="settings-team-list" id="settings-team-list"></div>
+              </div>
+
+              <div class="app-card settings-section-card">
+                <div class="settings-section-heading settings-section-heading-actions">
+                  <div><span>Roles</span><h2>Roles &amp; permissions</h2><p>Create access roles, assign members, and choose exactly what each role can do.</p></div>
+                  <button class="btn btn-secondary" id="create-role-button" type="button">Create Role</button>
+                </div>
+                <div class="settings-access-manager">
+                  <aside class="settings-role-browser" aria-label="Workspace roles">
+                    <div class="settings-role-browser-heading"><strong>Workspace roles</strong><span id="settings-role-browser-count" aria-live="polite">6 roles</span></div>
+                    <div class="settings-role-list" id="settings-role-list"></div>
+                  </aside>
+                  <section class="settings-role-editor" id="settings-role-editor"></section>
+                </div>
+                <p class="settings-access-note"><span aria-hidden="true">ⓘ</span> Access changes are saved for this browser-based demo. Production authorization would also be enforced by the server.</p>
               </div>
             </section>
 
             <section class="settings-panel" id="settings-security" data-settings-panel="security" hidden>
               <div class="app-card settings-section-card">
-                <div class="settings-section-heading"><div><span>Account security</span><h2>Password &amp; authentication</h2><p>Manage access to your individual Maguire account.</p></div></div>
+                <div class="settings-section-heading"><div><span>Account security</span><h2>Password &amp; authentication</h2><p>Manage access to your individual Tendigi account.</p></div></div>
                 <div class="settings-row-list">
                   <div class="settings-preference-row"><div><strong>Password</strong><p>Last changed 14 days ago.</p></div><button class="btn btn-secondary settings-row-button" id="change-password-button" type="button">Change Password</button></div>
                   <div class="settings-preference-row"><div><strong>Two-factor authentication</strong><p>Add a second verification step when signing in.</p></div><label class="settings-switch"><input id="two-factor" type="checkbox" /><span></span></label></div>
@@ -248,7 +255,7 @@
   </div>
 
   <div class="settings-modal-backdrop" id="settings-modal" hidden>
-    <div class="settings-modal" role="dialog" aria-modal="true" aria-labelledby="settings-modal-title">
+    <div class="settings-modal" role="dialog" aria-modal="true" aria-labelledby="settings-modal-title" aria-describedby="settings-modal-copy">
       <button class="settings-modal-close" id="settings-modal-close" type="button" aria-label="Close">×</button>
       <div class="settings-modal-icon" id="settings-modal-icon">✓</div>
       <h2 id="settings-modal-title">Settings updated</h2>
@@ -261,10 +268,133 @@
   <div class="settings-toast" id="settings-toast" role="status" aria-live="polite"><strong id="settings-toast-title">Saved</strong><span id="settings-toast-copy">Your changes were saved.</span></div>
 
   <script>
-    const isAuthenticated = localStorage.getItem("maguire_demo_authenticated") === "true";
+    const isAuthenticated = localStorage.getItem("octen_demo_authenticated") === "true";
     if (!isAuthenticated) window.location.replace("login.html");
 
-    const SETTINGS_KEY = "maguire_settings_v1";
+    const SETTINGS_KEY = "octen_settings_v1";
+    const TEAM_ACCESS_KEY = "octen_team_access_v1";
+    const SUPERADMIN_ROLE_ID = "superadmin";
+    const CURRENT_MEMBER_ID = "budi-santoso";
+    const permissionGroups = [
+      {
+        name: "Tender management",
+        permissions: [
+          { id: "tenders.view", label: "View tenders", description: "Open Discovery, tender details, and My Tenders." },
+          { id: "tenders.manage", label: "Manage tender workspaces", description: "Participate in tenders and update preparation workspaces." },
+          { id: "tenders.analyze", label: "Run AI analysis", description: "Start analysis and review readiness findings." },
+          { id: "tenders.submit", label: "Manage submissions", description: "Prepare and confirm tender submission activity." }
+        ]
+      },
+      {
+        name: "Evidence & company data",
+        permissions: [
+          { id: "documents.view", label: "View documents", description: "Open company and tender evidence." },
+          { id: "documents.manage", label: "Manage documents", description: "Upload, update, and delete permitted documents." },
+          { id: "company.view", label: "View company profile", description: "See KBLI, capabilities, certifications, and personnel." },
+          { id: "company.manage", label: "Edit company profile", description: "Update structured company and capability data." }
+        ]
+      },
+      {
+        name: "Workspace administration",
+        permissions: [
+          { id: "team.view", label: "View team members", description: "See workspace members and their assigned roles." },
+          { id: "team.manage", label: "Manage members & roles", description: "Add members, assign roles, and edit permissions." },
+          { id: "settings.manage", label: "Manage workspace settings", description: "Change workspace, security, notification, and data settings." }
+        ]
+      }
+    ];
+    const allPermissionIds = permissionGroups.flatMap(group => group.permissions.map(permission => permission.id));
+    const permissionDependencies = {
+      "tenders.manage": ["tenders.view"],
+      "tenders.analyze": ["tenders.view"],
+      "tenders.submit": ["tenders.view", "tenders.manage"],
+      "documents.manage": ["documents.view"],
+      "company.manage": ["company.view"],
+      "team.manage": ["team.view"]
+    };
+    const defaultAccessState = {
+      schemaVersion: 1,
+      revision: 0,
+      roles: [
+        { id: "superadmin", name: "Superadmin", description: "Unrestricted control of the Tendigi workspace, members, roles, and data.", permissions: [...allPermissionIds], protected: true },
+        { id: "sales", name: "Sales", description: "Discover opportunities, manage pursuits, run analysis, and coordinate submissions.", permissions: ["tenders.view", "tenders.manage", "tenders.analyze", "tenders.submit", "documents.view", "company.view", "team.view"] },
+        { id: "finance", name: "Finance", description: "Review commercial requirements and manage financial evidence.", permissions: ["tenders.view", "documents.view", "documents.manage", "company.view", "team.view"] },
+        { id: "legal", name: "Legal", description: "Review tender terms, risks, and supporting legal evidence.", permissions: ["tenders.view", "tenders.analyze", "tenders.submit", "documents.view", "documents.manage", "company.view", "team.view"] },
+        { id: "compliance", name: "Compliance", description: "Maintain qualifications, certifications, and readiness evidence.", permissions: ["tenders.view", "tenders.analyze", "documents.view", "documents.manage", "company.view", "company.manage", "team.view"] },
+        { id: "engineering", name: "Engineering", description: "Prepare technical responses, evidence, and delivery workspaces.", permissions: ["tenders.view", "tenders.manage", "tenders.analyze", "documents.view", "documents.manage", "company.view", "team.view"] }
+      ],
+      members: [
+        { id: "budi-santoso", name: "Budi Santoso", email: "budi@wijayainfra.co.id", department: "Business Development", roleId: "superadmin", status: "active", protected: true },
+        { id: "sari-wibowo", name: "Sari Wibowo", email: "sari@wijayainfra.co.id", department: "Bid Management", roleId: "sales", status: "active" },
+        { id: "andi-pratama", name: "Andi Pratama", email: "andi@wijayainfra.co.id", department: "Engineering", roleId: "engineering", status: "active" },
+        { id: "dewi-lestari", name: "Dewi Lestari", email: "dewi@wijayainfra.co.id", department: "Legal", roleId: "legal", status: "active" },
+        { id: "rizky-hidayat", name: "Rizky Hidayat", email: "rizky@wijayainfra.co.id", department: "Finance", roleId: "finance", status: "active" },
+        { id: "maya-anindita", name: "Maya Anindita", email: "maya@wijayainfra.co.id", department: "Compliance", roleId: "compliance", status: "active" }
+      ]
+    };
+
+    function cloneAccessState(value = defaultAccessState) {
+      return JSON.parse(JSON.stringify(value));
+    }
+
+    function cleanAccessText(value, maxLength = 120) {
+      return typeof value === "string"
+        ? value.normalize("NFKC").replace(/[\u0000-\u001F\u007F-\u009F]/g, " ").replace(/[\u200B-\u200F\u202A-\u202E\u2060\u2066-\u2069\uFEFF]/g, "").trim().replace(/\s+/g, " ").slice(0, maxLength)
+        : "";
+    }
+
+    function normalizePermissions(value) {
+      const permissions = new Set(Array.isArray(value) ? value.slice(0, 100).filter(permission => allPermissionIds.includes(permission)) : []);
+      function includeDependencies(permissionId) {
+        permissions.add(permissionId);
+        (permissionDependencies[permissionId] || []).forEach(includeDependencies);
+      }
+      [...permissions].forEach(includeDependencies);
+      return allPermissionIds.filter(permission => permissions.has(permission));
+    }
+
+    function normalizeAccessState(value) {
+      if (!value || value.schemaVersion !== 1 || !Array.isArray(value.roles) || !Array.isArray(value.members)) return cloneAccessState();
+
+      const seenRoleIds = new Set([SUPERADMIN_ROLE_ID]);
+      const seenRoleNames = new Set(["superadmin"]);
+      const roles = [cloneAccessState().roles[0]];
+      value.roles.slice(0, 49).forEach(rawRole => {
+        const id = cleanAccessText(rawRole && rawRole.id, 64).toLowerCase();
+        const name = cleanAccessText(rawRole && rawRole.name, 48);
+        const description = cleanAccessText(rawRole && rawRole.description, 180);
+        if (!id || id === SUPERADMIN_ROLE_ID || !/^[a-z0-9-]+$/.test(id) || seenRoleIds.has(id) || !name || seenRoleNames.has(name.toLowerCase())) return;
+        const permissions = normalizePermissions(rawRole.permissions);
+        roles.push({ id, name, description: description || "Custom workspace access role.", permissions });
+        seenRoleIds.add(id);
+        seenRoleNames.add(name.toLowerCase());
+      });
+
+      if (roles.length === 1) cloneAccessState().roles.slice(1).forEach(role => roles.push(role));
+      const assignableRoleIds = roles.slice(1).map(role => role.id);
+      const fallbackRoleId = assignableRoleIds[0];
+      const seenMemberIds = new Set([CURRENT_MEMBER_ID]);
+      const seenEmails = new Set(["budi@wijayainfra.co.id"]);
+      const members = [cloneAccessState().members[0]];
+      value.members.slice(0, 249).forEach(rawMember => {
+        const id = cleanAccessText(rawMember && rawMember.id, 64).toLowerCase();
+        const name = cleanAccessText(rawMember && rawMember.name, 80);
+        const email = cleanAccessText(rawMember && rawMember.email, 120).toLowerCase();
+        const department = cleanAccessText(rawMember && rawMember.department, 80);
+        const requestedRoleId = cleanAccessText(rawMember && rawMember.roleId, 64).toLowerCase();
+        if (!id || id === CURRENT_MEMBER_ID || !/^[a-z0-9-]+$/.test(id) || seenMemberIds.has(id) || !name || !/^\S+@\S+\.\S+$/.test(email) || seenEmails.has(email)) return;
+        members.push({ id, name, email, department: department || "Team member", roleId: assignableRoleIds.includes(requestedRoleId) ? requestedRoleId : fallbackRoleId, status: "active" });
+        seenMemberIds.add(id);
+        seenEmails.add(email);
+      });
+      const revision = Number.isSafeInteger(value.revision) && value.revision >= 0 ? value.revision : 0;
+      return { schemaVersion: 1, revision, roles, members };
+    }
+
+    let accessState;
+    try { accessState = normalizeAccessState(JSON.parse(localStorage.getItem(TEAM_ACCESS_KEY))); }
+    catch { accessState = cloneAccessState(); }
+    let selectedRoleId = accessState.roles.some(role => role.id === "sales") ? "sales" : accessState.roles[0].id;
     const defaults = {
       workspaceName: "PT Wijaya Infrastruktur Nusantara",
       timezone: "Asia/Jakarta",
@@ -343,6 +473,11 @@
         panel.hidden = !active;
       });
       if (updateHash) history.replaceState(null, "", valid === "workspace" ? "settings.html" : `#${valid}`);
+      const activeNavButton = settingsNavLinks.find(button => button.dataset.section === valid);
+      const settingsNav = activeNavButton && activeNavButton.closest(".settings-nav");
+      if (activeNavButton && settingsNav && window.innerWidth <= 760) {
+        requestAnimationFrame(() => settingsNav.scrollTo({ left: activeNavButton.offsetLeft - (settingsNav.clientWidth - activeNavButton.offsetWidth) / 2, behavior: updateHash ? "smooth" : "auto" }));
+      }
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
     settingsNavLinks.forEach(btn => btn.addEventListener("click", () => activateSection(btn.dataset.section)));
@@ -354,17 +489,43 @@
     const modalIcon = document.getElementById("settings-modal-icon");
     const modalExtra = document.getElementById("settings-modal-extra");
     const modalActions = document.getElementById("settings-modal-actions");
+    const modalDialog = modal.querySelector(".settings-modal");
+    const appShell = document.querySelector(".app-shell");
     const defaultModalActions = '<button class="btn btn-primary" id="settings-modal-done" type="button">Done</button>';
+    let modalReturnFocus = null;
 
     function bindModalDone() { const done = document.getElementById("settings-modal-done"); if (done) done.addEventListener("click", closeModal); }
-    function openModal(title, copy, icon = "✓", extra = "", actions = defaultModalActions) {
+    function openModal(title, copy, icon = "✓", extra = "", actions = defaultModalActions, options = {}) {
+      modalReturnFocus = options.returnFocus || (document.activeElement instanceof HTMLElement ? document.activeElement : null);
       modalTitle.textContent = title; modalCopy.textContent = copy; modalIcon.textContent = icon; modalExtra.innerHTML = extra; modalActions.innerHTML = actions;
-      modal.hidden = false; document.body.classList.add("settings-modal-open"); bindModalDone();
+      modalDialog.setAttribute("role", options.destructive ? "alertdialog" : "dialog");
+      modalDialog.classList.toggle("is-destructive", Boolean(options.destructive));
+      modal.hidden = false; document.body.classList.add("settings-modal-open"); appShell.inert = true; bindModalDone();
+      requestAnimationFrame(() => {
+        const initialFocus = modal.querySelector("[data-autofocus]") || modal.querySelector("input:not([type='hidden']):not([disabled]), select:not([disabled]), button:not([disabled])");
+        if (initialFocus) initialFocus.focus();
+      });
     }
-    function closeModal() { modal.hidden = true; document.body.classList.remove("settings-modal-open"); }
-    document.getElementById("settings-modal-close").addEventListener("click", closeModal);
+    function closeModal() {
+      modal.hidden = true; document.body.classList.remove("settings-modal-open"); appShell.inert = false;
+      const returnTarget = modalReturnFocus;
+      modalReturnFocus = null;
+      if (returnTarget && returnTarget.isConnected) requestAnimationFrame(() => returnTarget.focus());
+    }
+    document.getElementById("settings-modal-close").addEventListener("click", () => closeModal());
     modal.addEventListener("click", event => { if (event.target === modal) closeModal(); });
-    document.addEventListener("keydown", event => { if (event.key === "Escape" && !modal.hidden) closeModal(); });
+    document.addEventListener("keydown", event => {
+      if (modal.hidden) return;
+      if (event.key === "Escape") { event.preventDefault(); closeModal(); return; }
+      if (event.key !== "Tab") return;
+      const focusable = [...modal.querySelectorAll("button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [href], [tabindex]:not([tabindex='-1'])")]
+        .filter(element => element.getClientRects().length && !element.closest("[hidden]"));
+      if (!focusable.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+    });
 
     const toast = document.getElementById("settings-toast");
     let toastTimer;
@@ -374,22 +535,488 @@
       toast.classList.add("is-visible"); clearTimeout(toastTimer); toastTimer = setTimeout(() => toast.classList.remove("is-visible"), 2400);
     }
 
-    document.querySelectorAll("[data-prototype-action]").forEach(button => button.addEventListener("click", () => showToast(button.dataset.prototypeAction, "The export is simulated in this prototype.")));
+    function createAccessElement(tag, className, textContent) {
+      const element = document.createElement(tag);
+      if (className) element.className = className;
+      if (textContent !== undefined) element.textContent = textContent;
+      return element;
+    }
 
-    document.getElementById("invite-member-button").addEventListener("click", () => {
-      openModal("Invite team member", "Add someone to the PT Wijaya Infrastruktur Nusantara workspace.", "+", `
-        <div class="settings-modal-form">
-          <label><span>Work email</span><input id="invite-email" type="email" placeholder="name@company.com" /></label>
-          <label><span>Role</span><select id="invite-role"><option>Member</option><option>Manager</option><option>Admin</option></select></label>
-        </div>`,
-        '<button class="btn btn-secondary" id="settings-modal-done" type="button">Cancel</button><button class="btn btn-primary" id="send-invite-button" type="button">Send Invite</button>'
-      );
-      document.getElementById("send-invite-button").addEventListener("click", () => {
-        const email = document.getElementById("invite-email").value.trim();
-        if (!email || !email.includes("@")) { document.getElementById("invite-email").classList.add("is-error"); return; }
-        closeModal(); showToast("Invitation sent", `${email} was invited to the workspace.`);
+    function getRole(roleId) {
+      return accessState.roles.find(role => role.id === roleId);
+    }
+
+    function makeInitials(name) {
+      return name.split(/\s+/).filter(Boolean).slice(0, 2).map(part => part[0]).join("").toUpperCase() || "TM";
+    }
+
+    function roleMemberCount(roleId) {
+      return accessState.members.filter(member => member.roleId === roleId).length;
+    }
+
+    function persistAccessState(nextState, title, copy, focusSelector = "") {
+      const normalized = normalizeAccessState(nextState);
+      try {
+        const storedValue = localStorage.getItem(TEAM_ACCESS_KEY);
+        if (storedValue) {
+          let storedState = null;
+          try { storedState = normalizeAccessState(JSON.parse(storedValue)); }
+          catch { storedState = null; }
+          if (storedState && storedState.revision !== accessState.revision) {
+            accessState = storedState;
+            if (!accessState.roles.some(role => role.id === selectedRoleId)) selectedRoleId = accessState.roles[0].id;
+            renderAccessManagement();
+            showToast("Access settings refreshed", "Another tab saved a newer change. Review it and try again.");
+            return false;
+          }
+        }
+        normalized.revision = accessState.revision + 1;
+        localStorage.setItem(TEAM_ACCESS_KEY, JSON.stringify(normalized));
+      }
+      catch {
+        showToast("Changes not saved", "Browser storage is unavailable. Your previous access settings are unchanged.");
+        renderAccessManagement();
+        return false;
+      }
+      accessState = normalized;
+      if (!accessState.roles.some(role => role.id === selectedRoleId)) selectedRoleId = accessState.roles[0].id;
+      renderAccessManagement();
+      if (title) showToast(title, copy);
+      if (focusSelector) {
+        const focusTarget = document.querySelector(focusSelector);
+        if (focusTarget) requestAnimationFrame(() => focusTarget.focus());
+      }
+      return true;
+    }
+
+    function renderTeamMembers() {
+      const list = document.getElementById("settings-team-list");
+      list.replaceChildren();
+      accessState.members.forEach(member => {
+        const role = getRole(member.roleId);
+        const row = createAccessElement("div", "settings-team-row");
+        row.dataset.memberId = member.id;
+
+        row.append(createAccessElement("span", "settings-team-avatar", makeInitials(member.name)));
+        const copy = createAccessElement("span", "settings-team-copy");
+        const nameLine = createAccessElement("span", "settings-team-name-line");
+        nameLine.append(createAccessElement("strong", "", member.name));
+        if (member.id === CURRENT_MEMBER_ID) nameLine.append(createAccessElement("span", "settings-you-pill", "You"));
+        copy.append(nameLine, createAccessElement("small", "", `${member.email} · ${member.department}`));
+        row.append(copy);
+
+        const roleControl = createAccessElement("label", "settings-team-role-control");
+        const roleLabel = createAccessElement("span", "sr-only", `Role for ${member.name}`);
+        const roleSelect = createAccessElement("select", "settings-team-role-select");
+        roleSelect.dataset.memberRole = member.id;
+        roleSelect.setAttribute("aria-label", `Role for ${member.name}`);
+        accessState.roles.filter(optionRole => optionRole.id !== SUPERADMIN_ROLE_ID || member.id === CURRENT_MEMBER_ID).forEach(optionRole => {
+          const option = createAccessElement("option", "", optionRole.name);
+          option.value = optionRole.id;
+          option.selected = optionRole.id === member.roleId;
+          roleSelect.append(option);
+        });
+        if (member.id === CURRENT_MEMBER_ID) {
+          roleSelect.disabled = true;
+          roleSelect.title = "The signed-in Superadmin role is protected";
+        }
+        roleControl.append(roleLabel, roleSelect);
+        row.append(roleControl);
+        row.append(createAccessElement("span", "settings-team-status", member.status === "active" ? "Active" : "Invited"));
+
+        if (member.id === CURRENT_MEMBER_ID) {
+          const protectedLabel = createAccessElement("span", "settings-member-protected");
+          protectedLabel.title = "The signed-in Superadmin cannot be removed";
+          protectedLabel.setAttribute("aria-label", "Protected account. The signed-in Superadmin cannot be removed.");
+          const lockIcon = createAccessElement("span", "", "🔒");
+          lockIcon.setAttribute("aria-hidden", "true");
+          protectedLabel.append(lockIcon, createAccessElement("span", "settings-member-protected-copy", "Protected"));
+          row.append(protectedLabel);
+        } else {
+          const removeButton = createAccessElement("button", "settings-member-remove", "Remove");
+          removeButton.type = "button";
+          removeButton.dataset.removeMember = member.id;
+          removeButton.setAttribute("aria-label", `Remove ${member.name} from the workspace`);
+          row.append(removeButton);
+        }
+        list.append(row);
       });
+
+      const memberCount = accessState.members.length;
+      document.getElementById("access-member-count").textContent = String(memberCount);
+      document.getElementById("settings-team-summary").textContent = `${memberCount} ${memberCount === 1 ? "person currently has" : "people currently have"} access to this workspace.`;
+    }
+
+    function renderRoleList() {
+      const list = document.getElementById("settings-role-list");
+      list.replaceChildren();
+      accessState.roles.forEach(role => {
+        const button = createAccessElement("button", "settings-role-list-button");
+        button.type = "button";
+        button.dataset.roleId = role.id;
+        button.classList.toggle("is-active", role.id === selectedRoleId);
+        button.setAttribute("aria-pressed", String(role.id === selectedRoleId));
+        const icon = createAccessElement("span", "settings-role-icon", role.name.slice(0, 1).toUpperCase());
+        const copy = createAccessElement("span", "settings-role-list-copy");
+        copy.append(createAccessElement("strong", "", role.name), createAccessElement("small", "", `${roleMemberCount(role.id)} ${roleMemberCount(role.id) === 1 ? "member" : "members"}`));
+        button.append(icon, copy, createAccessElement("span", "settings-role-list-chevron", "›"));
+        list.append(button);
+      });
+      const roleCount = accessState.roles.length;
+      document.getElementById("access-role-count").textContent = String(roleCount);
+      document.getElementById("settings-role-browser-count").textContent = `${roleCount} ${roleCount === 1 ? "role" : "roles"}`;
+    }
+
+    function renderRoleEditor() {
+      const editor = document.getElementById("settings-role-editor");
+      const role = getRole(selectedRoleId) || accessState.roles[0];
+      selectedRoleId = role.id;
+      editor.replaceChildren();
+
+      const heading = createAccessElement("div", "settings-role-editor-heading");
+      const headingCopy = createAccessElement("div", "settings-role-editor-copy");
+      const badge = createAccessElement("span", `settings-role-type${role.protected ? " is-protected" : ""}`, role.protected ? "Protected system role" : "Workspace role");
+      headingCopy.append(badge, createAccessElement("h3", "", role.name), createAccessElement("p", "", role.description));
+      const metrics = createAccessElement("div", "settings-role-metrics");
+      metrics.append(createAccessElement("strong", "", String(roleMemberCount(role.id))), createAccessElement("span", "", roleMemberCount(role.id) === 1 ? "member" : "members"));
+      heading.append(headingCopy, metrics);
+      editor.append(heading);
+
+      const permissionArea = createAccessElement("div", "settings-permission-groups");
+      permissionGroups.forEach(group => {
+        const groupElement = createAccessElement("fieldset", "settings-permission-group");
+        groupElement.append(createAccessElement("legend", "", group.name));
+        group.permissions.forEach(permission => {
+          const option = createAccessElement("label", "settings-permission-option");
+          const optionCopy = createAccessElement("span", "settings-permission-copy");
+          optionCopy.append(createAccessElement("strong", "", permission.label), createAccessElement("small", "", permission.description));
+          const checkbox = createAccessElement("input", "settings-permission-checkbox");
+          checkbox.type = "checkbox";
+          checkbox.dataset.rolePermission = permission.id;
+          checkbox.checked = role.permissions.includes(permission.id);
+          checkbox.disabled = Boolean(role.protected);
+          checkbox.setAttribute("aria-label", `${permission.label} for ${role.name}`);
+          option.append(optionCopy, checkbox);
+          groupElement.append(option);
+        });
+        permissionArea.append(groupElement);
+      });
+      editor.append(permissionArea);
+
+      const footer = createAccessElement("div", "settings-role-editor-footer");
+      footer.append(createAccessElement("span", "settings-role-permission-count", `${role.permissions.length} of ${allPermissionIds.length} permissions enabled`));
+      if (role.protected) {
+        footer.append(createAccessElement("span", "settings-role-protected-note", "🔒 Superadmin always has full access"));
+      } else {
+        const actions = createAccessElement("div", "settings-role-editor-actions");
+        const editButton = createAccessElement("button", "btn btn-secondary", "Edit Details");
+        editButton.type = "button";
+        editButton.dataset.editRole = role.id;
+        const deleteButton = createAccessElement("button", "btn settings-danger-button", "Delete Role");
+        deleteButton.type = "button";
+        deleteButton.dataset.deleteRole = role.id;
+        actions.append(editButton, deleteButton);
+        footer.append(actions);
+      }
+      editor.append(footer);
+    }
+
+    function renderAccessManagement() {
+      renderTeamMembers();
+      renderRoleList();
+      renderRoleEditor();
+    }
+
+    function addRoleOptions(select, selectedValue, excludedRoleId = SUPERADMIN_ROLE_ID) {
+      accessState.roles.filter(role => role.id !== excludedRoleId).forEach(role => {
+        const option = createAccessElement("option", "", role.name);
+        option.value = role.id;
+        option.selected = role.id === selectedValue;
+        select.append(option);
+      });
+    }
+
+    function showFormError(input, errorElement, message) {
+      input.classList.add("is-error");
+      input.setAttribute("aria-invalid", "true");
+      input.setAttribute("aria-describedby", errorElement.id);
+      errorElement.textContent = message;
+      errorElement.hidden = false;
+      input.focus();
+    }
+
+    function openAddMemberModal() {
+      openModal("Add team member", "Add an active member and assign their workspace access role.", "+", `
+        <form class="settings-modal-form" id="add-member-form" novalidate>
+          <label><span>Full name</span><input id="member-name" type="text" autocomplete="name" maxlength="80" data-autofocus /></label>
+          <label><span>Work email</span><input id="member-email" type="email" autocomplete="email" maxlength="120" placeholder="name@company.com" /></label>
+          <label><span>Function or department</span><input id="member-department" type="text" maxlength="80" placeholder="e.g. Sales, Finance, Legal" /></label>
+          <label><span>Access role</span><select id="member-role"></select></label>
+          <p class="settings-form-error" id="add-member-error" role="alert" hidden></p>
+        </form>`,
+        '<button class="btn btn-secondary" id="settings-modal-done" type="button">Cancel</button><button class="btn btn-primary" type="submit" form="add-member-form">Add Member</button>'
+      );
+      const roleSelect = document.getElementById("member-role");
+      addRoleOptions(roleSelect, accessState.roles.find(role => role.id === "sales") ? "sales" : accessState.roles[1].id);
+      document.getElementById("add-member-form").addEventListener("submit", event => {
+        event.preventDefault();
+        const nameInput = document.getElementById("member-name");
+        const emailInput = document.getElementById("member-email");
+        const departmentInput = document.getElementById("member-department");
+        const errorElement = document.getElementById("add-member-error");
+        const name = cleanAccessText(nameInput.value, 80);
+        const email = cleanAccessText(emailInput.value, 120).toLowerCase();
+        const department = cleanAccessText(departmentInput.value, 80);
+        [nameInput, emailInput, departmentInput, roleSelect].forEach(input => { input.classList.remove("is-error"); input.removeAttribute("aria-invalid"); input.removeAttribute("aria-describedby"); });
+        errorElement.hidden = true;
+        if (name.length < 2) { showFormError(nameInput, errorElement, "Enter the team member's full name."); return; }
+        if (!/^\S+@\S+\.\S+$/.test(email)) { showFormError(emailInput, errorElement, "Enter a valid work email address."); return; }
+        if (accessState.members.some(member => member.email.toLowerCase() === email)) { showFormError(emailInput, errorElement, "A team member with this email already exists."); return; }
+        if (department.length < 2) { showFormError(departmentInput, errorElement, "Enter the member's function or department."); return; }
+        const roleId = roleSelect.value;
+        if (!getRole(roleId) || roleId === SUPERADMIN_ROLE_ID) { showFormError(roleSelect, errorElement, "Choose a valid access role."); return; }
+        const baseId = name.toLowerCase().normalize("NFKD").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "team-member";
+        let id = baseId;
+        let suffix = 2;
+        while (accessState.members.some(member => member.id === id)) id = `${baseId}-${suffix++}`;
+        const nextState = cloneAccessState(accessState);
+        nextState.members.push({ id, name, email, department, roleId, status: "active" });
+        if (persistAccessState(nextState, "Member added", `${name} now has ${getRole(roleId).name} access.`)) {
+          modalReturnFocus = document.getElementById("add-member-button");
+          closeModal();
+        }
+      });
+    }
+
+    function openRemoveMemberModal(memberId, returnFocus) {
+      const member = accessState.members.find(candidate => candidate.id === memberId);
+      if (!member || member.id === CURRENT_MEMBER_ID || member.protected) {
+        showToast("Protected account", "Budi Santoso is the signed-in Superadmin and cannot be removed.");
+        return;
+      }
+      openModal(`Remove ${member.name}?`, `${member.email} will lose access to this workspace. Their historical activity will remain visible.`, "!", "",
+        '<button class="btn btn-secondary" id="settings-modal-done" type="button" data-autofocus>Keep Member</button><button class="btn settings-modal-danger-button" id="confirm-remove-member" type="button">Remove Member</button>',
+        { destructive: true, returnFocus }
+      );
+      document.getElementById("confirm-remove-member").addEventListener("click", () => {
+        const currentMember = accessState.members.find(candidate => candidate.id === memberId);
+        if (!currentMember || currentMember.id === CURRENT_MEMBER_ID) return;
+        const nextState = cloneAccessState(accessState);
+        nextState.members = nextState.members.filter(candidate => candidate.id !== memberId);
+        if (persistAccessState(nextState, "Member removed", `${currentMember.name} no longer has workspace access.`)) {
+          modalReturnFocus = document.getElementById("add-member-button");
+          closeModal();
+        }
+      });
+    }
+
+    function uniqueRoleId(name) {
+      const baseId = name.toLowerCase().normalize("NFKD").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "custom-role";
+      let id = baseId;
+      let suffix = 2;
+      while (accessState.roles.some(role => role.id === id)) id = `${baseId}-${suffix++}`;
+      return id;
+    }
+
+    function openCreateRoleModal() {
+      openModal("Create access role", "Create a role, then enable the permissions it needs. New roles start with no access.", "+", `
+        <form class="settings-modal-form" id="create-role-form" novalidate>
+          <label><span>Role name</span><input id="new-role-name" type="text" maxlength="48" placeholder="e.g. Procurement" data-autofocus /></label>
+          <label><span>Description</span><textarea id="new-role-description" rows="3" maxlength="180" placeholder="What is this role responsible for?"></textarea></label>
+          <p class="settings-form-error" id="create-role-error" role="alert" hidden></p>
+        </form>`,
+        '<button class="btn btn-secondary" id="settings-modal-done" type="button">Cancel</button><button class="btn btn-primary" type="submit" form="create-role-form">Create Role</button>'
+      );
+      document.getElementById("create-role-form").addEventListener("submit", event => {
+        event.preventDefault();
+        const nameInput = document.getElementById("new-role-name");
+        const descriptionInput = document.getElementById("new-role-description");
+        const errorElement = document.getElementById("create-role-error");
+        const name = cleanAccessText(nameInput.value, 48);
+        const description = cleanAccessText(descriptionInput.value, 180);
+        nameInput.classList.remove("is-error"); nameInput.removeAttribute("aria-invalid"); nameInput.removeAttribute("aria-describedby"); errorElement.hidden = true;
+        if (name.length < 2) { showFormError(nameInput, errorElement, "Enter a role name with at least 2 characters."); return; }
+        if (accessState.roles.some(role => role.name.toLowerCase() === name.toLowerCase())) { showFormError(nameInput, errorElement, "A role with this name already exists."); return; }
+        const id = uniqueRoleId(name);
+        const nextState = cloneAccessState(accessState);
+        nextState.roles.push({ id, name, description: description || "Custom workspace access role.", permissions: [] });
+        const previousSelectedRoleId = selectedRoleId;
+        selectedRoleId = id;
+        if (persistAccessState(nextState, "Role created", `${name} is ready for permission setup.`)) {
+          modalReturnFocus = document.querySelector(`[data-role-id="${id}"]`);
+          closeModal();
+        } else {
+          selectedRoleId = previousSelectedRoleId;
+          renderAccessManagement();
+        }
+      });
+    }
+
+    function openEditRoleModal(roleId, returnFocus) {
+      const role = getRole(roleId);
+      if (!role || role.protected) return;
+      openModal(`Edit ${role.name}`, "Update the role name and description. Assigned members keep this role.", "✎", `
+        <form class="settings-modal-form" id="edit-role-form" novalidate>
+          <label><span>Role name</span><input id="edit-role-name" type="text" maxlength="48" data-autofocus /></label>
+          <label><span>Description</span><textarea id="edit-role-description" rows="3" maxlength="180"></textarea></label>
+          <p class="settings-form-error" id="edit-role-error" role="alert" hidden></p>
+        </form>`,
+        '<button class="btn btn-secondary" id="settings-modal-done" type="button">Cancel</button><button class="btn btn-primary" type="submit" form="edit-role-form">Save Changes</button>',
+        { returnFocus }
+      );
+      const nameInput = document.getElementById("edit-role-name");
+      const descriptionInput = document.getElementById("edit-role-description");
+      nameInput.value = role.name;
+      descriptionInput.value = role.description;
+      document.getElementById("edit-role-form").addEventListener("submit", event => {
+        event.preventDefault();
+        const currentRole = getRole(roleId);
+        if (!currentRole || currentRole.protected) return;
+        const errorElement = document.getElementById("edit-role-error");
+        const name = cleanAccessText(nameInput.value, 48);
+        const description = cleanAccessText(descriptionInput.value, 180);
+        nameInput.classList.remove("is-error"); nameInput.removeAttribute("aria-invalid"); nameInput.removeAttribute("aria-describedby"); errorElement.hidden = true;
+        if (name.length < 2) { showFormError(nameInput, errorElement, "Enter a role name with at least 2 characters."); return; }
+        if (accessState.roles.some(candidate => candidate.id !== roleId && candidate.name.toLowerCase() === name.toLowerCase())) { showFormError(nameInput, errorElement, "A role with this name already exists."); return; }
+        const nextState = cloneAccessState(accessState);
+        const nextRole = nextState.roles.find(candidate => candidate.id === roleId);
+        nextRole.name = name;
+        nextRole.description = description || "Custom workspace access role.";
+        if (persistAccessState(nextState, "Role updated", `${name} details were saved.`)) {
+          modalReturnFocus = document.querySelector(`[data-edit-role="${roleId}"]`);
+          closeModal();
+        }
+      });
+    }
+
+    function openDeleteRoleModal(roleId, returnFocus) {
+      const role = getRole(roleId);
+      if (!role || role.protected || role.id === SUPERADMIN_ROLE_ID) {
+        showToast("Protected role", "Superadmin cannot be changed or deleted.");
+        return;
+      }
+      const alternatives = accessState.roles.filter(candidate => candidate.id !== roleId && candidate.id !== SUPERADMIN_ROLE_ID);
+      if (!alternatives.length) {
+        showToast("Role required", "Create another assignable role before deleting this one.");
+        return;
+      }
+      const assignedCount = roleMemberCount(roleId);
+      const extra = assignedCount ? `
+        <div class="settings-modal-form">
+          <label><span>Move ${assignedCount} ${assignedCount === 1 ? "member" : "members"} to</span><select id="replacement-role"></select></label>
+        </div>` : "";
+      const confirmLabel = assignedCount ? "Move Members & Delete" : "Delete Role";
+      openModal(`Delete ${role.name}?`, assignedCount ? "Assigned members must be moved to another role before this role is deleted." : "This role has no assigned members and can be deleted safely.", "!", extra,
+        `<button class="btn btn-secondary" id="settings-modal-done" type="button" data-autofocus>Keep Role</button><button class="btn settings-modal-danger-button" id="confirm-delete-role" type="button">${confirmLabel}</button>`,
+        { destructive: true, returnFocus }
+      );
+      if (assignedCount) {
+        const replacementSelect = document.getElementById("replacement-role");
+        alternatives.forEach(candidate => {
+          const option = createAccessElement("option", "", candidate.name);
+          option.value = candidate.id;
+          replacementSelect.append(option);
+        });
+      }
+      document.getElementById("confirm-delete-role").addEventListener("click", () => {
+        const currentRole = getRole(roleId);
+        if (!currentRole || currentRole.protected) return;
+        const currentAlternatives = accessState.roles.filter(candidate => candidate.id !== roleId && candidate.id !== SUPERADMIN_ROLE_ID);
+        if (!currentAlternatives.length) return;
+        const replacementSelect = document.getElementById("replacement-role");
+        const replacementRoleId = replacementSelect ? replacementSelect.value : currentAlternatives[0].id;
+        if (replacementSelect && !currentAlternatives.some(candidate => candidate.id === replacementRoleId)) return;
+        const nextState = cloneAccessState(accessState);
+        nextState.roles = nextState.roles.filter(candidate => candidate.id !== roleId);
+        nextState.members = nextState.members.map(member => member.roleId === roleId ? { ...member, roleId: replacementRoleId } : member);
+        const previousSelectedRoleId = selectedRoleId;
+        selectedRoleId = replacementRoleId;
+        if (persistAccessState(nextState, "Role deleted", assignedCount ? `${assignedCount} ${assignedCount === 1 ? "member was" : "members were"} reassigned before deletion.` : `${currentRole.name} was deleted.`)) {
+          modalReturnFocus = document.getElementById("create-role-button");
+          closeModal();
+        } else {
+          selectedRoleId = previousSelectedRoleId;
+          renderAccessManagement();
+        }
+      });
+    }
+
+    function updateRolePermission(permissionId, enabled) {
+      const role = getRole(selectedRoleId);
+      if (!role || role.protected || !allPermissionIds.includes(permissionId)) { renderRoleEditor(); return; }
+      const permissions = new Set(role.permissions);
+      function enableWithDependencies(id) {
+        permissions.add(id);
+        (permissionDependencies[id] || []).forEach(enableWithDependencies);
+      }
+      if (enabled) enableWithDependencies(permissionId);
+      else {
+        permissions.delete(permissionId);
+        let changed = true;
+        while (changed) {
+          changed = false;
+          Object.entries(permissionDependencies).forEach(([dependentId, requirements]) => {
+            if (permissions.has(dependentId) && requirements.some(requirement => !permissions.has(requirement))) {
+              permissions.delete(dependentId);
+              changed = true;
+            }
+          });
+        }
+      }
+      const nextState = cloneAccessState(accessState);
+      nextState.roles.find(candidate => candidate.id === role.id).permissions = allPermissionIds.filter(id => permissions.has(id));
+      persistAccessState(nextState, "Permissions updated", `${role.name} now has ${permissions.size} enabled permissions.`, `[data-role-permission="${permissionId}"]`);
+    }
+
+    document.getElementById("add-member-button").addEventListener("click", openAddMemberModal);
+    document.getElementById("create-role-button").addEventListener("click", openCreateRoleModal);
+    document.getElementById("settings-team-list").addEventListener("change", event => {
+      const select = event.target.closest("[data-member-role]");
+      if (!select) return;
+      const memberId = select.dataset.memberRole;
+      const member = accessState.members.find(candidate => candidate.id === memberId);
+      const role = getRole(select.value);
+      if (!member || member.id === CURRENT_MEMBER_ID || !role || role.id === SUPERADMIN_ROLE_ID) { renderTeamMembers(); return; }
+      const nextState = cloneAccessState(accessState);
+      nextState.members.find(candidate => candidate.id === memberId).roleId = role.id;
+      persistAccessState(nextState, "Role assigned", `${member.name} now has ${role.name} access.`, `[data-member-role="${memberId}"]`);
     });
+    document.getElementById("settings-team-list").addEventListener("click", event => {
+      const button = event.target.closest("[data-remove-member]");
+      if (button) openRemoveMemberModal(button.dataset.removeMember, button);
+    });
+    document.getElementById("settings-role-list").addEventListener("click", event => {
+      const button = event.target.closest("[data-role-id]");
+      if (!button) return;
+      selectedRoleId = button.dataset.roleId;
+      renderRoleList();
+      renderRoleEditor();
+      const selectedRoleButton = document.querySelector(`[data-role-id="${selectedRoleId}"]`);
+      if (selectedRoleButton) requestAnimationFrame(() => selectedRoleButton.focus());
+    });
+    document.getElementById("settings-role-editor").addEventListener("change", event => {
+      const checkbox = event.target.closest("[data-role-permission]");
+      if (checkbox) updateRolePermission(checkbox.dataset.rolePermission, checkbox.checked);
+    });
+    document.getElementById("settings-role-editor").addEventListener("click", event => {
+      const editButton = event.target.closest("[data-edit-role]");
+      const deleteButton = event.target.closest("[data-delete-role]");
+      if (editButton) openEditRoleModal(editButton.dataset.editRole, editButton);
+      if (deleteButton) openDeleteRoleModal(deleteButton.dataset.deleteRole, deleteButton);
+    });
+    window.addEventListener("storage", event => {
+      if (event.key !== TEAM_ACCESS_KEY) return;
+      try {
+        accessState = normalizeAccessState(event.newValue ? JSON.parse(event.newValue) : null);
+        if (!accessState.roles.some(role => role.id === selectedRoleId)) selectedRoleId = accessState.roles[0].id;
+        renderAccessManagement();
+        showToast("Access settings refreshed", "A team or role change from another tab is now visible.");
+      } catch {
+        showToast("Access settings unchanged", "A change from another tab could not be read safely.");
+      }
+    });
+
+    document.querySelectorAll("[data-prototype-action]").forEach(button => button.addEventListener("click", () => showToast(button.dataset.prototypeAction, "The export is simulated in this prototype.")));
 
     document.getElementById("change-password-button").addEventListener("click", () => {
       openModal("Change password", "Enter a new password for the demo account.", "••", `
@@ -429,7 +1056,7 @@
     const mobileOverlay = document.getElementById("mobile-overlay");
 
     let readIds;
-    try { readIds = new Set(JSON.parse(localStorage.getItem("maguire_notification_read_ids")) || []); }
+    try { readIds = new Set(JSON.parse(localStorage.getItem("octen_notification_read_ids")) || []); }
     catch { readIds = new Set(); }
     const isoUnread = !readIds.has("iso-expiry");
     notificationCount.hidden = !isoUnread;
@@ -448,14 +1075,15 @@
     document.addEventListener("click", () => { closeUserMenu(); closeNotifications(); });
     userMenu.addEventListener("click", event => event.stopPropagation());
     notificationPopover.addEventListener("click", event => event.stopPropagation());
-    logoutButton.addEventListener("click", () => { localStorage.removeItem("maguire_demo_authenticated"); localStorage.removeItem("maguire_demo_user"); localStorage.removeItem("maguire_demo_company"); window.location.href = "login.html"; });
+    logoutButton.addEventListener("click", () => { localStorage.removeItem("octen_demo_authenticated"); localStorage.removeItem("octen_demo_user"); localStorage.removeItem("octen_demo_company"); window.location.href = "login.html"; });
 
     function setMobileSidebar(open){ sidebar.classList.toggle("is-open",open); mobileOverlay.hidden = !open; mobileMenuButton.setAttribute("aria-expanded",String(open)); document.body.classList.toggle("sidebar-open",open); }
     mobileMenuButton.addEventListener("click", () => setMobileSidebar(!sidebar.classList.contains("is-open")));
     mobileOverlay.addEventListener("click", () => setMobileSidebar(false));
-    window.addEventListener("resize", () => { if (window.innerWidth > 760) setMobileSidebar(false); });
+    window.addEventListener("resize", () => { if (window.innerWidth > 1024) setMobileSidebar(false); });
 
     loadSettings();
+    renderAccessManagement();
     activateSection(location.hash.replace("#", "") || "workspace", false);
   </script>
 </body>

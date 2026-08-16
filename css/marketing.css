@@ -20,7 +20,7 @@
   display: flex;
   gap: 30px;
   align-items: center;
-  font-size: 14px;
+  font-size: 17px;
   font-weight: 600;
   color: var(--text);
 }
@@ -61,7 +61,7 @@
 }
 
 .hero h1 {
-  font-size: clamp(44px, 5vw, 68px);
+  font-size: clamp(47px, 5vw, 71px);
   line-height: 1.03;
   letter-spacing: -2px;
   color: var(--navy);
@@ -69,7 +69,7 @@
 }
 
 .hero p {
-  font-size: 18px;
+  font-size: 21px;
   color: var(--text-light);
   margin: 25px 0 32px;
   max-width: 590px;
@@ -83,7 +83,7 @@
 
 .hero-note {
   margin-top: 17px;
-  font-size: 13px;
+  font-size: 16px;
   color: var(--text-light);
 }
 
@@ -141,7 +141,7 @@
 
 .tender-meta {
   color: var(--text-light);
-  font-size: 13px;
+  font-size: 16px;
 }
 
 .readiness {
@@ -152,7 +152,7 @@
 }
 
 .readiness-score {
-  font-size: 34px;
+  font-size: 37px;
   font-weight: 800;
   color: var(--navy);
 }
@@ -178,7 +178,7 @@
   justify-content: space-between;
   gap: 16px;
   padding: 9px 0;
-  font-size: 14px;
+  font-size: 17px;
   border-top: 1px solid #f1f5f9;
 }
 
@@ -192,7 +192,7 @@
 }
 
 .trusted {
-  padding: 34px 0;
+  padding: 34px 20px;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
   text-align: center;
@@ -225,12 +225,12 @@
 
 .step h3 {
   color: var(--navy);
-  font-size: 15px;
+  font-size: 18px;
   margin-bottom: 6px;
 }
 
 .step p {
-  font-size: 13px;
+  font-size: 16px;
   color: var(--text-light);
 }
 
@@ -251,7 +251,7 @@
 }
 
 .preview h3 {
-  font-size: 24px;
+  font-size: 27px;
 }
 
 .preview-grid {
@@ -272,7 +272,7 @@
   border-radius: 8px;
   margin-bottom: 7px;
   color: #cbd5e1;
-  font-size: 14px;
+  font-size: 17px;
 }
 
 .menu-item.active {
@@ -291,7 +291,7 @@
   grid-template-columns: 2fr 1fr 1fr;
   gap: 10px;
   color: #cbd5e1;
-  font-size: 13px;
+  font-size: 16px;
 }
 
 .fake-row strong {
@@ -336,7 +336,7 @@ summary::after {
   content: "+";
   position: absolute;
   right: 0;
-  font-size: 20px;
+  font-size: 23px;
   color: var(--blue);
 }
 
@@ -365,7 +365,7 @@ details p {
 }
 
 .cta-inner h2 {
-  font-size: clamp(32px, 4vw, 50px);
+  font-size: clamp(35px, 4vw, 53px);
   line-height: 1.08;
   max-width: 700px;
   margin: 0 auto 18px;
@@ -392,7 +392,7 @@ details p {
 
 .footer-brand p {
   color: var(--text-light);
-  font-size: 14px;
+  font-size: 17px;
   max-width: 300px;
   margin-top: 13px;
 }
@@ -405,7 +405,7 @@ details p {
 .footer-column a {
   display: block;
   color: var(--text-light);
-  font-size: 14px;
+  font-size: 17px;
   margin: 9px 0;
 }
 
@@ -418,16 +418,19 @@ details p {
   margin-top: 50px;
   padding-top: 25px;
   color: var(--text-light);
-  font-size: 13px;
+  font-size: 16px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1180px) {
   .nav-links {
     display: none;
   }
+}
 
+@media (max-width: 900px) {
   .hero-grid {
     grid-template-columns: 1fr;
+    gap: 48px;
   }
 
   .steps {
@@ -441,6 +444,7 @@ details p {
 
   .footer-grid {
     grid-template-columns: 1fr 1fr;
+    gap: 32px;
   }
 }
 
@@ -451,6 +455,15 @@ details p {
 
   .hero {
     padding-top: 70px;
+  }
+
+  .marketing-section {
+    padding: 64px 0;
+  }
+
+  .preview-top {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   .dashboard {
@@ -473,5 +486,16 @@ details p {
 
   .footer-grid {
     grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 360px) {
+  .nav-inner {
+    gap: 10px;
+  }
+
+  .marketing-nav .brand-logo img {
+    width: 128px;
   }
 }

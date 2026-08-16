@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tender Workspace — Maguire.id</title>
+  <title>Tender Workspace — Tendigi</title>
   <meta name="description" content="Active tender preparation workspace for Pengadaan Pembangunan Gardu Induk 150kV." />
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="css/app.css" />
@@ -12,7 +12,9 @@
   <div class="app-shell">
     <aside class="app-sidebar" id="app-sidebar" aria-label="Main navigation">
       <div class="app-sidebar-brand">
-        <a class="logo" href="dashboard.html" aria-label="Maguire.id dashboard">Maguire<span>.id</span></a>
+        <a class="logo brand-logo" href="dashboard.html" aria-label="Tendigi dashboard">
+          <img src="assets/tendigi-logo.png" alt="" width="1200" height="202" />
+        </a>
       </div>
 
       <div class="app-sidebar-section-label">Workspace</div>
@@ -82,7 +84,7 @@
           <div class="app-user-menu-wrap">
             <button class="app-user-button" id="user-menu-button" type="button" aria-expanded="false">
               <span class="app-user-avatar">BS</span>
-              <span class="app-user-meta"><strong>Budi Santoso</strong><span>Business Development</span></span>
+              <span class="app-user-meta"><strong>Budi Santoso</strong><span>Superadmin</span></span>
               <svg class="app-user-chevron" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
             </button>
             <div class="app-dropdown" id="user-menu" hidden>
@@ -111,7 +113,7 @@
                 <div class="workspace-badge-row">
                   <span class="workspace-status-badge">Preparing</span>
                   <span class="detail-badge">Infrastructure</span>
-                  <span class="detail-badge detail-badge-red">At Risk</span>
+                  <span class="detail-badge detail-badge-red" id="workspace-readiness-badge">At Risk</span>
                 </div>
                 <p>PT PLN (Persero) · PLN e-Procurement</p>
               </div>
@@ -132,25 +134,25 @@
         <section class="workspace-progress-grid" aria-label="Tender preparation progress">
           <article class="app-card workspace-progress-card workspace-progress-overall">
             <div class="workspace-progress-card-top"><span>Overall Progress</span><small>Preparing</small></div>
-            <strong>78%</strong>
-            <div class="workspace-progress-bar"><span style="width:78%"></span></div>
-            <p>Submission preparation across requirements, documents, and tasks.</p>
+            <strong id="workspace-overall-value">78%</strong>
+            <div class="workspace-progress-bar"><span id="workspace-overall-bar" style="width:78%"></span></div>
+            <p id="workspace-overall-copy">Submission preparation across requirements, documents, and tasks.</p>
           </article>
-          <article class="app-card workspace-progress-card">
-            <div class="workspace-progress-card-top"><span>Requirements</span><a href="requirements.html">View</a></div>
-            <strong>38 <small>/ 44</small></strong>
-            <div class="workspace-mini-bar"><span class="is-green" style="width:86%"></span></div>
-            <p>3 attention · 3 gaps</p>
+          <article class="app-card workspace-progress-card" id="workspace-requirements-progress">
+            <div class="workspace-progress-card-top"><span>Requirements</span><a href="requirements.html" id="workspace-requirements-link">View</a></div>
+            <strong id="workspace-requirements-value">38 <small>/ 44</small></strong>
+            <div class="workspace-mini-bar"><span class="is-green" id="workspace-requirements-bar" style="width:86%"></span></div>
+            <p id="workspace-requirements-copy">3 attention · 3 gaps</p>
           </article>
-          <article class="app-card workspace-progress-card">
+          <article class="app-card workspace-progress-card" id="workspace-documents-progress">
             <div class="workspace-progress-card-top"><span>Documents</span><button type="button" data-open-tab="documents">View</button></div>
-            <strong>21 <small>/ 24</small></strong>
-            <div class="workspace-mini-bar"><span class="is-blue" style="width:88%"></span></div>
-            <p>3 documents still required</p>
+            <strong id="workspace-documents-value">21 <small>/ 24</small></strong>
+            <div class="workspace-mini-bar"><span class="is-blue" id="workspace-documents-bar" style="width:88%"></span></div>
+            <p id="workspace-documents-copy">3 documents still required</p>
           </article>
           <article class="app-card workspace-progress-card">
             <div class="workspace-progress-card-top"><span>Tasks</span><button type="button" data-open-tab="tasks">View</button></div>
-            <strong><span id="task-complete-count">14</span> <small>/ 19</small></strong>
+            <strong><span id="task-complete-count">14</span> <small>/ <span id="task-total-count">19</span></small></strong>
             <div class="workspace-mini-bar"><span class="is-blue" id="task-progress-bar" style="width:74%"></span></div>
             <p><span id="task-open-count">5</span> tasks remain open</p>
           </article>
@@ -162,20 +164,20 @@
           </article>
         </section>
 
-        <div class="workspace-risk-banner" role="status">
+        <div class="workspace-risk-banner" id="workspace-readiness-banner" role="status">
           <span class="workspace-risk-icon">!</span>
           <div>
-            <strong>2 mandatory gaps are still unresolved</strong>
-            <p>Similar project experience and Project Manager SKA may affect eligibility if they remain unresolved at submission.</p>
+            <strong id="workspace-readiness-title">2 mandatory gaps are still unresolved</strong>
+            <p id="workspace-readiness-copy">Similar project experience and Project Manager SKA may affect eligibility if they remain unresolved at submission.</p>
           </div>
-          <a href="readiness.html">Review Readiness →</a>
+          <a href="readiness.html" id="workspace-readiness-action">Review Readiness →</a>
         </div>
 
         <div class="workspace-tabs" role="tablist" aria-label="Tender workspace sections">
           <button class="workspace-tab is-active" type="button" role="tab" aria-selected="true" data-tab="overview">Overview</button>
           <button class="workspace-tab" type="button" role="tab" aria-selected="false" data-tab="tasks">Tasks <span id="task-tab-badge">5</span></button>
-          <button class="workspace-tab" type="button" role="tab" aria-selected="false" data-tab="documents">Documents <span>3</span></button>
-          <button class="workspace-tab" type="button" role="tab" aria-selected="false" data-tab="requirements">Requirements <span>6</span></button>
+          <button class="workspace-tab" type="button" role="tab" aria-selected="false" data-tab="documents">Documents <span id="workspace-documents-tab-badge">3</span></button>
+          <button class="workspace-tab" id="workspace-requirements-tab" type="button" role="tab" aria-selected="false" data-tab="requirements">Requirements <span>6</span></button>
           <button class="workspace-tab" type="button" role="tab" aria-selected="false" data-tab="timeline">Timeline</button>
           <button class="workspace-tab" type="button" role="tab" aria-selected="false" data-tab="team">Team</button>
         </div>
@@ -183,7 +185,17 @@
         <div class="workspace-tab-panel is-active" data-panel="overview">
           <div class="workspace-overview-grid">
             <div class="workspace-main-column">
-              <section class="app-card workspace-section-card">
+              <section class="app-card workspace-section-card workspace-direct-start" id="workspace-direct-start" hidden>
+                <div class="workspace-direct-start-icon" aria-hidden="true">✓</div>
+                <div>
+                  <span class="detail-kicker">Workspace ready</span>
+                  <h2>Participation started without AI analysis</h2>
+                  <p>Your team can organize documents, assign tasks, and prepare the submission manually. Run the optional analysis whenever you want an extracted requirement checklist and readiness assessment.</p>
+                </div>
+                <a class="btn btn-secondary" href="analysis.html">Run Optional Analysis →</a>
+              </section>
+
+              <section class="app-card workspace-section-card" id="workspace-analysis-attention">
                 <div class="workspace-section-heading">
                   <div><span class="detail-kicker">Priority</span><h2>Needs Attention</h2></div>
                   <span class="workspace-section-count">3 items</span>
@@ -225,7 +237,7 @@
               <section class="app-card workspace-section-card">
                 <div class="workspace-section-heading">
                   <div><span class="detail-kicker">Execution</span><h2>Next Tasks</h2></div>
-                  <button class="workspace-text-button" type="button" data-open-tab="tasks">View all 19 tasks →</button>
+                  <button class="workspace-text-button" id="workspace-view-all-tasks" type="button" data-open-tab="tasks">View all 19 tasks →</button>
                 </div>
                 <div class="workspace-quick-task-list" id="overview-task-list"></div>
               </section>
@@ -243,8 +255,8 @@
                 <button class="btn btn-secondary workspace-wide-button" type="button" data-open-tab="timeline">View Full Timeline</button>
               </section>
 
-              <section class="app-card workspace-ai-card">
-                <div class="workspace-ai-heading"><span class="workspace-ai-icon">✦</span><div><strong>Ask Maguire</strong><small>Tender workspace assistant</small></div></div>
+              <section class="app-card workspace-ai-card" id="workspace-ai-card">
+                <div class="workspace-ai-heading"><span class="workspace-ai-icon">✦</span><div><strong>Ask Tendigi</strong><small>Tender workspace assistant</small></div></div>
                 <p class="workspace-ai-prompt">Ask about readiness, requirements, documents, or what your team should prioritize next.</p>
                 <div class="workspace-ai-chips">
                   <button type="button" data-ai-question="priority">What should we prioritize?</button>
@@ -254,12 +266,12 @@
                 <div class="workspace-ai-answer" id="workspace-ai-answer" hidden></div>
               </section>
 
-              <section class="app-card workspace-section-card">
+              <section class="app-card workspace-section-card" id="workspace-activity-card">
                 <div class="workspace-section-heading"><div><span class="detail-kicker">Recent activity</span><h2>Activity</h2></div></div>
                 <div class="workspace-activity-list">
                   <div><span class="workspace-avatar">DN</span><p><strong>Dina</strong> uploaded <b>Audited Financial Statement 2025</b><small>Today · 16:24</small></p></div>
                   <div><span class="workspace-avatar">AR</span><p><strong>Andi</strong> completed <b>Review technical specification</b><small>Today · 14:08</small></p></div>
-                  <div><span class="workspace-avatar">MG</span><p><strong>Maguire</strong> flagged an eligibility risk in project experience.<small>Today · 10:31</small></p></div>
+                  <div id="workspace-analysis-activity"><span class="workspace-avatar">TG</span><p><strong>Tendigi</strong> flagged an eligibility risk in project experience.<small>Today · 10:31</small></p></div>
                 </div>
               </section>
             </aside>
@@ -295,10 +307,16 @@
         <div class="workspace-tab-panel" data-panel="documents" hidden>
           <section class="app-card workspace-full-card">
             <div class="workspace-full-heading">
-              <div><span class="detail-kicker">Evidence</span><h2>Submission Documents</h2><p>Documents required for this tender, linked to the underlying requirement checklist.</p></div>
-              <div class="workspace-full-heading-stat"><strong>21 / 24</strong><span>ready</span></div>
+              <div><span class="detail-kicker">Evidence</span><h2>Submission Documents</h2><p id="workspace-documents-panel-copy">Documents required for this tender, linked to the underlying requirement checklist.</p></div>
+              <div class="workspace-full-heading-stat"><strong id="workspace-documents-panel-value">21 / 24</strong><span id="workspace-documents-panel-label">ready</span></div>
             </div>
-            <div class="workspace-document-groups">
+            <div class="workspace-direct-empty" id="workspace-direct-documents" hidden>
+              <span class="workspace-direct-empty-icon" aria-hidden="true">DOC</span>
+              <strong>No tender documents mapped yet</strong>
+              <p>Start from your company document library or run optional AI analysis to map evidence against extracted requirements.</p>
+              <a class="btn btn-secondary" href="documents.html">Open Document Library →</a>
+            </div>
+            <div class="workspace-document-groups" id="workspace-analyzed-documents">
               <div class="workspace-document-group">
                 <div class="workspace-document-group-title"><strong>Needs Action</strong><span>3 documents</span></div>
                 <button class="workspace-document-row is-missing" type="button" data-doc="Project Manager SKA"><span class="workspace-doc-icon">PDF</span><span><strong>Project Manager SKA</strong><small>Technical · Mandatory</small></span><span class="workspace-doc-owner">Andi Rahman</span><span class="workspace-doc-status">Missing</span><span>›</span></button>
@@ -316,7 +334,7 @@
           </section>
         </div>
 
-        <div class="workspace-tab-panel" data-panel="requirements" hidden>
+        <div class="workspace-tab-panel" id="workspace-requirements-panel" data-panel="requirements" hidden>
           <section class="app-card workspace-full-card">
             <div class="workspace-full-heading">
               <div><span class="detail-kicker">Readiness evidence</span><h2>Unresolved Requirements</h2><p>Focus the team on the six requirements that still need action or verification.</p></div>
@@ -338,7 +356,7 @@
             <div class="workspace-full-heading"><div><span class="detail-kicker">Schedule</span><h2>Tender Timeline</h2><p>Procurement milestones and internal preparation checkpoints.</p></div></div>
             <div class="workspace-timeline">
               <div class="workspace-timeline-item is-complete"><span>✓</span><div><time>8 Aug 2026</time><strong>Tender announced</strong><p>Opportunity identified and matched to PT Wijaya Infrastruktur Nusantara.</p></div></div>
-              <div class="workspace-timeline-item is-complete"><span>✓</span><div><time>9 Aug 2026</time><strong>Readiness assessment completed</strong><p>44 requirements extracted. Workspace created with 82% readiness and At Risk eligibility.</p></div></div>
+              <div class="workspace-timeline-item is-complete" id="workspace-analysis-timeline"><span>✓</span><div><time>9 Aug 2026</time><strong>Readiness assessment completed</strong><p>44 requirements extracted. Workspace created with 82% readiness and At Risk eligibility.</p></div></div>
               <div class="workspace-timeline-item is-next"><span></span><div><time>11 Aug 2026</time><strong>Clarification meeting</strong><p>Prepare open commercial and technical questions for PLN.</p></div></div>
               <div class="workspace-timeline-item"><span></span><div><time>15 Aug 2026</time><strong>Internal bid review</strong><p>Management review of eligibility gaps, commercial position, and submission readiness.</p></div></div>
               <div class="workspace-timeline-item"><span></span><div><time>18 Aug 2026</time><strong>Submission window opens</strong><p>Begin final upload and portal validation.</p></div></div>
@@ -349,7 +367,7 @@
 
         <div class="workspace-tab-panel" data-panel="team" hidden>
           <section class="app-card workspace-full-card">
-            <div class="workspace-full-heading"><div><span class="detail-kicker">Collaboration</span><h2>Tender Team</h2><p>Six team members across Business Development, Engineering, Legal, and Finance.</p></div><button class="btn btn-secondary" type="button" id="invite-team-button">Invite Member</button></div>
+            <div class="workspace-full-heading"><div><span class="detail-kicker">Collaboration</span><h2>Tender Team</h2><p>Six team members across Business Development, Engineering, Legal, and Finance.</p></div><button class="btn btn-secondary" type="button" id="invite-team-button">Manage Workspace Access</button></div>
             <div class="workspace-team-grid">
               <article class="workspace-team-card"><span class="workspace-team-avatar">BS</span><div><strong>Budi Santoso</strong><p>Business Development · Tender Lead</p><small>5 tasks · 2 open</small></div><span class="workspace-role-badge">Owner</span></article>
               <article class="workspace-team-card"><span class="workspace-team-avatar">AR</span><div><strong>Andi Rahman</strong><p>Engineering · Technical Lead</p><small>4 tasks · 1 open</small></div><span class="workspace-role-badge is-member">Member</span></article>
@@ -380,16 +398,81 @@
   </div>
 
   <script>
-    const isAuthenticated = localStorage.getItem("maguire_demo_authenticated") === "true";
-    if (!isAuthenticated) window.location.replace("login.html");
+    (() => {
+    const isAuthenticated = localStorage.getItem("octen_demo_authenticated") === "true";
+    if (!isAuthenticated) {
+      window.location.replace("login.html");
+      return;
+    }
 
-    localStorage.setItem("maguire_active_tender", "pln-150kv");
-    localStorage.setItem("maguire_workspace_tender", "pln-150kv");
-    localStorage.setItem("maguire_tender_participation", "preparing");
+    const hasWorkspaceParticipation = localStorage.getItem("octen_tender_participation") === "preparing"
+      && localStorage.getItem("octen_workspace_tender") === "pln-150kv";
+    if (!hasWorkspaceParticipation) {
+      window.location.replace("tender-detail.html");
+      return;
+    }
+
+    localStorage.setItem("octen_active_tender", "pln-150kv");
+
+    const analysisCompleted = localStorage.getItem("octen_analysis_status") === "completed"
+      || localStorage.getItem("octen_analysis_status_cached") === "completed";
+    const isDirectParticipation = localStorage.getItem("octen_participation_mode") === "direct"
+      && !analysisCompleted;
+
+    function applyParticipationMode() {
+      if (!isDirectParticipation) return;
+
+      const readinessBadge = document.getElementById("workspace-readiness-badge");
+      readinessBadge.textContent = "Not analyzed";
+      readinessBadge.classList.remove("detail-badge-red");
+      readinessBadge.classList.add("detail-badge-blue");
+
+      document.getElementById("workspace-requirements-link").href = "analysis.html";
+      document.getElementById("workspace-requirements-link").textContent = "Analyze";
+      document.getElementById("workspace-requirements-value").textContent = "Not analyzed";
+      document.getElementById("workspace-requirements-bar").style.width = "0%";
+      document.getElementById("workspace-requirements-copy").textContent = "Track manually in Tasks and Documents, or run optional analysis";
+      document.getElementById("workspace-requirements-progress").classList.add("is-analysis-pending");
+
+      document.getElementById("workspace-documents-value").textContent = "Not mapped";
+      document.getElementById("workspace-documents-bar").style.width = "0%";
+      document.getElementById("workspace-documents-copy").textContent = "No tender documents mapped yet";
+      document.getElementById("workspace-documents-progress").classList.add("is-analysis-pending");
+      document.getElementById("workspace-documents-tab-badge").textContent = "0";
+      document.getElementById("workspace-overall-copy").textContent = "Manual preparation progress based on completed workspace tasks.";
+      document.getElementById("workspace-documents-panel-copy").textContent = "Organize submission evidence manually or use optional analysis to map documents against tender requirements.";
+      document.getElementById("workspace-documents-panel-value").textContent = "0";
+      document.getElementById("workspace-documents-panel-label").textContent = "mapped";
+      document.getElementById("workspace-direct-documents").hidden = false;
+      document.getElementById("workspace-analyzed-documents").hidden = true;
+
+      const readinessBanner = document.getElementById("workspace-readiness-banner");
+      readinessBanner.classList.add("is-analysis-pending");
+      readinessBanner.querySelector(".workspace-risk-icon").textContent = "i";
+      document.getElementById("workspace-readiness-title").textContent = "Readiness has not been assessed";
+      document.getElementById("workspace-readiness-copy").textContent = "Participation is active. Your team can prepare manually or run AI analysis later for a requirement checklist and readiness assessment.";
+      const readinessAction = document.getElementById("workspace-readiness-action");
+      readinessAction.href = "analysis.html";
+      readinessAction.textContent = "Run Optional Analysis →";
+
+      document.getElementById("workspace-direct-start").hidden = false;
+      document.getElementById("workspace-analysis-attention").hidden = true;
+      document.getElementById("workspace-ai-card").hidden = true;
+      document.getElementById("workspace-activity-card").hidden = true;
+      document.getElementById("workspace-requirements-tab").hidden = true;
+      document.getElementById("workspace-requirements-panel").hidden = true;
+      document.querySelectorAll(".workspace-team-card small").forEach(summary => {
+        summary.textContent = "No tasks assigned yet";
+      });
+
+      const analysisTimeline = document.getElementById("workspace-analysis-timeline");
+      analysisTimeline.querySelector("strong").textContent = "Tender workspace created";
+      analysisTimeline.querySelector("p").textContent = "Participation started directly. AI readiness analysis remains optional and has not been run.";
+    }
 
     const tasks = [
       { id:"task-01", title:"Review tender announcement", owner:"Budi Santoso", due:"9 Aug", priority:"Normal", done:true },
-      { id:"task-02", title:"Complete AI readiness assessment", owner:"Budi Santoso", due:"9 Aug", priority:"High", done:true },
+      { id:"task-02", title:"Complete AI readiness assessment", owner:"Budi Santoso", due:"9 Aug", priority:"High", done:true, analysisOnly:true },
       { id:"task-03", title:"Review administrative requirements", owner:"Dina Natalia", due:"10 Aug", priority:"Normal", done:true },
       { id:"task-04", title:"Review technical specification", owner:"Andi Rahman", due:"10 Aug", priority:"High", done:true },
       { id:"task-05", title:"Validate audited financial statements", owner:"Raka Saputra", due:"10 Aug", priority:"Normal", done:true },
@@ -402,23 +485,36 @@
       { id:"task-12", title:"Compile method statement draft", owner:"Andi Rahman", due:"12 Aug", priority:"Normal", done:true },
       { id:"task-13", title:"Check ISO 9001 validity", owner:"Dina Natalia", due:"12 Aug", priority:"Normal", done:true },
       { id:"task-14", title:"Upload financial statement evidence", owner:"Raka Saputra", due:"12 Aug", priority:"Normal", done:true },
-      { id:"task-15", title:"Add third qualifying project evidence", owner:"Budi Santoso", due:"12 Aug", priority:"Critical", done:false },
-      { id:"task-16", title:"Upload Project Manager SKA", owner:"Andi Rahman", due:"13 Aug", priority:"Critical", done:false },
+      { id:"task-15", title:"Add third qualifying project evidence", owner:"Budi Santoso", due:"12 Aug", priority:"Critical", done:false, analysisOnly:true },
+      { id:"task-16", title:"Upload Project Manager SKA", owner:"Andi Rahman", due:"13 Aug", priority:"Critical", done:false, analysisOnly:true },
       { id:"task-17", title:"Confirm bank guarantee issuance", owner:"Raka Saputra", due:"14 Aug", priority:"High", done:false },
       { id:"task-18", title:"Complete ISO 45001 renewal evidence", owner:"Dina Natalia", due:"15 Aug", priority:"High", done:false },
       { id:"task-19", title:"Run internal submission readiness review", owner:"Budi Santoso", due:"15 Aug", priority:"High", done:false }
-    ];
+    ].filter(task => !isDirectParticipation || !task.analysisOnly);
 
+    if (isDirectParticipation) tasks.forEach(task => { task.done = false; });
+
+    const taskStorageKey = isDirectParticipation ? "octen_workspace_tasks_direct" : "octen_workspace_tasks";
     let storedTaskState = {};
-    try { storedTaskState = JSON.parse(localStorage.getItem("maguire_workspace_tasks") || "{}"); } catch { storedTaskState = {}; }
+    try { storedTaskState = JSON.parse(localStorage.getItem(taskStorageKey) || "{}"); } catch { storedTaskState = {}; }
+    if (!isDirectParticipation && analysisCompleted) {
+      try {
+        const directTaskState = JSON.parse(localStorage.getItem("octen_workspace_tasks_direct") || "{}");
+        storedTaskState = { ...storedTaskState, ...directTaskState };
+      } catch {}
+    }
     tasks.forEach(task => { if (typeof storedTaskState[task.id] === "boolean") task.done = storedTaskState[task.id]; });
+    if (analysisCompleted) {
+      const analysisTask = tasks.find(task => task.id === "task-02");
+      if (analysisTask) analysisTask.done = true;
+    }
 
     const ownerInitials = {"Budi Santoso":"BS","Andi Rahman":"AR","Dina Natalia":"DN","Raka Saputra":"RS","Fajar Wibowo":"FW","Siti Maharani":"SM"};
     let taskFilter = "all";
 
     function persistTasks() {
       const state = Object.fromEntries(tasks.map(task => [task.id, task.done]));
-      localStorage.setItem("maguire_workspace_tasks", JSON.stringify(state));
+      localStorage.setItem(taskStorageKey, JSON.stringify(state));
     }
 
     function getTaskCounts() {
@@ -429,10 +525,17 @@
     function renderTaskStats() {
       const { complete, open } = getTaskCounts();
       document.getElementById("task-complete-count").textContent = complete;
+      document.getElementById("task-total-count").textContent = tasks.length;
       document.getElementById("task-open-count").textContent = open;
       document.getElementById("task-tab-badge").textContent = open;
       document.getElementById("tasks-heading-count").textContent = `${complete} / ${tasks.length}`;
-      document.getElementById("task-progress-bar").style.width = `${Math.round((complete / tasks.length) * 100)}%`;
+      document.getElementById("workspace-view-all-tasks").textContent = `View all ${tasks.length} tasks →`;
+      const taskPercent = Math.round((complete / tasks.length) * 100);
+      document.getElementById("task-progress-bar").style.width = `${taskPercent}%`;
+      if (isDirectParticipation) {
+        document.getElementById("workspace-overall-value").textContent = `${taskPercent}%`;
+        document.getElementById("workspace-overall-bar").style.width = `${taskPercent}%`;
+      }
     }
 
     function taskPriorityClass(priority) { return `is-${priority.toLowerCase()}`; }
@@ -495,7 +598,7 @@
         panel.hidden = !active;
         panel.classList.toggle("is-active", active);
       });
-      localStorage.setItem("maguire_workspace_tab", tabName);
+      localStorage.setItem("octen_workspace_tab", tabName);
       if (history.replaceState) history.replaceState(null, "", `#${tabName}`);
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
@@ -533,7 +636,7 @@
     document.getElementById("workspace-modal-done").addEventListener("click", closeModal);
     modal.addEventListener("click", event => { if (event.target === modal) closeModal(); });
     document.querySelectorAll("[data-doc]").forEach(button => button.addEventListener("click", () => openModal(button.dataset.doc, "This workspace item is linked to the tender requirement checklist and company document library. In the production product, this view would show document versions, owner, requirement links, validation status, and upload history.", "DOC")));
-    document.getElementById("invite-team-button").addEventListener("click", () => openModal("Invite team member", "Team invitations will be connected to organization users and role-based access in the production product. For this prototype, the tender team is fixed at six members.", "+"));
+    document.getElementById("invite-team-button").addEventListener("click", () => { window.location.href = "settings.html#team"; });
     document.addEventListener("keydown", event => { if (event.key === "Escape" && !modal.hidden) closeModal(); });
 
     const userMenuButton = document.getElementById("user-menu-button");
@@ -552,18 +655,21 @@
     document.addEventListener("click", () => { closeUserMenu(); closeNotifications(); });
     userMenu.addEventListener("click", event => event.stopPropagation());
     notificationPopover.addEventListener("click", event => event.stopPropagation());
-    logoutButton.addEventListener("click", () => { localStorage.removeItem("maguire_demo_authenticated"); localStorage.removeItem("maguire_demo_user"); localStorage.removeItem("maguire_demo_company"); window.location.href = "login.html"; });
+    logoutButton.addEventListener("click", () => { localStorage.removeItem("octen_demo_authenticated"); localStorage.removeItem("octen_demo_user"); localStorage.removeItem("octen_demo_company"); window.location.href = "login.html"; });
 
     function setMobileSidebar(open){ sidebar.classList.toggle("is-open",open); mobileOverlay.hidden = !open; mobileMenuButton.setAttribute("aria-expanded",String(open)); document.body.classList.toggle("sidebar-open",open); }
     mobileMenuButton.addEventListener("click", () => setMobileSidebar(!sidebar.classList.contains("is-open")));
     mobileOverlay.addEventListener("click", () => setMobileSidebar(false));
-    window.addEventListener("resize", () => { if (window.innerWidth > 760) setMobileSidebar(false); });
+    window.addEventListener("resize", () => { if (window.innerWidth > 1024) setMobileSidebar(false); });
 
+    applyParticipationMode();
     renderTaskStats();
     renderOverviewTasks();
     renderTaskTable();
-    const requestedTab = location.hash ? location.hash.slice(1) : (localStorage.getItem("maguire_workspace_tab") || "overview");
+    let requestedTab = location.hash ? location.hash.slice(1) : (localStorage.getItem("octen_workspace_tab") || "overview");
+    if (isDirectParticipation && requestedTab === "requirements") requestedTab = "overview";
     if (["overview","tasks","documents","requirements","timeline","team"].includes(requestedTab)) setTab(requestedTab);
+    })();
   </script>
 </body>
 </html>

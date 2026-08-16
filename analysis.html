@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Analyze Tender — Maguire.id</title>
-  <meta name="description" content="Maguire tender analysis for Pengadaan Pembangunan Gardu Induk 150kV." />
+  <title>Analyze Tender — Tendigi</title>
+  <meta name="description" content="Tendigi tender analysis for Pengadaan Pembangunan Gardu Induk 150kV." />
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="css/app.css" />
 </head>
@@ -12,7 +12,9 @@
   <div class="app-shell">
     <aside class="app-sidebar" id="app-sidebar" aria-label="Main navigation">
       <div class="app-sidebar-brand">
-        <a class="logo" href="dashboard.html" aria-label="Maguire.id dashboard">Maguire<span>.id</span></a>
+        <a class="logo brand-logo" href="dashboard.html" aria-label="Tendigi dashboard">
+          <img src="assets/tendigi-logo.png" alt="" width="1200" height="202" />
+        </a>
       </div>
 
       <div class="app-sidebar-section-label">Workspace</div>
@@ -102,7 +104,7 @@
           <div class="app-user-menu-wrap">
             <button class="app-user-button" id="user-menu-button" type="button" aria-expanded="false">
               <span class="app-user-avatar">BS</span>
-              <span class="app-user-meta"><strong>Budi Santoso</strong><span>Business Development</span></span>
+              <span class="app-user-meta"><strong>Budi Santoso</strong><span>Superadmin</span></span>
               <svg class="app-user-chevron" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
             </button>
             <div class="app-dropdown" id="user-menu" hidden>
@@ -179,7 +181,7 @@
               <div class="analysis-section-heading">
                 <div>
                   <span class="analysis-kicker">Analysis process</span>
-                  <h2>What Maguire is checking</h2>
+                  <h2>What Tendigi is checking</h2>
                 </div>
               </div>
 
@@ -233,7 +235,7 @@
                 <div class="analysis-readiness-score"><strong>82%</strong><span>Readiness</span></div>
               </div>
 
-              <p class="analysis-findings-intro">Maguire found strong overall alignment, but six requirements need review before your team should proceed with submission preparation.</p>
+              <p class="analysis-findings-intro">Tendigi found strong overall alignment, but six requirements need review before your team should proceed with submission preparation.</p>
 
               <div class="analysis-result-grid">
                 <div class="analysis-result-card analysis-result-card-success"><span>Matched</span><strong>38</strong><small>requirements</small></div>
@@ -244,7 +246,7 @@
               <div class="analysis-risk-preview">
                 <div class="analysis-risk-row is-danger">
                   <span class="analysis-risk-icon">!</span>
-                  <div><strong>Similar project experience may not meet the minimum</strong><p>3 qualifying projects ≥ Rp10B are required; Maguire found 2.</p></div>
+                  <div><strong>Similar project experience may not meet the minimum</strong><p>3 qualifying projects ≥ Rp10B are required; Tendigi found 2.</p></div>
                   <span class="analysis-source-ref">RKS · p.104</span>
                 </div>
                 <div class="analysis-risk-row is-warning">
@@ -305,12 +307,12 @@
   </div>
 
   <script>
-    const isAuthenticated = localStorage.getItem("maguire_demo_authenticated") === "true";
+    const isAuthenticated = localStorage.getItem("octen_demo_authenticated") === "true";
     if (!isAuthenticated) window.location.replace("login.html");
 
     const TENDER_ID = "pln-150kv";
-    localStorage.setItem("maguire_active_tender", TENDER_ID);
-    localStorage.setItem("maguire_analysis_tender", TENDER_ID);
+    localStorage.setItem("octen_active_tender", TENDER_ID);
+    localStorage.setItem("octen_analysis_tender", TENDER_ID);
 
     const progressBar = document.getElementById("analysis-progress-bar");
     const progressTrack = document.getElementById("analysis-progress-track");
@@ -385,9 +387,13 @@
     }
 
     function completeAnalysis() {
-      localStorage.setItem("maguire_analysis_status", "completed");
-      localStorage.setItem("maguire_readiness_score", "82");
-      localStorage.setItem("maguire_requirement_summary", JSON.stringify({ total: 44, matched: 38, attention: 3, missing: 3 }));
+      localStorage.setItem("octen_analysis_status", "completed");
+      localStorage.setItem("octen_readiness_score", "82");
+      localStorage.setItem("octen_requirement_summary", JSON.stringify({ total: 44, matched: 38, attention: 3, missing: 3 }));
+      if (localStorage.getItem("octen_tender_participation") === "preparing"
+        && localStorage.getItem("octen_workspace_tender") === TENDER_ID) {
+        localStorage.setItem("octen_participation_mode", "analyzed");
+      }
       statusPill.classList.add("is-complete");
       statusText.textContent = "Analysis complete";
       progressLabel.textContent = "Analysis complete";
@@ -403,9 +409,9 @@
       findings.classList.remove("is-visible");
       statusPill.classList.remove("is-complete");
       statusText.textContent = "Analysis in progress";
-      localStorage.setItem("maguire_analysis_status", "started");
+      localStorage.setItem("octen_analysis_status", "started");
 
-      if (!forceReplay && localStorage.getItem("maguire_analysis_status_cached") === "completed") {
+      if (!forceReplay && localStorage.getItem("octen_analysis_status_cached") === "completed") {
         renderProgress(100);
         completeAnalysis();
         return;
@@ -425,14 +431,14 @@
           clearInterval(animationTimer);
           animationTimer = null;
           renderProgress(100);
-          localStorage.setItem("maguire_analysis_status_cached", "completed");
+          localStorage.setItem("octen_analysis_status_cached", "completed");
           completeAnalysis();
         }
       }, interval);
     }
 
     document.getElementById("rerun-analysis-button").addEventListener("click", () => {
-      localStorage.removeItem("maguire_analysis_status_cached");
+      localStorage.removeItem("octen_analysis_status_cached");
       window.scrollTo({ top: 0, behavior: "smooth" });
       runAnalysis(true);
     });
@@ -470,9 +476,9 @@
     notificationPopover.addEventListener("click", (event) => event.stopPropagation());
 
     logoutButton.addEventListener("click", () => {
-      localStorage.removeItem("maguire_demo_authenticated");
-      localStorage.removeItem("maguire_demo_user");
-      localStorage.removeItem("maguire_demo_company");
+      localStorage.removeItem("octen_demo_authenticated");
+      localStorage.removeItem("octen_demo_user");
+      localStorage.removeItem("octen_demo_company");
       window.location.href = "login.html";
     });
 
@@ -485,13 +491,13 @@
 
     mobileMenuButton.addEventListener("click", () => setMobileSidebar(!sidebar.classList.contains("is-open")));
     mobileOverlay.addEventListener("click", () => setMobileSidebar(false));
-    window.addEventListener("resize", () => { if (window.innerWidth > 760) setMobileSidebar(false); });
+    window.addEventListener("resize", () => { if (window.innerWidth > 1024) setMobileSidebar(false); });
 
-    const requestedFreshAnalysis = localStorage.getItem("maguire_analysis_status") === "started";
-    const alreadyCompleted = localStorage.getItem("maguire_analysis_status_cached") === "completed";
+    const requestedFreshAnalysis = localStorage.getItem("octen_analysis_status") === "started";
+    const alreadyCompleted = localStorage.getItem("octen_analysis_status_cached") === "completed";
 
     if (requestedFreshAnalysis) {
-      localStorage.removeItem("maguire_analysis_status_cached");
+      localStorage.removeItem("octen_analysis_status_cached");
       runAnalysis(true);
     } else if (alreadyCompleted) {
       renderProgress(100);

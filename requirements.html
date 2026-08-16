@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Requirement Checklist — Maguire.id</title>
+  <title>Requirement Checklist — Tendigi</title>
   <meta name="description" content="Detailed tender requirement checklist for Pengadaan Pembangunan Gardu Induk 150kV." />
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="css/app.css" />
@@ -12,7 +12,9 @@
   <div class="app-shell">
     <aside class="app-sidebar" id="app-sidebar" aria-label="Main navigation">
       <div class="app-sidebar-brand">
-        <a class="logo" href="dashboard.html" aria-label="Maguire.id dashboard">Maguire<span>.id</span></a>
+        <a class="logo brand-logo" href="dashboard.html" aria-label="Tendigi dashboard">
+          <img src="assets/tendigi-logo.png" alt="" width="1200" height="202" />
+        </a>
       </div>
 
       <div class="app-sidebar-section-label">Workspace</div>
@@ -82,7 +84,7 @@
           <div class="app-user-menu-wrap">
             <button class="app-user-button" id="user-menu-button" type="button" aria-expanded="false">
               <span class="app-user-avatar">BS</span>
-              <span class="app-user-meta"><strong>Budi Santoso</strong><span>Business Development</span></span>
+              <span class="app-user-meta"><strong>Budi Santoso</strong><span>Superadmin</span></span>
               <svg class="app-user-chevron" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
             </button>
             <div class="app-dropdown" id="user-menu" hidden>
@@ -260,7 +262,7 @@
   </div>
 
   <script>
-    const isAuthenticated = localStorage.getItem("maguire_demo_authenticated") === "true";
+    const isAuthenticated = localStorage.getItem("octen_demo_authenticated") === "true";
     if (!isAuthenticated) window.location.replace("login.html");
 
     const requirements = [
@@ -428,7 +430,7 @@
       if (!activeRequirement) return;
       document.getElementById("source-modal-title").textContent = activeRequirement.sourceFile;
       document.getElementById("source-modal-ref").textContent = `${activeRequirement.sourceRef} · ${activeRequirement.id}`;
-      document.getElementById("source-modal-copy").innerHTML = `<span>Extracted requirement</span><p>${escapeHTML(activeRequirement.quote)}</p><small>Maguire links extracted requirements back to the original source so your team can verify important findings.</small>`;
+      document.getElementById("source-modal-copy").innerHTML = `<span>Extracted requirement</span><p>${escapeHTML(activeRequirement.quote)}</p><small>Tendigi links extracted requirements back to the original source so your team can verify important findings.</small>`;
       sourceModal.hidden = false;
       document.body.classList.add("detail-modal-open");
     }
@@ -464,12 +466,12 @@
     document.addEventListener("click", () => { closeUserMenu(); closeNotifications(); });
     userMenu.addEventListener("click", event => event.stopPropagation());
     notificationPopover.addEventListener("click", event => event.stopPropagation());
-    logoutButton.addEventListener("click", () => { localStorage.removeItem("maguire_demo_authenticated"); localStorage.removeItem("maguire_demo_user"); localStorage.removeItem("maguire_demo_company"); window.location.href = "login.html"; });
+    logoutButton.addEventListener("click", () => { localStorage.removeItem("octen_demo_authenticated"); localStorage.removeItem("octen_demo_user"); localStorage.removeItem("octen_demo_company"); window.location.href = "login.html"; });
 
     function setMobileSidebar(open){ sidebar.classList.toggle("is-open",open); mobileOverlay.hidden = !open; mobileMenuButton.setAttribute("aria-expanded",String(open)); document.body.classList.toggle("sidebar-open",open); }
     mobileMenuButton.addEventListener("click", () => setMobileSidebar(!sidebar.classList.contains("is-open")));
     mobileOverlay.addEventListener("click", () => setMobileSidebar(false));
-    window.addEventListener("resize", () => { if (window.innerWidth > 760) setMobileSidebar(false); });
+    window.addEventListener("resize", () => { if (window.innerWidth > 1024) setMobileSidebar(false); });
 
     renderRequirements();
   </script>

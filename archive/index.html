@@ -1,0 +1,1627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Maguire.id — Win More Tenders, Smarter</title>
+
+  <meta
+    name="description"
+    content="Maguire helps companies discover relevant tenders, assess readiness, organize compliance documents, and prepare submissions faster."
+  />
+
+  <style>
+    :root {
+      --navy: #0f172a;
+      --navy-light: #1e293b;
+      --blue: #2563eb;
+      --blue-dark: #1d4ed8;
+      --blue-light: #eff6ff;
+      --green: #10b981;
+      --yellow: #f59e0b;
+      --red: #ef4444;
+      --white: #ffffff;
+      --background: #f8fafc;
+      --border: #e2e8f0;
+      --text: #334155;
+      --text-light: #64748b;
+      --radius: 16px;
+      --shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .container {
+      width: min(1160px, 92%);
+      margin: 0 auto;
+    }
+
+    /* NAV */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+    }
+
+    .nav-inner {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--navy);
+      letter-spacing: -0.5px;
+    }
+
+    .logo span {
+      color: var(--blue);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .nav-links a:hover {
+      color: var(--blue);
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn {
+      border-radius: 10px;
+      padding: 11px 18px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--blue);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--blue-dark);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: white;
+      border-color: var(--border);
+      color: var(--navy);
+    }
+
+    .btn-secondary:hover {
+      border-color: #cbd5e1;
+      background: #f8fafc;
+    }
+
+    /* HERO */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 105px 0 90px;
+      background:
+        radial-gradient(circle at 80% 10%, #dbeafe 0, transparent 32%),
+        linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: var(--blue-light);
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      font-size: clamp(44px, 5vw, 68px);
+      line-height: 1.03;
+      letter-spacing: -2px;
+      color: var(--navy);
+      max-width: 700px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: var(--text-light);
+      margin: 25px 0 32px;
+      max-width: 590px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .hero-note {
+      margin-top: 17px;
+      font-size: 13px;
+      color: var(--text-light);
+    }
+
+    /* DASHBOARD MOCKUP */
+
+    .dashboard {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transform: rotate(1deg);
+    }
+
+    .dashboard-top {
+      padding: 18px 22px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .dashboard-title {
+      font-weight: 800;
+      color: var(--navy);
+    }
+
+    .window-dots {
+      display: flex;
+      gap: 6px;
+    }
+
+    .window-dots span {
+      width: 8px;
+      height: 8px;
+      background: #cbd5e1;
+      border-radius: 50%;
+    }
+
+    .dashboard-body {
+      padding: 22px;
+    }
+
+    .tender-card {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px;
+      margin-bottom: 14px;
+    }
+
+    .tender-name {
+      color: var(--navy);
+      font-weight: 750;
+      margin-bottom: 4px;
+    }
+
+    .tender-meta {
+      color: var(--text-light);
+      font-size: 13px;
+    }
+
+    .readiness {
+      margin-top: 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+    }
+
+    .readiness-score {
+      font-size: 34px;
+      font-weight: 800;
+      color: var(--navy);
+    }
+
+    .progress {
+      width: 100%;
+      height: 9px;
+      background: #e2e8f0;
+      border-radius: 999px;
+      overflow: hidden;
+      margin: 9px 0 15px;
+    }
+
+    .progress > div {
+      width: 92%;
+      height: 100%;
+      background: var(--green);
+      border-radius: inherit;
+    }
+
+    .checklist-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 9px 0;
+      font-size: 14px;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .success {
+      color: var(--green);
+      font-weight: 700;
+    }
+
+    .warning {
+      color: var(--yellow);
+      font-weight: 700;
+    }
+
+    /* GENERAL SECTION */
+
+    section {
+      padding: 95px 0;
+    }
+
+    .section-alt {
+      background: var(--background);
+    }
+
+    .section-heading {
+      max-width: 680px;
+      margin-bottom: 48px;
+    }
+
+    .section-heading.center {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .section-heading h2 {
+      color: var(--navy);
+      font-size: clamp(32px, 4vw, 46px);
+      line-height: 1.12;
+      letter-spacing: -1.3px;
+      margin-bottom: 16px;
+    }
+
+    .section-heading p {
+      font-size: 17px;
+      color: var(--text-light);
+    }
+
+    /* BUILT FOR */
+
+    .trusted {
+      padding: 34px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+      color: var(--text-light);
+      font-weight: 600;
+    }
+
+    /* CARDS */
+
+    .grid-3,
+    .grid-4 {
+      display: grid;
+      gap: 22px;
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .grid-4 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      transition: 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 35px rgba(15, 23, 42, 0.07);
+    }
+
+    .card-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background: var(--blue-light);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+      margin-bottom: 18px;
+    }
+
+    .card h3 {
+      color: var(--navy);
+      margin-bottom: 8px;
+      font-size: 18px;
+    }
+
+    .card p {
+      color: var(--text-light);
+      font-size: 15px;
+    }
+
+    /* HOW IT WORKS */
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      position: relative;
+      gap: 15px;
+    }
+
+    .step {
+      text-align: center;
+      position: relative;
+    }
+
+    .step-number {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      margin: 0 auto 16px;
+      background: var(--navy);
+      color: white;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+    }
+
+    .step h3 {
+      color: var(--navy);
+      font-size: 15px;
+      margin-bottom: 6px;
+    }
+
+    .step p {
+      font-size: 13px;
+      color: var(--text-light);
+    }
+
+    /* PRODUCT PREVIEW */
+
+    .preview {
+      background: var(--navy);
+      border-radius: 24px;
+      padding: 40px;
+      color: white;
+    }
+
+    .preview-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    .preview h3 {
+      font-size: 24px;
+    }
+
+    .preview-grid {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 16px;
+    }
+
+    .preview-sidebar,
+    .preview-main {
+      background: #1e293b;
+      border-radius: 13px;
+      padding: 20px;
+    }
+
+    .menu-item {
+      padding: 11px 12px;
+      border-radius: 8px;
+      margin-bottom: 7px;
+      color: #cbd5e1;
+      font-size: 14px;
+    }
+
+    .menu-item.active {
+      background: var(--blue);
+      color: white;
+    }
+
+    .fake-table {
+      width: 100%;
+    }
+
+    .fake-row {
+      padding: 14px 0;
+      border-bottom: 1px solid #334155;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 10px;
+      color: #cbd5e1;
+      font-size: 13px;
+    }
+
+    .fake-row strong {
+      color: white;
+    }
+
+    /* SECURITY */
+
+    .security-card {
+      text-align: center;
+    }
+
+    /* FAQ */
+
+    .faq {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    details {
+      border-bottom: 1px solid var(--border);
+      padding: 22px 0;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 750;
+      color: var(--navy);
+      list-style: none;
+      position: relative;
+      padding-right: 25px;
+    }
+
+    summary::after {
+      content: "+";
+      position: absolute;
+      right: 0;
+      font-size: 20px;
+      color: var(--blue);
+    }
+
+    details[open] summary::after {
+      content: "−";
+    }
+
+    details p {
+      color: var(--text-light);
+      padding-top: 13px;
+    }
+
+    /* CTA */
+
+    .cta {
+      padding-top: 50px;
+      padding-bottom: 90px;
+    }
+
+    .cta-inner {
+      background:
+        radial-gradient(circle at 80% 0%, #1d4ed8, transparent 42%),
+        var(--navy);
+
+      border-radius: 25px;
+      padding: 70px 50px;
+      text-align: center;
+      color: white;
+    }
+
+    .cta-inner h2 {
+      font-size: clamp(32px, 4vw, 50px);
+      line-height: 1.08;
+      max-width: 700px;
+      margin: 0 auto 18px;
+    }
+
+    .cta-inner p {
+      max-width: 570px;
+      margin: 0 auto 28px;
+      color: #cbd5e1;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 70px 0 35px;
+      background: var(--background);
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 50px;
+    }
+
+    .footer-brand p {
+      color: var(--text-light);
+      font-size: 14px;
+      max-width: 300px;
+      margin-top: 13px;
+    }
+
+    .footer-column h4 {
+      color: var(--navy);
+      margin-bottom: 14px;
+    }
+
+    .footer-column a {
+      display: block;
+      color: var(--text-light);
+      font-size: 14px;
+      margin: 9px 0;
+    }
+
+    .footer-column a:hover {
+      color: var(--blue);
+    }
+
+    .copyright {
+      border-top: 1px solid var(--border);
+      margin-top: 50px;
+      padding-top: 25px;
+      color: var(--text-light);
+      font-size: 13px;
+    }
+
+    @media (max-width: 900px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .grid-3,
+      .grid-4 {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .steps {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .preview-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .nav-actions .btn-secondary {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 70px;
+      }
+
+      .grid-3,
+      .grid-4 {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-inner {
+        padding: 50px 25px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <nav>
+    <div class="container nav-inner">
+
+      <a class="logo" href="#">
+        Maguire<span>.id</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#solutions">Solutions</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#security">Security</a>
+        <a href="#faq">FAQ</a>
+      </div>
+
+      <div class="nav-actions">
+        <a href="#demo" class="btn btn-secondary">
+          Request Demo
+        </a>
+
+        <a href="#signup" class="btn btn-primary">
+          Start Free Trial
+        </a>
+      </div>
+
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+
+  <header class="hero">
+
+    <div class="container hero-grid">
+
+      <div>
+
+        <div class="eyebrow">
+          Tender Intelligence Platform
+        </div>
+
+        <h1>
+          Win More Tenders.
+          Spend Less Time Preparing Them.
+        </h1>
+
+        <p>
+          Maguire helps companies discover relevant tenders,
+          assess readiness, organize compliance documents,
+          and prepare submissions faster — all in one workspace.
+        </p>
+
+        <div class="hero-actions">
+
+          <a href="#signup" class="btn btn-primary">
+            Start Free Trial →
+          </a>
+
+          <a href="#demo" class="btn btn-secondary">
+            Request Demo
+          </a>
+
+        </div>
+
+        <div class="hero-note">
+          Early access • Built for Indonesian tender teams
+        </div>
+
+      </div>
+
+
+      <!-- HERO DASHBOARD MOCKUP -->
+
+      <div class="dashboard">
+
+        <div class="dashboard-top">
+
+          <div class="dashboard-title">
+            Tender Readiness
+          </div>
+
+          <div class="window-dots">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+        </div>
+
+        <div class="dashboard-body">
+
+          <div class="tender-card">
+
+            <div class="tender-name">
+              PLN Infrastructure Development
+            </div>
+
+            <div class="tender-meta">
+              PT PLN • Jakarta • Deadline in 12 days
+            </div>
+
+            <div class="readiness">
+
+              <div>
+                <small>Readiness Score</small>
+                <div class="readiness-score">
+                  92%
+                </div>
+              </div>
+
+              <span class="success">
+                Ready
+              </span>
+
+            </div>
+
+            <div class="progress">
+              <div></div>
+            </div>
+
+            <div class="checklist-item">
+              <span>NIB</span>
+              <span class="success">✓ Complete</span>
+            </div>
+
+            <div class="checklist-item">
+              <span>ISO 9001</span>
+              <span class="success">✓ Complete</span>
+            </div>
+
+            <div class="checklist-item">
+              <span>Previous Project Experience</span>
+              <span class="success">✓ Complete</span>
+            </div>
+
+            <div class="checklist-item">
+              <span>Bank Guarantee</span>
+              <span class="warning">⚠ Missing</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- TRUST -->
+
+  <div class="trusted">
+    Built for Business Development, Procurement, Legal,
+    and Compliance teams across Indonesia.
+  </div>
+
+
+  <!-- PROBLEM -->
+
+  <section id="solutions">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <span class="eyebrow">
+          The Problem
+        </span>
+
+        <h2>
+          Tender preparation shouldn't feel like detective work.
+        </h2>
+
+        <p>
+          Companies lose valuable time searching for opportunities,
+          interpreting requirements, and coordinating documents manually.
+        </p>
+
+      </div>
+
+
+      <div class="grid-3">
+
+        <div class="card">
+
+          <div class="card-icon">
+            🔍
+          </div>
+
+          <h3>
+            Finding Opportunities
+          </h3>
+
+          <p>
+            Teams manually browse procurement portals every day
+            and still risk missing relevant tenders.
+          </p>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="card-icon">
+            📄
+          </div>
+
+          <h3>
+            Understanding Requirements
+          </h3>
+
+          <p>
+            Tender documents can contain hundreds of pages
+            with complex legal and technical requirements.
+          </p>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="card-icon">
+            ⏰
+          </div>
+
+          <h3>
+            Meeting Deadlines
+          </h3>
+
+          <p>
+            Missing one document or requirement can put
+            the entire tender submission at risk.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FEATURES -->
+
+  <section id="features" class="section-alt">
+
+    <div class="container">
+
+      <div class="section-heading center">
+
+        <span class="eyebrow">
+          Product
+        </span>
+
+        <h2>
+          Everything your tender team needs.
+        </h2>
+
+        <p>
+          One workspace to discover opportunities,
+          evaluate readiness, and prepare submissions.
+        </p>
+
+      </div>
+
+
+      <div class="grid-4">
+
+        <div class="card">
+
+          <div class="card-icon">
+            🔍
+          </div>
+
+          <h3>
+            Smart Tender Discovery
+          </h3>
+
+          <p>
+            Receive relevant tender opportunities
+            matched with your company's business profile.
+          </p>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="card-icon">
+            ✨
+          </div>
+
+          <h3>
+            AI Readiness Assessment
+          </h3>
+
+          <p>
+            Analyze tender documents and identify
+            requirements, gaps, and eligibility risks.
+          </p>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="card-icon">
+            📂
+          </div>
+
+          <h3>
+            Compliance Workspace
+          </h3>
+
+          <p>
+            Organize licenses, certifications,
+            legal documents, and supporting files.
+          </p>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="card-icon">
+            🔔
+          </div>
+
+          <h3>
+            Deadline Management
+          </h3>
+
+          <p>
+            Track submission deadlines,
+            requirements, and important milestones.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- HOW IT WORKS -->
+
+  <section id="how-it-works">
+
+    <div class="container">
+
+      <div class="section-heading center">
+
+        <span class="eyebrow">
+          How It Works
+        </span>
+
+        <h2>
+          From opportunity to submission.
+        </h2>
+
+      </div>
+
+
+      <div class="steps">
+
+        <div class="step">
+
+          <div class="step-number">
+            1
+          </div>
+
+          <h3>
+            Create Company Profile
+          </h3>
+
+          <p>
+            Tell Maguire about your company.
+          </p>
+
+        </div>
+
+
+        <div class="step">
+
+          <div class="step-number">
+            2
+          </div>
+
+          <h3>
+            Discover Tenders
+          </h3>
+
+          <p>
+            Receive relevant opportunities automatically.
+          </p>
+
+        </div>
+
+
+        <div class="step">
+
+          <div class="step-number">
+            3
+          </div>
+
+          <h3>
+            Review Tender
+          </h3>
+
+          <p>
+            Upload or select tender documents.
+          </p>
+
+        </div>
+
+
+        <div class="step">
+
+          <div class="step-number">
+            4
+          </div>
+
+          <h3>
+            Assess Readiness
+          </h3>
+
+          <p>
+            AI identifies requirements and gaps.
+          </p>
+
+        </div>
+
+
+        <div class="step">
+
+          <div class="step-number">
+            5
+          </div>
+
+          <h3>
+            Prepare Submission
+          </h3>
+
+          <p>
+            Coordinate documents and submit confidently.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PRODUCT PREVIEW -->
+
+  <section class="section-alt">
+
+    <div class="container">
+
+      <div class="section-heading center">
+
+        <span class="eyebrow">
+          One Workspace
+        </span>
+
+        <h2>
+          See your entire tender pipeline at a glance.
+        </h2>
+
+      </div>
+
+
+      <div class="preview">
+
+        <div class="preview-top">
+
+          <h3>
+            Maguire Workspace
+          </h3>
+
+          <span>
+            Demo Company
+          </span>
+
+        </div>
+
+
+        <div class="preview-grid">
+
+          <aside class="preview-sidebar">
+
+            <div class="menu-item active">
+              Dashboard
+            </div>
+
+            <div class="menu-item">
+              Tender Discovery
+            </div>
+
+            <div class="menu-item">
+              My Tenders
+            </div>
+
+            <div class="menu-item">
+              Documents
+            </div>
+
+            <div class="menu-item">
+              Company Profile
+            </div>
+
+          </aside>
+
+
+          <main class="preview-main">
+
+            <strong>
+              Active Tenders
+            </strong>
+
+            <div class="fake-table">
+
+              <div class="fake-row">
+
+                <strong>
+                  Tender
+                </strong>
+
+                <strong>
+                  Readiness
+                </strong>
+
+                <strong>
+                  Deadline
+                </strong>
+
+              </div>
+
+
+              <div class="fake-row">
+
+                <span>
+                  PLN Infrastructure Development
+                </span>
+
+                <span>
+                  92%
+                </span>
+
+                <span>
+                  12 days
+                </span>
+
+              </div>
+
+
+              <div class="fake-row">
+
+                <span>
+                  Telkom Network Procurement
+                </span>
+
+                <span>
+                  78%
+                </span>
+
+                <span>
+                  7 days
+                </span>
+
+              </div>
+
+
+              <div class="fake-row">
+
+                <span>
+                  Ministry IT Infrastructure
+                </span>
+
+                <span>
+                  61%
+                </span>
+
+                <span>
+                  18 days
+                </span>
+
+              </div>
+
+            </div>
+
+          </main>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SECURITY -->
+
+  <section id="security">
+
+    <div class="container">
+
+      <div class="section-heading center">
+
+        <span class="eyebrow">
+          Security
+        </span>
+
+        <h2>
+          Your tender documents are sensitive.
+          We treat them that way.
+        </h2>
+
+      </div>
+
+
+      <div class="grid-4">
+
+        <div class="card security-card">
+
+          <div class="card-icon">
+            🔐
+          </div>
+
+          <h3>
+            Encryption
+          </h3>
+
+          <p>
+            Protect documents during storage and transmission.
+          </p>
+
+        </div>
+
+
+        <div class="card security-card">
+
+          <div class="card-icon">
+            🏢
+          </div>
+
+          <h3>
+            Data Isolation
+          </h3>
+
+          <p>
+            Company data remains isolated between organizations.
+          </p>
+
+        </div>
+
+
+        <div class="card security-card">
+
+          <div class="card-icon">
+            👥
+          </div>
+
+          <h3>
+            Role-Based Access
+          </h3>
+
+          <p>
+            Control what each member of your organization can access.
+          </p>
+
+        </div>
+
+
+        <div class="card security-card">
+
+          <div class="card-icon">
+            🛡️
+          </div>
+
+          <h3>
+            Audit Trail
+          </h3>
+
+          <p>
+            Track important changes across tender workspaces.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FAQ -->
+
+  <section id="faq" class="section-alt">
+
+    <div class="container">
+
+      <div class="section-heading center">
+
+        <span class="eyebrow">
+          FAQ
+        </span>
+
+        <h2>
+          Questions?
+        </h2>
+
+      </div>
+
+
+      <div class="faq">
+
+        <details>
+
+          <summary>
+            Which tender portals does Maguire support?
+          </summary>
+
+          <p>
+            Maguire is being designed to aggregate tender opportunities
+            from multiple Indonesian procurement sources.
+            Coverage will expand progressively during beta.
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            Can Maguire read tender PDF documents?
+          </summary>
+
+          <p>
+            Maguire is designed to analyze tender documentation
+            and extract important eligibility, administrative,
+            technical, and commercial requirements.
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            Will Maguire automatically decide whether we should join a tender?
+          </summary>
+
+          <p>
+            No. Maguire is designed as a decision-support system.
+            It surfaces requirements, gaps, and risks while leaving
+            the final decision to your team.
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            Can multiple employees collaborate on a tender?
+          </summary>
+
+          <p>
+            Team collaboration is part of the product direction,
+            including ownership, task tracking, and document preparation.
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            Is Maguire already available?
+          </summary>
+
+          <p>
+            Maguire is currently in early development.
+            Companies interested in testing the platform can request early access.
+          </p>
+
+        </details>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CTA -->
+
+  <section class="cta" id="signup">
+
+    <div class="container">
+
+      <div class="cta-inner">
+
+        <h2>
+          Spend less time preparing tenders.
+          Spend more time winning them.
+        </h2>
+
+        <p>
+          Join the early-access program and help shape
+          the future of tender intelligence in Indonesia.
+        </p>
+
+        <a
+          href="mailto:hello@maguire.id"
+          class="btn btn-primary"
+        >
+          Request Early Access →
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer id="demo">
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+
+        <div class="footer-brand">
+
+          <div class="logo">
+            Maguire<span>.id</span>
+          </div>
+
+          <p>
+            Tender intelligence and preparation platform
+            for modern Indonesian businesses.
+          </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+          <h4>
+            Product
+          </h4>
+
+          <a href="#features">
+            Features
+          </a>
+
+          <a href="#how-it-works">
+            How It Works
+          </a>
+
+          <a href="#">
+            Roadmap
+          </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+          <h4>
+            Solutions
+          </h4>
+
+          <a href="#">
+            Business Development
+          </a>
+
+          <a href="#">
+            Procurement
+          </a>
+
+          <a href="#">
+            Legal & Compliance
+          </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+          <h4>
+            Company
+          </h4>
+
+          <a href="#">
+            About
+          </a>
+
+          <a href="mailto:hello@maguire.id">
+            Contact
+          </a>
+
+          <a href="#">
+            Privacy
+          </a>
+
+          <a href="#">
+            Terms
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="copyright">
+        © 2026 Maguire.id. All rights reserved.
+      </div>
+
+    </div>
+
+  </footer>
+
+
+</body>
+</html>

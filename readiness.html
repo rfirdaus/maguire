@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Readiness Assessment — Maguire.id</title>
+  <title>Readiness Assessment — Tendigi</title>
   <meta name="description" content="Tender readiness assessment for Pengadaan Pembangunan Gardu Induk 150kV." />
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="css/app.css" />
@@ -12,7 +12,9 @@
   <div class="app-shell">
     <aside class="app-sidebar" id="app-sidebar" aria-label="Main navigation">
       <div class="app-sidebar-brand">
-        <a class="logo" href="dashboard.html" aria-label="Maguire.id dashboard">Maguire<span>.id</span></a>
+        <a class="logo brand-logo" href="dashboard.html" aria-label="Tendigi dashboard">
+          <img src="assets/tendigi-logo.png" alt="" width="1200" height="202" />
+        </a>
       </div>
 
       <div class="app-sidebar-section-label">Workspace</div>
@@ -82,7 +84,7 @@
           <div class="app-user-menu-wrap">
             <button class="app-user-button" id="user-menu-button" type="button" aria-expanded="false">
               <span class="app-user-avatar">BS</span>
-              <span class="app-user-meta"><strong>Budi Santoso</strong><span>Business Development</span></span>
+              <span class="app-user-meta"><strong>Budi Santoso</strong><span>Superadmin</span></span>
               <svg class="app-user-chevron" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
             </button>
             <div class="app-dropdown" id="user-menu" hidden>
@@ -266,7 +268,7 @@
               <div class="readiness-coverage-bar" aria-label="Requirement coverage: 38 matched, 3 attention, 3 gaps">
                 <span class="is-match" style="width:86.36%"></span><span class="is-attention" style="width:6.82%"></span><span class="is-gap" style="width:6.82%"></span>
               </div>
-              <p>Every requirement includes the source document, page reference, matching company evidence, and Maguire's assessment status.</p>
+              <p>Every requirement includes the source document, page reference, matching company evidence, and Tendigi's assessment status.</p>
             </section>
 
             <section class="app-card readiness-section-card">
@@ -283,7 +285,7 @@
             <section class="app-card readiness-side-card readiness-decision-card">
               <span class="readiness-kicker">Decision support</span>
               <h3>Proceed with caution</h3>
-              <p>Maguire found strong overall alignment, but the two mandatory gaps should be verified before your team commits significant bid resources.</p>
+              <p>Tendigi found strong overall alignment, but the two mandatory gaps should be verified before your team commits significant bid resources.</p>
               <div class="readiness-decision-list">
                 <div><span>✓</span><p><strong>38 requirements</strong> already supported</p></div>
                 <div class="is-warning"><span>!</span><p><strong>3 items</strong> need manual review</p></div>
@@ -308,7 +310,7 @@
 
             <section class="readiness-trust-card">
               <span class="readiness-trust-icon">↗</span>
-              <div><strong>Verify every finding</strong><p>Maguire links assessments back to the exact tender document and page. Your team stays in control of the final decision.</p></div>
+              <div><strong>Verify every finding</strong><p>Tendigi links assessments back to the exact tender document and page. Your team stays in control of the final decision.</p></div>
             </section>
           </aside>
         </div>
@@ -335,14 +337,25 @@
   </div>
 
   <script>
-    const isAuthenticated = localStorage.getItem("maguire_demo_authenticated") === "true";
-    if (!isAuthenticated) window.location.replace("login.html");
+    (() => {
+    const isAuthenticated = localStorage.getItem("octen_demo_authenticated") === "true";
+    if (!isAuthenticated) {
+      window.location.replace("login.html");
+      return;
+    }
 
-    localStorage.setItem("maguire_active_tender", "pln-150kv");
-    localStorage.setItem("maguire_analysis_status", "completed");
-    localStorage.setItem("maguire_analysis_status_cached", "completed");
-    localStorage.setItem("maguire_readiness_score", "82");
-    localStorage.setItem("maguire_requirement_summary", JSON.stringify({ total: 44, matched: 38, attention: 3, missing: 3 }));
+    const analysisCompleted = localStorage.getItem("octen_analysis_status") === "completed"
+      || localStorage.getItem("octen_analysis_status_cached") === "completed";
+    if (!analysisCompleted) {
+      window.location.replace("analysis.html");
+      return;
+    }
+
+    localStorage.setItem("octen_active_tender", "pln-150kv");
+    if (localStorage.getItem("octen_tender_participation") === "preparing"
+      && localStorage.getItem("octen_workspace_tender") === "pln-150kv") {
+      localStorage.setItem("octen_participation_mode", "analyzed");
+    }
 
     const modal = document.getElementById("readiness-modal");
     const modalTitle = document.getElementById("readiness-modal-title");
@@ -395,13 +408,14 @@
     function openParticipationModal() {
       openModal({
         title: "Create tender workspace?",
-        copy: "This tender currently has 2 mandatory gaps that may affect qualification. You can still participate and use Maguire to resolve the gaps during preparation.",
+        copy: "This tender currently has 2 mandatory gaps that may affect qualification. You can still participate and use Tendigi to resolve the gaps during preparation.",
         icon: "!",
         detail: "Readiness 82% · Eligibility: At Risk · 12 days until submission deadline",
         primaryLabel: "Continue Anyway →",
         primaryHandler: () => {
-          localStorage.setItem("maguire_tender_participation", "preparing");
-          localStorage.setItem("maguire_workspace_tender", "pln-150kv");
+          localStorage.setItem("octen_tender_participation", "preparing");
+          localStorage.setItem("octen_workspace_tender", "pln-150kv");
+          localStorage.setItem("octen_participation_mode", "analyzed");
           window.location.href = "workspace.html";
         }
       });
@@ -448,9 +462,9 @@
     notificationPopover.addEventListener("click", (event) => event.stopPropagation());
 
     logoutButton.addEventListener("click", () => {
-      localStorage.removeItem("maguire_demo_authenticated");
-      localStorage.removeItem("maguire_demo_user");
-      localStorage.removeItem("maguire_demo_company");
+      localStorage.removeItem("octen_demo_authenticated");
+      localStorage.removeItem("octen_demo_user");
+      localStorage.removeItem("octen_demo_company");
       window.location.href = "login.html";
     });
 
@@ -462,7 +476,8 @@
     }
     mobileMenuButton.addEventListener("click", () => setMobileSidebar(!sidebar.classList.contains("is-open")));
     mobileOverlay.addEventListener("click", () => setMobileSidebar(false));
-    window.addEventListener("resize", () => { if (window.innerWidth > 760) setMobileSidebar(false); });
+    window.addEventListener("resize", () => { if (window.innerWidth > 1024) setMobileSidebar(false); });
+    })();
   </script>
 </body>
 </html>

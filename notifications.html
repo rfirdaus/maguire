@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Notifications — Maguire.id</title>
-  <meta name="description" content="Review tender matches, deadlines, evidence risks, assignments, and activity notifications in Maguire." />
+  <title>Notifications — Tendigi</title>
+  <meta name="description" content="Review tender matches, deadlines, evidence risks, assignments, and activity notifications in Tendigi." />
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="css/app.css" />
 </head>
@@ -12,7 +12,9 @@
   <div class="app-shell">
     <aside class="app-sidebar" id="app-sidebar" aria-label="Main navigation">
       <div class="app-sidebar-brand">
-        <a class="logo" href="dashboard.html" aria-label="Maguire.id dashboard">Maguire<span>.id</span></a>
+        <a class="logo brand-logo" href="dashboard.html" aria-label="Tendigi dashboard">
+          <img src="assets/tendigi-logo.png" alt="" width="1200" height="202" />
+        </a>
       </div>
 
       <div class="app-sidebar-section-label">Workspace</div>
@@ -82,7 +84,7 @@
           <div class="app-user-menu-wrap">
             <button class="app-user-button" id="user-menu-button" type="button" aria-expanded="false">
               <span class="app-user-avatar">BS</span>
-              <span class="app-user-meta"><strong>Budi Santoso</strong><span>Business Development</span></span>
+              <span class="app-user-meta"><strong>Budi Santoso</strong><span>Superadmin</span></span>
               <svg class="app-user-chevron" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
             </button>
             <div class="app-dropdown" id="user-menu" hidden>
@@ -189,7 +191,7 @@
 
             <section class="app-card notifications-side-card notifications-tip-card">
               <div class="notifications-tip-icon">i</div>
-              <div><strong>Keep alerts actionable</strong><p>Maguire prioritizes changes that can affect tender relevance, eligibility, preparation, or submission timing.</p></div>
+              <div><strong>Keep alerts actionable</strong><p>Tendigi prioritizes changes that can affect tender relevance, eligibility, preparation, or submission timing.</p></div>
             </section>
           </aside>
         </div>
@@ -203,11 +205,11 @@
   </div>
 
   <script>
-    const isAuthenticated = localStorage.getItem("maguire_demo_authenticated") === "true";
+    const isAuthenticated = localStorage.getItem("octen_demo_authenticated") === "true";
     if (!isAuthenticated) window.location.replace("login.html");
 
     let notificationSettings = {};
-    try { notificationSettings = JSON.parse(localStorage.getItem("maguire_settings_v1")) || {}; } catch {}
+    try { notificationSettings = JSON.parse(localStorage.getItem("octen_settings_v1")) || {}; } catch {}
     const channelDefaults = { notifyInapp:true, notifyEmail:true, digestTime:"08:00", eventDeadlines:true };
     notificationSettings = { ...channelDefaults, ...notificationSettings };
     function syncChannelStatus(id, enabled) {
@@ -228,7 +230,7 @@
       { id:"pln-clarification", date:"Today", time:"18:30", type:"deadline", unread:false, tone:"warning", title:"PLN clarification meeting is in 2 days", copy:"Clarification meeting for Pengadaan Pembangunan Gardu Induk 150kV is scheduled for 11 Aug 2026 at 10:00 WIB.", meta:"PLN Gardu Induk 150kV", href:"workspace.html#timeline", icon:"2d" },
       { id:"project-task", date:"Today", time:"16:05", type:"task", unread:false, tone:"blue", title:"You were assigned a critical tender action", copy:"Verify whether a third qualifying project can satisfy PLN's minimum similar-project requirement.", meta:"Assigned by Sari Wibowo · Due 12 Aug", href:"workspace.html#tasks", icon:"✓" },
       { id:"pln-analysis", date:"Today", time:"14:42", type:"analysis", unread:false, tone:"blue", title:"PLN readiness assessment completed", copy:"Readiness is 82%. Eligibility is currently At Risk because 2 mandatory gaps were detected.", meta:"44 requirements analyzed", href:"readiness.html", icon:"82" },
-      { id:"telkom-match", date:"Yesterday", time:"15:20", type:"tender", unread:false, tone:"green", title:"New 91% tender match: Telkom Network Modernization", copy:"Maguire matched the opportunity to your infrastructure capabilities, project experience, and operating coverage.", meta:"Estimated value Rp29.8B", href:"my-tenders.html", icon:"91" },
+      { id:"telkom-match", date:"Yesterday", time:"15:20", type:"tender", unread:false, tone:"green", title:"New 91% tender match: Telkom Network Modernization", copy:"Tendigi matched the opportunity to your infrastructure capabilities, project experience, and operating coverage.", meta:"Estimated value Rp29.8B", href:"my-tenders.html", icon:"91" },
       { id:"pln-match", date:"Yesterday", time:"09:12", type:"tender", unread:false, tone:"green", title:"New 94% tender match from PT PLN (Persero)", copy:"Pengadaan Pembangunan Gardu Induk 150kV strongly matches your KBLI 42201 and 150kV infrastructure profile.", meta:"Published 8 Aug 2026", href:"tender-detail.html", icon:"94" },
       { id:"govcloud-status", date:"Earlier", time:"7 Aug", type:"tender", unread:false, tone:"neutral", title:"Government Cloud Phase II moved to evaluation", copy:"The submitted tender is now under buyer evaluation. No action is required from your team at this time.", meta:"Submitted tender", href:"my-tenders.html", icon:"→" },
       { id:"internal-review", date:"Earlier", time:"7 Aug", type:"deadline", unread:false, tone:"warning", title:"Internal PLN bid review scheduled for 15 Aug", copy:"The workspace milestone is six days away. Three unresolved evidence items remain before internal review.", meta:"PLN Gardu Induk 150kV", href:"workspace.html#timeline", icon:"6d" },
@@ -236,7 +238,7 @@
     ];
 
     let readIds;
-    try { readIds = new Set(JSON.parse(localStorage.getItem("maguire_notification_read_ids")) || []); }
+    try { readIds = new Set(JSON.parse(localStorage.getItem("octen_notification_read_ids")) || []); }
     catch { readIds = new Set(); }
     // Seed all notifications except the deliberate single unread alert as read.
     notifications.filter(n => !n.unread).forEach(n => readIds.add(n.id));
@@ -248,7 +250,7 @@
     const typeFilter = document.getElementById("notification-type-filter");
 
     function isUnread(n) { return !readIds.has(n.id); }
-    function persistReadState() { localStorage.setItem("maguire_notification_read_ids", JSON.stringify([...readIds])); }
+    function persistReadState() { localStorage.setItem("octen_notification_read_ids", JSON.stringify([...readIds])); }
     function escapeHTML(value) { const d=document.createElement("div"); d.textContent=String(value); return d.innerHTML; }
 
     function updateUnreadUI() {
@@ -351,12 +353,12 @@
     document.addEventListener("click", () => { closeUserMenu(); closeNotifications(); });
     userMenu.addEventListener("click", event => event.stopPropagation());
     notificationPopover.addEventListener("click", event => event.stopPropagation());
-    logoutButton.addEventListener("click", () => { localStorage.removeItem("maguire_demo_authenticated"); localStorage.removeItem("maguire_demo_user"); localStorage.removeItem("maguire_demo_company"); window.location.href="login.html"; });
+    logoutButton.addEventListener("click", () => { localStorage.removeItem("octen_demo_authenticated"); localStorage.removeItem("octen_demo_user"); localStorage.removeItem("octen_demo_company"); window.location.href="login.html"; });
 
     function setMobileSidebar(open){ sidebar.classList.toggle("is-open",open); mobileOverlay.hidden=!open; mobileMenuButton.setAttribute("aria-expanded",String(open)); document.body.classList.toggle("sidebar-open",open); }
     mobileMenuButton.addEventListener("click", () => setMobileSidebar(!sidebar.classList.contains("is-open")));
     mobileOverlay.addEventListener("click", () => setMobileSidebar(false));
-    window.addEventListener("resize", () => { if(window.innerWidth>760) setMobileSidebar(false); });
+    window.addEventListener("resize", () => { if(window.innerWidth > 1024) setMobileSidebar(false); });
 
     renderNotifications();
   </script>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PLN Gardu Induk 150kV — Maguire.id</title>
+  <title>PLN Gardu Induk 150kV — Tendigi</title>
   <meta
     name="description"
     content="Tender detail for Pengadaan Pembangunan Gardu Induk 150kV by PT PLN (Persero)."
@@ -15,8 +15,8 @@
   <div class="app-shell">
     <aside class="app-sidebar" id="app-sidebar" aria-label="Main navigation">
       <div class="app-sidebar-brand">
-        <a class="logo" href="dashboard.html" aria-label="Maguire.id dashboard">
-          Maguire<span>.id</span>
+        <a class="logo brand-logo" href="dashboard.html" aria-label="Tendigi dashboard">
+          <img src="assets/tendigi-logo.png" alt="" width="1200" height="202" />
         </a>
       </div>
 
@@ -136,7 +136,7 @@
               <span class="app-user-avatar">BS</span>
               <span class="app-user-meta">
                 <strong>Budi Santoso</strong>
-                <span>Business Development</span>
+                <span>Superadmin</span>
               </span>
               <svg class="app-user-chevron" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="m6 9 6 6 6-6"></path>
@@ -235,6 +235,24 @@
           </aside>
         </section>
 
+        <section class="app-card detail-participation-banner" aria-labelledby="participation-title">
+          <span class="detail-participation-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 7h14a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Z"></path>
+              <path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 12h18M10 12v2h4v-2"></path>
+            </svg>
+          </span>
+          <div class="detail-participation-copy">
+            <span class="detail-kicker">Tender participation</span>
+            <h2 id="participation-title">Start preparing your bid</h2>
+            <p>Mark this tender as Preparing and create a preparation workspace now. AI analysis is optional and can be run later.</p>
+          </div>
+          <button class="btn btn-primary detail-participate-button" id="participate-button" type="button">
+            <span id="participate-button-label">Participate in Tender</span>
+            <span aria-hidden="true">→</span>
+          </button>
+        </section>
+
         <div class="tender-detail-layout">
           <div class="tender-detail-main-column">
             <section class="app-card detail-section-card">
@@ -289,7 +307,7 @@
               <div class="detail-section-heading detail-section-heading-inline">
                 <div>
                   <span class="detail-kicker">Preliminary fit</span>
-                  <h2>What Maguire Already Knows</h2>
+                  <h2>What Tendigi Already Knows</h2>
                 </div>
                 <span class="detail-not-analyzed-badge">Before analysis</span>
               </div>
@@ -306,7 +324,7 @@
                   <span class="detail-fit-status detail-fit-positive">✓</span>
                   <div>
                     <strong>Relevant project experience exists</strong>
-                    <p>Maguire found two electrical infrastructure projects above Rp10B in your company profile.</p>
+                    <p>Tendigi found two electrical infrastructure projects above Rp10B in your company profile.</p>
                   </div>
                 </div>
                 <div class="detail-fit-row">
@@ -398,9 +416,9 @@
                   <circle cx="12" cy="12" r="4"></circle>
                 </svg>
               </div>
-              <span class="detail-kicker">AI tender analysis</span>
-              <h2>Know your gaps before committing.</h2>
-              <p>Maguire will review all 184 pages, extract tender requirements, and compare them with your company profile and document library.</p>
+              <span class="detail-kicker">Optional AI analysis</span>
+              <h2>Check readiness before or during preparation.</h2>
+              <p>Tendigi can review all 184 pages, extract tender requirements, and compare them with your company profile and document library at any time.</p>
 
               <ul class="detail-analyze-list">
                 <li><span>✓</span> Extract administrative requirements</li>
@@ -410,14 +428,14 @@
                 <li><span>✓</span> Link every finding to its source</li>
               </ul>
 
-              <button class="btn btn-primary detail-analyze-button" id="analyze-button" type="button">
+              <button class="btn btn-secondary detail-analyze-button" id="analyze-button" type="button">
                 <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <path d="m12 3 1.1 3.1L16 7.2l-2.9 1.1L12 11.5l-1.1-3.2L8 7.2l2.9-1.1L12 3Z"></path>
                   <path d="m18 13 1 2 2 1-2 1-1 2-1-2-2-1 2-1 1-2Z"></path>
                 </svg>
                 Analyze Tender
               </button>
-              <small class="detail-analyze-note">Creates a readiness assessment and requirement checklist.</small>
+              <small class="detail-analyze-note">Optional — participate now and analyze whenever your team is ready.</small>
             </section>
 
             <section class="app-card detail-side-card">
@@ -441,7 +459,7 @@
             <section class="app-card detail-side-card">
               <div class="detail-side-card-heading detail-side-card-heading-inline">
                 <h3>Your Review</h3>
-                <span class="detail-review-status">Not analyzed</span>
+                <span class="detail-review-status" id="detail-review-status">Not analyzed</span>
               </div>
               <div class="detail-review-actions">
                 <button class="btn btn-secondary detail-save-wide" id="save-tender-button" type="button">
@@ -449,7 +467,7 @@
                   <span>Saved</span>
                 </button>
               </div>
-              <p class="detail-review-copy">Save this tender to revisit it later or share it with your tender team before deciding whether to participate.</p>
+              <p class="detail-review-copy">Save this tender to revisit it later or share it with your tender team.</p>
             </section>
           </aside>
         </div>
@@ -472,27 +490,32 @@
   </div>
 
   <div class="detail-modal-backdrop" id="detail-modal" hidden>
-    <div class="detail-modal" role="dialog" aria-modal="true" aria-labelledby="detail-modal-title">
+    <div class="detail-modal" role="dialog" aria-modal="true" aria-labelledby="detail-modal-title" aria-describedby="detail-modal-copy detail-modal-detail">
       <button class="detail-modal-close" id="detail-modal-close" type="button" aria-label="Close">×</button>
       <div class="detail-modal-icon" id="detail-modal-icon">i</div>
-      <h2 id="detail-modal-title">Information</h2>
+      <h2 id="detail-modal-title" tabindex="-1">Information</h2>
       <p id="detail-modal-copy"></p>
-      <button class="btn btn-primary detail-modal-action" id="detail-modal-action" type="button">Got it</button>
+      <div class="detail-modal-detail" id="detail-modal-detail" hidden></div>
+      <div class="detail-modal-actions">
+        <button class="btn btn-secondary" id="detail-modal-cancel" type="button" hidden>Cancel</button>
+        <button class="btn btn-primary detail-modal-action" id="detail-modal-action" type="button">Got it</button>
+      </div>
     </div>
   </div>
 
   <script>
-    const isAuthenticated = localStorage.getItem("maguire_demo_authenticated") === "true";
+    const isAuthenticated = localStorage.getItem("octen_demo_authenticated") === "true";
     if (!isAuthenticated) {
       window.location.replace("login.html");
     }
 
-    localStorage.setItem("maguire_active_tender", "pln-150kv");
+    const TENDER_ID = "pln-150kv";
+    localStorage.setItem("octen_active_tender", TENDER_ID);
 
     const DEFAULT_SAVED = ["pln-150kv", "jakarta-drainage"];
     let savedIds;
     try {
-      const storedSaved = JSON.parse(localStorage.getItem("maguire_saved_tenders"));
+      const storedSaved = JSON.parse(localStorage.getItem("octen_saved_tenders"));
       savedIds = new Set(Array.isArray(storedSaved) ? storedSaved : DEFAULT_SAVED);
     } catch {
       savedIds = new Set(DEFAULT_SAVED);
@@ -502,84 +525,174 @@
     const saveButtonLabel = saveButton.querySelector("span");
 
     function saveSavedState() {
-      localStorage.setItem("maguire_saved_tenders", JSON.stringify([...savedIds]));
+      localStorage.setItem("octen_saved_tenders", JSON.stringify([...savedIds]));
     }
 
     function updateSaveButton() {
-      const isSaved = savedIds.has("pln-150kv");
+      const isSaved = savedIds.has(TENDER_ID);
       saveButton.classList.toggle("is-saved", isSaved);
       saveButtonLabel.textContent = isSaved ? "Saved" : "Save Tender";
       saveButton.setAttribute("aria-pressed", String(isSaved));
     }
 
     saveButton.addEventListener("click", () => {
-      if (savedIds.has("pln-150kv")) savedIds.delete("pln-150kv");
-      else savedIds.add("pln-150kv");
+      if (savedIds.has(TENDER_ID)) savedIds.delete(TENDER_ID);
+      else savedIds.add(TENDER_ID);
       saveSavedState();
       updateSaveButton();
     });
 
     const analyzeButton = document.getElementById("analyze-button");
     analyzeButton.addEventListener("click", () => {
-      localStorage.setItem("maguire_analysis_tender", "pln-150kv");
-      localStorage.setItem("maguire_analysis_status", "started");
+      localStorage.setItem("octen_analysis_tender", TENDER_ID);
+      localStorage.setItem("octen_analysis_status", "started");
       window.location.href = "analysis.html";
     });
 
+    const participateButton = document.getElementById("participate-button");
+    const participateButtonLabel = document.getElementById("participate-button-label");
+    const reviewStatus = document.getElementById("detail-review-status");
     const detailModal = document.getElementById("detail-modal");
     const detailModalTitle = document.getElementById("detail-modal-title");
     const detailModalCopy = document.getElementById("detail-modal-copy");
     const detailModalIcon = document.getElementById("detail-modal-icon");
+    const detailModalDetail = document.getElementById("detail-modal-detail");
     const detailModalClose = document.getElementById("detail-modal-close");
+    const detailModalCancel = document.getElementById("detail-modal-cancel");
     const detailModalAction = document.getElementById("detail-modal-action");
+    let detailModalActionHandler = null;
+    let detailModalReturnFocus = null;
 
-    function openDetailModal(title, copy, icon = "i") {
+    function openDetailModal({
+      title,
+      copy,
+      icon = "i",
+      detail = "",
+      actionLabel = "Got it",
+      actionHandler = null,
+      showCancel = false
+    }) {
+      detailModalReturnFocus = document.activeElement instanceof HTMLElement ? document.activeElement : null;
       detailModalTitle.textContent = title;
       detailModalCopy.textContent = copy;
       detailModalIcon.textContent = icon;
+      detailModalDetail.textContent = detail;
+      detailModalDetail.hidden = !detail;
+      detailModalAction.textContent = actionLabel;
+      detailModalActionHandler = actionHandler;
+      detailModalCancel.hidden = !showCancel;
       detailModal.hidden = false;
       document.body.classList.add("detail-modal-open");
-      detailModalClose.focus();
+      window.requestAnimationFrame(() => (showCancel ? detailModalCancel : detailModalAction).focus());
     }
 
-    function closeDetailModal() {
+    function closeDetailModal({ restoreFocus = true } = {}) {
       detailModal.hidden = true;
       document.body.classList.remove("detail-modal-open");
+      detailModalActionHandler = null;
+      if (restoreFocus && detailModalReturnFocus?.isConnected) detailModalReturnFocus.focus();
+      detailModalReturnFocus = null;
+    }
+
+    function isParticipating() {
+      return localStorage.getItem("octen_tender_participation") === "preparing"
+        && localStorage.getItem("octen_workspace_tender") === TENDER_ID;
+    }
+
+    function hasCompletedAnalysis() {
+      return localStorage.getItem("octen_analysis_status") === "completed"
+        || localStorage.getItem("octen_analysis_status_cached") === "completed";
+    }
+
+    function updateParticipationState() {
+      const participating = isParticipating();
+      const analyzed = hasCompletedAnalysis();
+      participateButtonLabel.textContent = participating ? "Open Tender Workspace" : "Participate in Tender";
+      reviewStatus.textContent = participating ? "Preparing" : analyzed ? "Analyzed" : "Not analyzed";
+      reviewStatus.classList.toggle("is-preparing", participating);
+      reviewStatus.classList.toggle("is-analyzed", !participating && analyzed);
+    }
+
+    function createTenderWorkspace() {
+      savedIds.add(TENDER_ID);
+      saveSavedState();
+      localStorage.setItem("octen_active_tender", TENDER_ID);
+      localStorage.setItem("octen_tender_participation", "preparing");
+      localStorage.setItem("octen_workspace_tender", TENDER_ID);
+      localStorage.setItem("octen_participation_mode", hasCompletedAnalysis() ? "analyzed" : "direct");
+      window.location.href = "workspace.html";
+    }
+
+    function openParticipationModal() {
+      openDetailModal({
+        title: "Start participating in this tender?",
+        copy: "Tendigi will mark this tender as Preparing and create a preparation workspace. You can run AI analysis later. This does not submit or register a bid with PLN.",
+        icon: "→",
+        detail: "PLN-PROC-2026-0815 · Deadline 21 Aug 2026 · 94% preliminary match",
+        actionLabel: "Create Workspace →",
+        actionHandler: createTenderWorkspace,
+        showCancel: true
+      });
     }
 
     document.getElementById("match-info-button").addEventListener("click", () => {
-      openDetailModal(
-        "About preliminary match",
-        "The 94% match score estimates how relevant this opportunity is to your company using known profile data such as KBLI, location, certifications, capabilities, and past projects. It is not an eligibility or readiness assessment. Detailed tender requirements are checked only after analysis.",
-        "%"
-      );
+      openDetailModal({
+        title: "About preliminary match",
+        copy: "The 94% match score estimates how relevant this opportunity is to your company using known profile data such as KBLI, location, certifications, capabilities, and past projects. It is not an eligibility or readiness assessment. Detailed tender requirements are checked only after analysis.",
+        icon: "%"
+      });
     });
 
     document.getElementById("source-button").addEventListener("click", () => {
-      openDetailModal(
-        "PLN e-Procurement",
-        "This prototype tender was sourced from the PLN e-Procurement channel. In the production product, this action would open the original procurement listing so your team can verify the source information directly.",
-        "↗"
-      );
+      openDetailModal({
+        title: "PLN e-Procurement",
+        copy: "This prototype tender was sourced from the PLN e-Procurement channel. In the production product, this action would open the original procurement listing so your team can verify the source information directly.",
+        icon: "↗"
+      });
     });
 
     document.querySelectorAll("[data-document]").forEach((button) => {
       button.addEventListener("click", () => {
-        openDetailModal(
-          button.dataset.document,
-          `${button.dataset.pages} · ${button.dataset.size}. This source file is available in the tender package and will be included when Maguire runs the tender analysis.`,
-          "PDF"
-        );
+        openDetailModal({
+          title: button.dataset.document,
+          copy: `${button.dataset.pages} · ${button.dataset.size}. This source file is available in the tender package and will be included when Tendigi runs the tender analysis.`,
+          icon: "PDF"
+        });
       });
     });
 
+    participateButton.addEventListener("click", () => {
+      if (isParticipating()) window.location.href = "workspace.html";
+      else openParticipationModal();
+    });
     detailModalClose.addEventListener("click", closeDetailModal);
-    detailModalAction.addEventListener("click", closeDetailModal);
+    detailModalCancel.addEventListener("click", closeDetailModal);
+    detailModalAction.addEventListener("click", () => {
+      if (detailModalActionHandler) detailModalActionHandler();
+      else closeDetailModal();
+    });
     detailModal.addEventListener("click", (event) => {
       if (event.target === detailModal) closeDetailModal();
     });
     document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape" && !detailModal.hidden) closeDetailModal();
+      if (detailModal.hidden) return;
+      if (event.key === "Escape") {
+        closeDetailModal();
+        return;
+      }
+      if (event.key !== "Tab") return;
+      const focusable = [...detailModal.querySelectorAll("button:not([hidden]):not([disabled]), [href]")]
+        .filter((element) => element.offsetParent !== null);
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (!first || !last) return;
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
     });
 
     const userMenuButton = document.getElementById("user-menu-button");
@@ -626,9 +739,9 @@
     notificationPopover.addEventListener("click", (event) => event.stopPropagation());
 
     logoutButton.addEventListener("click", () => {
-      localStorage.removeItem("maguire_demo_authenticated");
-      localStorage.removeItem("maguire_demo_user");
-      localStorage.removeItem("maguire_demo_company");
+      localStorage.removeItem("octen_demo_authenticated");
+      localStorage.removeItem("octen_demo_user");
+      localStorage.removeItem("octen_demo_company");
       window.location.href = "login.html";
     });
 
@@ -644,10 +757,11 @@
     });
     mobileOverlay.addEventListener("click", () => setMobileSidebar(false));
     window.addEventListener("resize", () => {
-      if (window.innerWidth > 760) setMobileSidebar(false);
+      if (window.innerWidth > 1024) setMobileSidebar(false);
     });
 
     updateSaveButton();
+    updateParticipationState();
   </script>
 </body>
 </html>

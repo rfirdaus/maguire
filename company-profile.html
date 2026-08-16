@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Company Profile — Maguire.id</title>
-  <meta name="description" content="Manage the structured company profile Maguire uses for tender matching and readiness assessment." />
+  <title>Company Profile — Tendigi</title>
+  <meta name="description" content="Manage the structured company profile Tendigi uses for tender matching and readiness assessment." />
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="css/app.css" />
 </head>
@@ -12,7 +12,9 @@
   <div class="app-shell">
     <aside class="app-sidebar" id="app-sidebar" aria-label="Main navigation">
       <div class="app-sidebar-brand">
-        <a class="logo" href="dashboard.html" aria-label="Maguire.id dashboard">Maguire<span>.id</span></a>
+        <a class="logo brand-logo" href="dashboard.html" aria-label="Tendigi dashboard">
+          <img src="assets/tendigi-logo.png" alt="" width="1200" height="202" />
+        </a>
       </div>
 
       <div class="app-sidebar-section-label">Workspace</div>
@@ -82,7 +84,7 @@
           <div class="app-user-menu-wrap">
             <button class="app-user-button" id="user-menu-button" type="button" aria-expanded="false">
               <span class="app-user-avatar">BS</span>
-              <span class="app-user-meta"><strong>Budi Santoso</strong><span>Business Development</span></span>
+              <span class="app-user-meta"><strong>Budi Santoso</strong><span>Superadmin</span></span>
               <svg class="app-user-chevron" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
             </button>
             <div class="app-dropdown" id="user-menu" hidden>
@@ -100,7 +102,7 @@
         <div class="app-page-header company-profile-page-header">
           <div>
             <h1>Company Profile</h1>
-            <p>Structured company data Maguire uses to match opportunities and assess tender readiness.</p>
+            <p>Structured company data Tendigi uses to match opportunities and assess tender readiness.</p>
           </div>
           <button class="btn btn-primary" id="edit-company-button" type="button">
             <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"></path><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L8 18l-4 1 1-4Z"></path></svg>
@@ -227,7 +229,7 @@
 
               <div class="company-profile-insight-box">
                 <span class="company-profile-insight-icon">✨</span>
-                <div><strong>How Maguire uses KBLI</strong><p>KBLI helps rank tender relevance, but Maguire does not treat it as proof of eligibility by itself. Tender-specific classification requirements are still extracted and checked during analysis.</p></div>
+                <div><strong>How Tendigi uses KBLI</strong><p>KBLI helps rank tender relevance, but Tendigi does not treat it as proof of eligibility by itself. Tender-specific classification requirements are still extracted and checked during analysis.</p></div>
               </div>
             </div>
 
@@ -236,7 +238,7 @@
                 <div><span>Delivery capability</span><h2>What your company can execute</h2></div>
                 <button class="btn btn-secondary company-profile-small-button" type="button" id="add-capability-button">Add Capability</button>
               </div>
-              <p class="company-profile-section-intro">Capabilities improve semantic tender matching and help Maguire understand whether your past experience is relevant to a new scope of work.</p>
+              <p class="company-profile-section-intro">Capabilities improve semantic tender matching and help Tendigi understand whether your past experience is relevant to a new scope of work.</p>
               <div class="company-profile-capability-grid" id="capability-grid">
                 <article><span class="is-verified">✓ Verified</span><strong>Electrical Infrastructure EPC</strong><p>End-to-end engineering, procurement, installation, testing, and commissioning.</p><small>Supported by 4 project records</small></article>
                 <article><span class="is-verified">✓ Verified</span><strong>150kV Substation Works</strong><p>Civil, electrical, protection, control, cabling, and commissioning for substations.</p><small>Supported by 2 project records</small></article>
@@ -267,7 +269,7 @@
                 <div><span>Past performance</span><h2>Project experience</h2></div>
                 <button class="btn btn-secondary company-profile-small-button" type="button" id="add-project-button">Add Project</button>
               </div>
-              <p class="company-profile-section-intro">Maguire compares project scope, value, client, completion date, and linked evidence against tender experience requirements.</p>
+              <p class="company-profile-section-intro">Tendigi compares project scope, value, client, completion date, and linked evidence against tender experience requirements.</p>
               <div class="company-profile-project-list" id="project-list"></div>
             </div>
 
@@ -294,7 +296,7 @@
           <aside class="company-profile-side-column">
             <section class="app-card company-profile-impact-card">
               <div class="company-profile-side-heading"><span>Matching impact</span><h2>This profile powers discovery</h2></div>
-              <p>Maguire uses structured profile data to rank relevant tenders before any tender documents are analyzed.</p>
+              <p>Tendigi uses structured profile data to rank relevant tenders before any tender documents are analyzed.</p>
               <div class="company-profile-impact-score"><strong>94%</strong><span>PLN 150kV preliminary match</span></div>
               <div class="company-profile-impact-reasons">
                 <div><span>✓</span><p><strong>KBLI 42201</strong> matches utility construction</p></div>
@@ -316,7 +318,7 @@
             </section>
 
             <section class="app-card company-profile-data-model-card">
-              <div class="company-profile-side-heading"><span>Profile vs evidence</span><h2>How Maguire connects data</h2></div>
+              <div class="company-profile-side-heading"><span>Profile vs evidence</span><h2>How Tendigi connects data</h2></div>
               <div class="company-profile-data-flow">
                 <div><strong>Company Profile</strong><small>“We completed Project X.”</small></div>
                 <span>+</span>
@@ -383,7 +385,7 @@
   <div class="prototype-toast" id="profile-toast" aria-live="polite"><strong id="profile-toast-title"></strong><span id="profile-toast-copy"></span></div>
 
   <script>
-    const isAuthenticated = localStorage.getItem("maguire_demo_authenticated") === "true";
+    const isAuthenticated = localStorage.getItem("octen_demo_authenticated") === "true";
     if (!isAuthenticated) window.location.replace("login.html");
 
     const defaultProjects = [
@@ -397,7 +399,7 @@
 
     let projects;
     try {
-      const stored = JSON.parse(localStorage.getItem("maguire_profile_projects"));
+      const stored = JSON.parse(localStorage.getItem("octen_profile_projects"));
       projects = Array.isArray(stored) && stored.length ? stored : defaultProjects;
     } catch { projects = defaultProjects; }
 
@@ -455,7 +457,7 @@
     const projectModal = setupModal("add-project-modal","add-project-button","add-project-close","add-project-cancel");
     const capabilityModal = setupModal("add-capability-modal","add-capability-button","add-capability-close","add-capability-cancel");
 
-    const storedCompany = JSON.parse(localStorage.getItem("maguire_profile_company") || "null");
+    const storedCompany = JSON.parse(localStorage.getItem("octen_profile_company") || "null");
     if (storedCompany) {
       document.getElementById("edit-company-name").value = storedCompany.name;
       document.getElementById("edit-company-employees").value = storedCompany.employees;
@@ -473,7 +475,7 @@
     document.getElementById("edit-company-form").addEventListener("submit", event => {
       event.preventDefault();
       const company = {name:document.getElementById("edit-company-name").value.trim(),employees:document.getElementById("edit-company-employees").value,location:document.getElementById("edit-company-location").value.trim(),website:document.getElementById("edit-company-website").value.trim()};
-      localStorage.setItem("maguire_profile_company", JSON.stringify(company));
+      localStorage.setItem("octen_profile_company", JSON.stringify(company));
       applyCompany(company); editModal.setOpen(false); showToast("Company profile updated","Your structured company information has been saved for this prototype.");
     });
 
@@ -482,7 +484,7 @@
       const value = Number(document.getElementById("new-project-value").value);
       const similarity = document.getElementById("new-project-similarity").value;
       const project = {id:`proj-${Date.now()}`,name:document.getElementById("new-project-name").value.trim(),client:document.getElementById("new-project-client").value.trim(),value,year:Number(document.getElementById("new-project-year").value),similarity,evidence:"Evidence not linked yet",qualifies:similarity === "high" && value >= 10};
-      projects.unshift(project); localStorage.setItem("maguire_profile_projects", JSON.stringify(projects)); renderProjects(); projectModal.setOpen(false); event.target.reset(); document.getElementById("new-project-year").value="2026"; activateTab("projects"); showToast("Project added", project.qualifies ? "This project appears to satisfy the PLN similarity and value threshold. Evidence should still be linked." : "Project experience has been added to the company profile.");
+      projects.unshift(project); localStorage.setItem("octen_profile_projects", JSON.stringify(projects)); renderProjects(); projectModal.setOpen(false); event.target.reset(); document.getElementById("new-project-year").value="2026"; activateTab("projects"); showToast("Project added", project.qualifies ? "This project appears to satisfy the PLN similarity and value threshold. Evidence should still be linked." : "Project experience has been added to the company profile.");
     });
 
     document.getElementById("add-capability-form").addEventListener("submit", event => {
@@ -509,11 +511,11 @@
     document.addEventListener("click", () => { closeUserMenu(); closeNotifications(); });
     userMenu.addEventListener("click", event => event.stopPropagation());
     notificationPopover.addEventListener("click", event => event.stopPropagation());
-    logoutButton.addEventListener("click", () => { localStorage.removeItem("maguire_demo_authenticated"); localStorage.removeItem("maguire_demo_user"); localStorage.removeItem("maguire_demo_company"); window.location.href="login.html"; });
+    logoutButton.addEventListener("click", () => { localStorage.removeItem("octen_demo_authenticated"); localStorage.removeItem("octen_demo_user"); localStorage.removeItem("octen_demo_company"); window.location.href="login.html"; });
     function setMobileSidebar(open){ sidebar.classList.toggle("is-open",open); mobileOverlay.hidden = !open; mobileMenuButton.setAttribute("aria-expanded",String(open)); document.body.classList.toggle("sidebar-open",open); }
     mobileMenuButton.addEventListener("click", () => setMobileSidebar(!sidebar.classList.contains("is-open")));
     mobileOverlay.addEventListener("click", () => setMobileSidebar(false));
-    window.addEventListener("resize", () => { if (window.innerWidth > 760) setMobileSidebar(false); });
+    window.addEventListener("resize", () => { if (window.innerWidth > 1024) setMobileSidebar(false); });
     document.addEventListener("keydown", event => { if (event.key === "Escape") { editModal.setOpen(false); projectModal.setOpen(false); capabilityModal.setOpen(false); } });
 
     renderProjects();

@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dashboard — Maguire.id</title>
+  <title>Dashboard — Tendigi</title>
   <meta
     name="description"
-    content="Maguire.id tender dashboard for opportunity discovery, tender readiness, submissions, documents, and deadlines."
+    content="Tendigi tender dashboard for opportunity discovery, tender readiness, submissions, documents, and deadlines."
   />
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="css/app.css" />
@@ -15,8 +15,8 @@
   <div class="app-shell">
     <aside class="app-sidebar" id="app-sidebar" aria-label="Main navigation">
       <div class="app-sidebar-brand">
-        <a class="logo" href="dashboard.html" aria-label="Maguire.id dashboard">
-          Maguire<span>.id</span>
+        <a class="logo brand-logo" href="dashboard.html" aria-label="Tendigi dashboard">
+          <img src="assets/tendigi-logo.png" alt="" width="1200" height="202" />
         </a>
       </div>
 
@@ -136,7 +136,7 @@
               <span class="app-user-avatar">BS</span>
               <span class="app-user-meta">
                 <strong>Budi Santoso</strong>
-                <span>Business Development</span>
+                <span>Superadmin</span>
               </span>
               <svg class="app-user-chevron" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="m6 9 6 6 6-6"></path>
@@ -487,7 +487,7 @@
   </div>
 
   <script>
-    const isAuthenticated = localStorage.getItem("maguire_demo_authenticated") === "true";
+    const isAuthenticated = localStorage.getItem("octen_demo_authenticated") === "true";
     if (!isAuthenticated) {
       window.location.replace("login.html");
     }
@@ -540,9 +540,9 @@
     notificationPopover.addEventListener("click", (event) => event.stopPropagation());
 
     logoutButton.addEventListener("click", () => {
-      localStorage.removeItem("maguire_demo_authenticated");
-      localStorage.removeItem("maguire_demo_user");
-      localStorage.removeItem("maguire_demo_company");
+      localStorage.removeItem("octen_demo_authenticated");
+      localStorage.removeItem("octen_demo_user");
+      localStorage.removeItem("octen_demo_company");
       window.location.href = "login.html";
     });
 
@@ -560,7 +560,7 @@
     mobileOverlay.addEventListener("click", () => setMobileSidebar(false));
 
     window.addEventListener("resize", () => {
-      if (window.innerWidth > 760) setMobileSidebar(false);
+      if (window.innerWidth > 1024) setMobileSidebar(false);
     });
   </script>
 </body>
