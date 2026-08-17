@@ -202,35 +202,40 @@
                 </div>
 
                 <div class="workspace-attention-list">
-                  <article class="workspace-attention-item is-critical">
+                  <article class="workspace-attention-item is-critical" data-priority-item="project">
                     <span class="workspace-attention-status">!</span>
                     <div class="workspace-attention-main">
                       <div class="workspace-attention-title-row"><strong>Add a third qualifying project</strong><span>Critical</span></div>
                       <p>Tender requires 3 similar projects ≥ Rp10B within the last 5 years. Only 2 currently qualify.</p>
                       <div class="workspace-owner-row"><span class="workspace-avatar">BS</span><span>Budi Santoso</span><i></i><span>Due 12 Aug</span></div>
                     </div>
-                    <a href="requirements.html">Review</a>
+                    <button class="workspace-attention-action" type="button" data-priority-action="project">Add Project</button>
                   </article>
 
-                  <article class="workspace-attention-item is-critical">
+                  <article class="workspace-attention-item is-critical" data-priority-item="ska">
                     <span class="workspace-attention-status">!</span>
                     <div class="workspace-attention-main">
                       <div class="workspace-attention-title-row"><strong>Upload Project Manager SKA</strong><span>Critical</span></div>
                       <p>No matching Project Manager certification was found in the personnel document library.</p>
                       <div class="workspace-owner-row"><span class="workspace-avatar">AR</span><span>Andi Rahman</span><i></i><span>Due 13 Aug</span></div>
                     </div>
-                    <a href="requirements.html">Review</a>
+                    <button class="workspace-attention-action" type="button" data-priority-action="ska">Upload SKA</button>
                   </article>
 
-                  <article class="workspace-attention-item is-warning">
+                  <article class="workspace-attention-item is-warning" data-priority-item="iso45001">
                     <span class="workspace-attention-status">!</span>
                     <div class="workspace-attention-main">
                       <div class="workspace-attention-title-row"><strong>Renew ISO 45001 certificate</strong><span>High</span></div>
                       <p>Current certificate expires in 23 days and may not remain valid throughout the qualification period.</p>
                       <div class="workspace-owner-row"><span class="workspace-avatar">DN</span><span>Dina Natalia</span><i></i><span>Due 15 Aug</span></div>
                     </div>
-                    <a href="documents.html">Open</a>
+                    <button class="workspace-attention-action" type="button" data-priority-action="iso45001">Replace Certificate</button>
                   </article>
+
+                  <div class="workspace-attention-empty" id="workspace-attention-empty" hidden>
+                    <span aria-hidden="true">✓</span>
+                    <div><strong>Priority actions completed</strong><p>The required evidence has been added to this tender workspace.</p></div>
+                  </div>
                 </div>
               </section>
 
@@ -397,6 +402,41 @@
     </div>
   </div>
 
+  <div class="detail-modal-backdrop" id="workspace-action-modal" hidden>
+    <div class="detail-modal workspace-action-modal" role="dialog" aria-modal="true" aria-labelledby="workspace-action-modal-title" aria-describedby="workspace-action-modal-copy">
+      <button class="detail-modal-close" id="workspace-action-modal-close" type="button" aria-label="Close action window">×</button>
+      <div class="workspace-action-modal-heading">
+        <span class="detail-modal-icon" id="workspace-action-modal-icon" aria-hidden="true">DOC</span>
+        <div>
+          <span class="detail-kicker">Resolve priority item</span>
+          <h2 id="workspace-action-modal-title">Upload required evidence</h2>
+        </div>
+      </div>
+      <p id="workspace-action-modal-copy"></p>
+      <form class="workspace-action-form" id="workspace-action-form">
+        <input id="workspace-action-type" type="hidden" />
+        <div class="workspace-action-fields" id="workspace-action-fields"></div>
+        <label class="workspace-action-upload">
+          <span>Supporting file</span>
+          <input id="workspace-action-file" type="file" accept=".pdf,.doc,.docx,.xls,.xlsx,.zip" required />
+          <span class="workspace-action-upload-box">
+            <strong id="workspace-action-file-name">Choose PDF, DOCX, XLSX, or ZIP</strong>
+            <small>Required · maximum 25 MB</small>
+          </span>
+        </label>
+        <div class="workspace-action-modal-actions">
+          <button class="btn btn-secondary" id="workspace-action-modal-cancel" type="button">Cancel</button>
+          <button class="btn btn-primary" id="workspace-action-submit" type="submit">Save Evidence</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="prototype-toast" id="workspace-toast" role="status" aria-live="polite">
+    <strong id="workspace-toast-title">Evidence updated</strong>
+    <span id="workspace-toast-copy">The priority item was resolved.</span>
+  </div>
+
   <script>
     (() => {
     const isAuthenticated = localStorage.getItem("octen_demo_authenticated") === "true";
@@ -508,6 +548,17 @@
       const analysisTask = tasks.find(task => task.id === "task-02");
       if (analysisTask) analysisTask.done = true;
     }
+
+    const priorityTaskIds = { project:"task-15", ska:"task-16", iso45001:"task-18" };
+    let resolvedPriorityActions = new Set();
+    try {
+      const storedResolvedActions = JSON.parse(localStorage.getItem("octen_workspace_resolved_priorities") || "[]");
+      if (Array.isArray(storedResolvedActions)) resolvedPriorityActions = new Set(storedResolvedActions);
+    } catch {}
+    resolvedPriorityActions.forEach(action => {
+      const task = tasks.find(item => item.id === priorityTaskIds[action]);
+      if (task) task.done = true;
+    });
 
     const ownerInitials = {"Budi Santoso":"BS","Andi Rahman":"AR","Dina Natalia":"DN","Raka Saputra":"RS","Fajar Wibowo":"FW","Siti Maharani":"SM"};
     let taskFilter = "all";
@@ -639,6 +690,195 @@
     document.getElementById("invite-team-button").addEventListener("click", () => { window.location.href = "settings.html#team"; });
     document.addEventListener("keydown", event => { if (event.key === "Escape" && !modal.hidden) closeModal(); });
 
+    const priorityActionConfig = {
+      project: {
+        title: "Add qualifying project evidence",
+        copy: "Add the third project record and supporting contract or handover evidence required by this tender.",
+        icon: "PRJ",
+        submitLabel: "Add Project Evidence",
+        documentName: "Third qualifying project evidence",
+        successTitle: "Project evidence added",
+        successCopy: "The third qualifying project is now ready for tender validation.",
+        fields: `
+          <label class="workspace-action-field is-wide"><span>Project name</span><input name="projectName" type="text" placeholder="e.g. 150kV Substation Expansion" required /></label>
+          <label class="workspace-action-field"><span>Client</span><input name="client" type="text" placeholder="Client organization" required /></label>
+          <label class="workspace-action-field"><span>Contract value (IDR)</span><input name="contractValue" type="number" min="10000000000" step="1000000" placeholder="Minimum 10000000000" required /></label>
+          <label class="workspace-action-field"><span>Completion date</span><input name="completionDate" type="date" required /></label>
+          <label class="workspace-action-field"><span>Evidence type</span><select name="evidenceType" required><option value="">Select evidence</option><option>Contract and BAST</option><option>Contract and completion certificate</option><option>Purchase order and handover record</option></select></label>`
+      },
+      ska: {
+        title: "Upload Project Manager SKA",
+        copy: "Add the specific competency certificate needed to support the proposed Project Manager qualification.",
+        icon: "SKA",
+        submitLabel: "Upload SKA",
+        documentName: "Project Manager SKA",
+        successTitle: "Project Manager SKA uploaded",
+        successCopy: "The credential is now linked to the technical qualification requirement.",
+        fields: `
+          <label class="workspace-action-field"><span>Credential holder</span><select name="holder" required><option>Andi Rahman</option><option>Sari Wijaya</option></select></label>
+          <label class="workspace-action-field"><span>Certificate number</span><input name="certificateNumber" type="text" placeholder="Enter certificate number" required /></label>
+          <label class="workspace-action-field"><span>Issue date</span><input name="issueDate" type="date" required /></label>
+          <label class="workspace-action-field"><span>Expiry date</span><input name="expiryDate" type="date" required /></label>`
+      },
+      iso45001: {
+        title: "Replace ISO 45001 certificate",
+        copy: "Upload the renewed certificate and update its validity details for this tender workspace.",
+        icon: "ISO",
+        submitLabel: "Replace Certificate",
+        documentName: "ISO 45001",
+        successTitle: "ISO 45001 certificate replaced",
+        successCopy: "The renewed certificate is now available to the tender workspace.",
+        fields: `
+          <label class="workspace-action-field"><span>Certificate number</span><input name="certificateNumber" type="text" placeholder="Enter renewed certificate number" required /></label>
+          <label class="workspace-action-field"><span>Certification body</span><input name="certificationBody" type="text" placeholder="Certification body" required /></label>
+          <label class="workspace-action-field"><span>Issue date</span><input name="issueDate" type="date" required /></label>
+          <label class="workspace-action-field"><span>Expiry date</span><input name="expiryDate" type="date" required /></label>`
+      }
+    };
+
+    const actionModal = document.getElementById("workspace-action-modal");
+    const actionModalTitle = document.getElementById("workspace-action-modal-title");
+    const actionModalCopy = document.getElementById("workspace-action-modal-copy");
+    const actionModalIcon = document.getElementById("workspace-action-modal-icon");
+    const actionModalClose = document.getElementById("workspace-action-modal-close");
+    const actionModalCancel = document.getElementById("workspace-action-modal-cancel");
+    const actionForm = document.getElementById("workspace-action-form");
+    const actionType = document.getElementById("workspace-action-type");
+    const actionFields = document.getElementById("workspace-action-fields");
+    const actionFile = document.getElementById("workspace-action-file");
+    const actionFileName = document.getElementById("workspace-action-file-name");
+    const actionSubmit = document.getElementById("workspace-action-submit");
+    let actionModalReturnFocus = null;
+    let workspaceToastTimer = null;
+
+    function showWorkspaceToast(title, copy) {
+      const toast = document.getElementById("workspace-toast");
+      document.getElementById("workspace-toast-title").textContent = title;
+      document.getElementById("workspace-toast-copy").textContent = copy;
+      toast.classList.add("is-visible");
+      window.clearTimeout(workspaceToastTimer);
+      workspaceToastTimer = window.setTimeout(() => toast.classList.remove("is-visible"), 3200);
+    }
+
+    function openPriorityActionModal(action, trigger) {
+      const config = priorityActionConfig[action];
+      if (!config) return;
+      actionModalReturnFocus = trigger;
+      actionForm.reset();
+      actionFile.setCustomValidity("");
+      actionType.value = action;
+      actionModalTitle.textContent = config.title;
+      actionModalCopy.textContent = config.copy;
+      actionModalIcon.textContent = config.icon;
+      actionFields.innerHTML = config.fields;
+      actionFileName.textContent = "Choose PDF, DOCX, XLSX, or ZIP";
+      actionSubmit.textContent = config.submitLabel;
+      actionModal.hidden = false;
+      document.body.classList.add("detail-modal-open");
+      window.requestAnimationFrame(() => actionFields.querySelector("input, select")?.focus());
+    }
+
+    function closePriorityActionModal({ restoreFocus = true } = {}) {
+      actionModal.hidden = true;
+      document.body.classList.remove("detail-modal-open");
+      if (restoreFocus && actionModalReturnFocus?.isConnected) actionModalReturnFocus.focus();
+      actionModalReturnFocus = null;
+    }
+
+    function updatePrioritySummary() {
+      const remaining = Object.keys(priorityActionConfig).filter(action => !resolvedPriorityActions.has(action));
+      document.querySelector("#workspace-analysis-attention .workspace-section-count").textContent = `${remaining.length} ${remaining.length === 1 ? "item" : "items"}`;
+      document.getElementById("workspace-attention-empty").hidden = remaining.length !== 0;
+
+      if (!isDirectParticipation) {
+        const readyDocuments = Math.min(24, 21 + resolvedPriorityActions.size);
+        const missingDocuments = 24 - readyDocuments;
+        document.getElementById("workspace-documents-value").textContent = `${readyDocuments} / 24`;
+        document.getElementById("workspace-documents-bar").style.width = `${Math.round((readyDocuments / 24) * 100)}%`;
+        document.getElementById("workspace-documents-copy").textContent = missingDocuments ? `${missingDocuments} documents still required` : "All required documents are ready";
+        document.getElementById("workspace-documents-tab-badge").textContent = missingDocuments;
+        document.getElementById("workspace-documents-panel-value").textContent = `${readyDocuments} / 24`;
+        document.getElementById("workspace-documents-panel-label").textContent = missingDocuments ? "ready" : "complete";
+      }
+
+      if (!isDirectParticipation) {
+        const mandatoryRemaining = ["project", "ska"].filter(action => !resolvedPriorityActions.has(action));
+        const readinessBanner = document.getElementById("workspace-readiness-banner");
+        readinessBanner.classList.toggle("is-resolved", mandatoryRemaining.length === 0);
+        if (mandatoryRemaining.length === 0) {
+          readinessBanner.querySelector(".workspace-risk-icon").textContent = "✓";
+          document.getElementById("workspace-readiness-title").textContent = "Mandatory eligibility gaps resolved";
+          document.getElementById("workspace-readiness-copy").textContent = "Project experience and Project Manager SKA evidence have been added. Review readiness to confirm the updated assessment.";
+          document.getElementById("workspace-readiness-badge").textContent = "Ready for review";
+          document.getElementById("workspace-readiness-badge").classList.remove("detail-badge-red");
+          document.getElementById("workspace-readiness-badge").classList.add("detail-badge-green");
+        } else {
+          readinessBanner.querySelector(".workspace-risk-icon").textContent = "!";
+          document.getElementById("workspace-readiness-title").textContent = `${mandatoryRemaining.length} mandatory ${mandatoryRemaining.length === 1 ? "gap is" : "gaps are"} still unresolved`;
+          document.getElementById("workspace-readiness-copy").textContent = mandatoryRemaining.length === 1
+            ? `${mandatoryRemaining[0] === "project" ? "Similar project experience" : "Project Manager SKA"} may affect eligibility if it remains unresolved at submission.`
+            : "Similar project experience and Project Manager SKA may affect eligibility if they remain unresolved at submission.";
+        }
+      }
+    }
+
+    function applyPriorityResolution(action) {
+      const config = priorityActionConfig[action];
+      if (!config) return;
+      const priorityItem = document.querySelector(`[data-priority-item="${action}"]`);
+      if (priorityItem) priorityItem.hidden = true;
+      document.querySelectorAll(`[data-doc="${config.documentName}"]`).forEach(row => {
+        row.classList.remove("is-missing", "is-warning");
+        const status = row.querySelector(".workspace-doc-status");
+        if (status) {
+          status.textContent = "Ready";
+          status.classList.add("is-ready");
+        }
+      });
+      updatePrioritySummary();
+    }
+
+    document.querySelectorAll("[data-priority-action]").forEach(button => {
+      button.addEventListener("click", () => openPriorityActionModal(button.dataset.priorityAction, button));
+    });
+    actionFile.addEventListener("change", () => {
+      const file = actionFile.files[0];
+      actionFileName.textContent = file?.name || "Choose PDF, DOCX, XLSX, or ZIP";
+      actionFile.setCustomValidity(file && file.size > 25 * 1024 * 1024 ? "Choose a file smaller than 25 MB." : "");
+    });
+    actionModalClose.addEventListener("click", () => closePriorityActionModal());
+    actionModalCancel.addEventListener("click", () => closePriorityActionModal());
+    actionModal.addEventListener("click", event => { if (event.target === actionModal) closePriorityActionModal(); });
+    actionModal.addEventListener("keydown", event => {
+      if (event.key !== "Tab") return;
+      const focusable = [...actionModal.querySelectorAll("button:not([disabled]), input:not([disabled]), select:not([disabled])")].filter(element => element.offsetParent !== null);
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (!first || !last) return;
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+    });
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape" && !actionModal.hidden) closePriorityActionModal();
+    });
+    actionForm.addEventListener("submit", event => {
+      event.preventDefault();
+      const action = actionType.value;
+      const config = priorityActionConfig[action];
+      if (!config) return;
+      resolvedPriorityActions.add(action);
+      localStorage.setItem("octen_workspace_resolved_priorities", JSON.stringify([...resolvedPriorityActions]));
+      const task = tasks.find(item => item.id === priorityTaskIds[action]);
+      if (task) task.done = true;
+      persistTasks();
+      applyPriorityResolution(action);
+      renderTaskStats();
+      renderOverviewTasks();
+      renderTaskTable();
+      closePriorityActionModal({ restoreFocus: false });
+      showWorkspaceToast(config.successTitle, config.successCopy);
+    });
+
     const userMenuButton = document.getElementById("user-menu-button");
     const userMenu = document.getElementById("user-menu");
     const logoutButton = document.getElementById("logout-button");
@@ -663,6 +903,7 @@
     window.addEventListener("resize", () => { if (window.innerWidth > 1024) setMobileSidebar(false); });
 
     applyParticipationMode();
+    resolvedPriorityActions.forEach(applyPriorityResolution);
     renderTaskStats();
     renderOverviewTasks();
     renderTaskTable();
