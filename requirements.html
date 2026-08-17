@@ -323,6 +323,18 @@
     const categoryFilter = document.getElementById("category-filter");
     const mandatoryFilter = document.getElementById("mandatory-filter");
     const visibleCount = document.getElementById("visible-count");
+    const supportedStatusFilters = ["matched", "attention", "gap"];
+    const supportedCategoryFilters = ["Administrative", "Legal", "Technical", "Financial", "Experience"];
+    const initialFilters = new URLSearchParams(window.location.search);
+    const initialStatusFilter = initialFilters.get("status");
+    const initialCategoryFilter = initialFilters.get("category");
+
+    if (supportedStatusFilters.includes(initialStatusFilter)) {
+      statusFilter.value = initialStatusFilter;
+    }
+    if (supportedCategoryFilters.includes(initialCategoryFilter)) {
+      categoryFilter.value = initialCategoryFilter;
+    }
 
     const statusMeta = {
       matched: {label:"Matched", symbol:"✓"},
@@ -366,15 +378,34 @@
       list.querySelectorAll(".requirements-row").forEach(row => row.addEventListener("click", () => openDrawer(row.dataset.id)));
     }
 
+    function syncFiltersToUrl() {
+      const url = new URL(window.location.href);
+      if (statusFilter.value === "all") url.searchParams.delete("status");
+      else url.searchParams.set("status", statusFilter.value);
+      if (categoryFilter.value === "all") url.searchParams.delete("category");
+      else url.searchParams.set("category", categoryFilter.value);
+      window.history.replaceState({}, "", url);
+    }
+
     function clearFilters() {
       searchInput.value = "";
       statusFilter.value = "all";
       categoryFilter.value = "all";
       mandatoryFilter.checked = false;
+      syncFiltersToUrl();
       renderRequirements();
     }
 
-    [searchInput,statusFilter,categoryFilter,mandatoryFilter].forEach(control => control.addEventListener(control === searchInput ? "input" : "change", renderRequirements));
+    searchInput.addEventListener("input", renderRequirements);
+    statusFilter.addEventListener("change", () => {
+      syncFiltersToUrl();
+      renderRequirements();
+    });
+    categoryFilter.addEventListener("change", () => {
+      syncFiltersToUrl();
+      renderRequirements();
+    });
+    mandatoryFilter.addEventListener("change", renderRequirements);
     document.getElementById("clear-filters").addEventListener("click", clearFilters);
     document.getElementById("empty-clear-button").addEventListener("click", clearFilters);
 
