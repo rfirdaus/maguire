@@ -6377,10 +6377,19 @@ body.documents-drawer-open { overflow:hidden; }
 .prototype-toast strong { color:var(--navy); font-size:14px; }
 .prototype-toast span { color:#64748b; font-size:13px; }
 
-@media (max-width: 1250px) {
-  .documents-summary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+/*
+ * The application sidebar remains visible on mid-sized desktop displays, so
+ * the viewport width alone overstates the space available to this table. Move
+ * the supporting cards below the library before the seven document columns
+ * reach their minimum width (notably on 1470px-wide macOS viewports).
+ */
+@media (max-width: 1580px) {
   .documents-layout { grid-template-columns: 1fr; }
   .documents-side-column { grid-template-columns: 1fr 1fr; position: static; }
+}
+
+@media (max-width: 1250px) {
+  .documents-summary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .documents-table-head { display: none; }
   .documents-row { grid-template-columns: minmax(240px, 1.6fr) 115px 120px 110px 70px 100px 18px; overflow-x: auto; }
 }
